@@ -140,4 +140,7 @@ alias gp='git push'
 # Nvim
 alias n='nvim'
 
+# Trash-cli
+alias rm='trash-put'
+
 neofetch
