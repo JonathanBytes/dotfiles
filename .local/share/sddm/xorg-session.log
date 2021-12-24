@@ -1,0 +1,133 @@
+config: focused_border_color: Invalid value: ''.
+config: Unknown setting: 'paddingless_monocle'.
+/home/jonathan/.config/bspwm/bspwmrc: line 56: [[HDMI1: command not found
+xsettingsd: no process found
+sxhkd: no process found
+dunst: no process found
+ksuperkey: no process found
+xfce4-power-manager: no process found
+polybar: no process found
+xsettingsd: Loaded 10 settings from /home/jonathan/.xsettingsd
+xsettingsd: Created window 0x400001 on screen 0 with timestamp 12065
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+WARNING: Setting geometry in section global doesn't exist
+WARNING: Section shortcuts is deprecated.
+Acting on notifications has been moved to its own utility. For more information, see the manual for dunstctl.
+Ignoring this section.
+No keycodes found for keysym 96.
+pgrep: only one pattern can be provided
+Try `pgrep --help' for more information.
+
+(xfce-polkit:884): Gdk-WARNING **: 23:44:04.420: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(xfce4-power-manager:888): Gdk-WARNING **: 23:44:04.421: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+polybar|error: module/mpd: Connection refused
+
+(xfce4-power-manager:888): Gdk-WARNING **: 23:44:04.534: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(xfce4-power-manager:888): Gdk-WARNING **: 23:44:04.534: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(xfce4-power-manager:888): Gdk-WARNING **: 23:44:04.534: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(xfce4-power-manager:888): Gdk-WARNING **: 23:44:04.534: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(xfce-polkit:884): Gdk-WARNING **: 23:44:04.542: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(xfce-polkit:884): Gdk-WARNING **: 23:44:04.542: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(xfce-polkit:884): Gdk-WARNING **: 23:44:04.542: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(xfce-polkit:884): Gdk-WARNING **: 23:44:04.542: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+** (xfce4-power-manager:888): WARNING **: 23:44:04.593: Failed to get name owner: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not get owner of name 'org.freedesktop.PowerManagement': no such name
+
+
+** (xfce4-power-manager:888): WARNING **: 23:44:04.593: Failed to get name owner: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not get owner of name 'org.xfce.PowerManager': no such name
+
+
+(xfce4-power-manager:888): xfce4-power-manager-WARNING **: 23:44:04.594: Unable to connect to session manager : Failed to connect to the session manager: SESSION_MANAGER environment variable not defined
+Dec 23 23:44 : decoder: Decoder plugin 'wildmidi' is unavailable: configuration file does not exist: /etc/timidity/timidity.cfg
+
+(xfce4-power-manager:888): GLib-GObject-WARNING **: 23:44:04.722: ../glib/gobject/gsignal.c:2614: signal 'Changed' is invalid for instance '0x560bb80f6560' of type 'GDBusProxy'
+
+(xfce4-power-manager:888): xfce4-power-manager-WARNING **: 23:44:04.739: could not map keysym 1008ffa8 to keycode
+
+
+(xfce4-power-manager:888): xfce4-power-manager-WARNING **: 23:44:04.753: It seems the kernel brightness switch handling value was not restored properly on exit last time, xfce4-power-manager will try to restore it this time.
+
+(xfce4-power-manager:888): xfce4-power-manager-WARNING **: 23:44:04.753: Unable to set the kernel brightness switch parameter to 1.
+
+(xfce4-power-manager:888): xfce4-power-manager-WARNING **: 23:44:04.754: Failed to get keyboard max brightness level : GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Object does not exist at path “/org/freedesktop/UPower/KbdBacklight”
+[ 23/12/21 23:44:09.826 configure_root INFO ] Root configuration changed, new geometry: 1920x1848
+config: focused_border_color: Invalid value: ''.
+config: Unknown setting: 'paddingless_monocle'.
+/home/jonathan/.config/bspwm/bspwmrc: line 56: [[HDMI1: command not found
+xsettingsd: Loaded 10 settings from /home/jonathan/.xsettingsd
+xsettingsd: Created window 0x400001 on screen 0 with timestamp 21830
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+
+(xfce-polkit:884): Gdk-WARNING **: 23:44:14.034: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+WARNING: Setting geometry in section global doesn't exist
+WARNING: Section shortcuts is deprecated.
+Acting on notifications has been moved to its own utility. For more information, see the manual for dunstctl.
+Ignoring this section.
+No keycodes found for keysym 96.
+
+(xfce-polkit:884): Gdk-WARNING **: 23:44:14.070: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(xfce-polkit:884): Gdk-WARNING **: 23:44:14.070: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(xfce-polkit:884): Gdk-WARNING **: 23:44:14.070: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(xfce4-power-manager:1532): Gdk-WARNING **: 23:44:14.084: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(xfce4-power-manager:1532): Gdk-WARNING **: 23:44:14.122: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(xfce4-power-manager:1532): Gdk-WARNING **: 23:44:14.122: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(xfce4-power-manager:1532): Gdk-WARNING **: 23:44:14.122: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(xfce4-power-manager:1532): Gdk-WARNING **: 23:44:14.122: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+** (xfce4-power-manager:1532): WARNING **: 23:44:14.125: Failed to get name owner: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not get owner of name 'org.freedesktop.PowerManagement': no such name
+
+
+** (xfce4-power-manager:1532): WARNING **: 23:44:14.125: Failed to get name owner: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not get owner of name 'org.xfce.PowerManager': no such name
+
+
+(xfce4-power-manager:1532): xfce4-power-manager-WARNING **: 23:44:14.126: Unable to connect to session manager : Failed to connect to the session manager: SESSION_MANAGER environment variable not defined
+
+(xfce4-power-manager:1532): GLib-GObject-WARNING **: 23:44:14.140: ../glib/gobject/gsignal.c:2614: signal 'Changed' is invalid for instance '0x563f91962520' of type 'GDBusProxy'
+Dec 23 23:44 : exception: Failed to bind to '127.0.0.1:6600'; Failed to bind socket: Address already in use
+
+(xfce4-power-manager:1532): xfce4-power-manager-WARNING **: 23:44:14.165: could not map keysym 1008ffa8 to keycode
+
+
+(xfce4-power-manager:1532): xfce4-power-manager-WARNING **: 23:44:14.187: It seems the kernel brightness switch handling value was not restored properly on exit last time, xfce4-power-manager will try to restore it this time.
+
+(xfce4-power-manager:1532): xfce4-power-manager-WARNING **: 23:44:14.187: Unable to set the kernel brightness switch parameter to 1.
+
+(xfce4-power-manager:1532): xfce4-power-manager-WARNING **: 23:44:14.188: Failed to get keyboard max brightness level : GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Object does not exist at path “/org/freedesktop/UPower/KbdBacklight”
+pgrep: only one pattern can be provided
+Try `pgrep --help' for more information.
