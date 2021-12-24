@@ -135,7 +135,7 @@ alias gcl='git clone --depth 1'
 alias gi='git init'
 alias ga='git add'
 alias gc='git commit -m'
-alias gp='git push origin master'
+alias gp='git push'
 
 # Nvim
 alias n='nvim'
