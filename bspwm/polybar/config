@@ -17,6 +17,7 @@ include-file = ~/.config/bspwm/polybar/modules
 [bar/main]
 monitor = eDP1
 
+wm-restack = bspwm
 bottom = false
 fixed-center = true
 
@@ -76,6 +77,7 @@ scroll-down = bspc desktop -f next.local
 [bar/second]
 monitor = HDMI1 
 
+wm-restack = bspwm
 bottom = false
 fixed-center = true
 
