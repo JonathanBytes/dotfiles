@@ -1,0 +1,11 @@
+
+#!/bin/bash
+
+status=$(xrandr --query | grep 'HDMI1')
+connected=' connected'
+
+if grep -q "$connected" <<< "$status"; then
+  autorandr docked
+else
+  autorandr undocked
+fi

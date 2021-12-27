@@ -358,7 +358,7 @@ label-background = ${color.BACKGROUND}
 interval = 1.0
 
 exec = ~/.config/bspwm/polybar/scripts/toggletouchpad-icon.sh &
-click-left = ~/.config/bspwm/polybar/scripts/toggletouchpad.sh & 
+click-left = ~/.config/bspwm/polybar/scripts/toggletouchpad.sh
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;;	    __________  ______
