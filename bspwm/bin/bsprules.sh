@@ -1,9 +1,9 @@
 #!/bin/bash
 
 status=$(xrandr --query | grep 'HDMI1')
-connected="HDMI1 connected 1920x1080+0+0 (normal left inverted right x axis y axis) 520mm x 290mm"
+connected=' connected'
 
-if [ "$status" = "$connected" ]; then
+if grep -q "$connected" <<< "$status"; then
 # 1 > terminal
 bspc rule -a Alacritty follow=on focus=on
 bspc rule -a Xfce4-terminal desktop='^2' follow=on focus=on
@@ -59,7 +59,6 @@ bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
 
 else
-  
 # 1 > terminal
 bspc rule -a Alacritty follow=on focus=on
 bspc rule -a Xfce4-terminal desktop='^1' follow=on focus=on

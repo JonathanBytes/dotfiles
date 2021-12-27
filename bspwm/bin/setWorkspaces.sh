@@ -1,9 +1,9 @@
 #!/bin/bash
 
 status=$(xrandr --query | grep 'HDMI1')
-connected="HDMI1 connected 1920x1080+0+0 (normal left inverted right x axis y axis) 520mm x 290mm"
+connected=' connected'
 
-if [ "$status" = "$connected" ]; then
+if grep -q "$connected" <<< "$status"; then
   bspc monitor HDMI1 -d '' '' '' ''
   bspc monitor eDP1 -d   '' '' '' '' '' 
 else

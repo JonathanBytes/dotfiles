@@ -84,6 +84,3 @@ bspfloat &
 
 # Random Wallpaper
 $HOME/.config/bspwm/bin/randomWallpaper &
-
-# Prevent screen save 
-

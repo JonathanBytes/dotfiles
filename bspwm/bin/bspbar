@@ -70,7 +70,9 @@ fi
 launch_bar
 
 # Second monitor bar
-my_laptop_external_monitor=$(xrandr --query | grep 'HDMI1')
-if [[ $my_laptop_external_monitor = *connected* ]]; then
+status=$(xrandr --query | grep 'HDMI1')
+connected=' connected'
+
+if grep -q "$connected" <<< "$status"; then
   polybar -q second -c /home/jonathan/.config/bspwm/polybar/config &
 fi

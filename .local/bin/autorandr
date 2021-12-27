@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 status=$(xrandr --query | grep 'HDMI1')
