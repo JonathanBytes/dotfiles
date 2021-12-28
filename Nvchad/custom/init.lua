@@ -26,18 +26,19 @@ end)
 -- examples below:
 
 hooks.add("install_plugins", function(use)
-   --
-   -- use {
-   --    "numirias/semshi",
-   -- }
-use {
-  'phaazon/hop.nvim',
-  branch = 'v1', -- optional but strongly recommended
-  config = function()
-    -- you can configure Hop the way you like here; see :h hop-config
-    require'hop'.setup() 
-  end
-}
+   -- Better motion with search
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v1', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup() 
+    end
+  }
+  -- HTML live server
+  use {
+    'turbio/bracey.vim'
+  }
 end)
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)
