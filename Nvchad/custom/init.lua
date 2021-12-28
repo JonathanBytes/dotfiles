@@ -14,6 +14,7 @@ hooks.add("setup_mappings", function(map)
    map("n", "<leader>q", ":q <CR>", opt)
    map("n", "<leader>s", ":HopChar2 <CR>", opt)
    map("n", "<leader>f", "/", opt)
+   map("n", "<F5>", ":w<CR>:!python % <CR>", opt)
 end)
 
 -- NOTE : opt is a variable  there (most likely a table if you want multiple options),
