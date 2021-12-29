@@ -37,7 +37,8 @@ hooks.add("install_plugins", function(use)
   }
   -- HTML live server
   use {
-    'turbio/bracey.vim'
+    'turbio/bracey.vim',
+    config = bracey,
   }
 end)
 
