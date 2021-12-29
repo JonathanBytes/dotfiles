@@ -15,6 +15,8 @@ hooks.add("setup_mappings", function(map)
    map("n", "<leader>s", ":HopChar2 <CR>", opt)
    map("n", "<leader>f", "/", opt)
    map("n", "<F5>", ":w<CR>:!python % <CR>", opt)
+   map("n", "<leader>m", ":MinimapToggle<CR>:MinimapRefresh<CR>", opt)
+   map("n", "<F9>", ":!mcs % <CR>", opt)
 end)
 
 -- NOTE : opt is a variable  there (most likely a table if you want multiple options),
@@ -35,10 +37,27 @@ hooks.add("install_plugins", function(use)
       require'hop'.setup() 
     end
   }
+  -- Scrollbar
+  use {
+    'Xuyuanp/scrollbar.nvim',
+    config = scrollbar, 
+  }
   -- HTML live server
   use {
     'turbio/bracey.vim',
     config = bracey,
+  }
+  -- Minimap
+  use {
+    'wfxr/minimap.vim',
+    config = function() 
+      vim.g.minimap_width = 10
+      vim.g.minimap_auto_start = 1
+      vim.g.minimap_auto_start_win_enter = 1
+    end,
+  }
+  use {
+    'OmniSharp/omnisharp-vim'
   }
 end)
 
