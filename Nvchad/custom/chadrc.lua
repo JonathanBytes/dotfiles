@@ -105,6 +105,7 @@ M.plugins = {
    default_plugin_config_replace = {
      feline = "custom.feline",
      nvim_tree = "custom.nvimtree",
+     nvim_colorizer = "custom.nvim_colorizer",
    },
 }
 

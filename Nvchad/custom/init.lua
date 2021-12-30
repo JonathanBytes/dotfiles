@@ -56,8 +56,12 @@ hooks.add("install_plugins", function(use)
       vim.g.minimap_auto_start_win_enter = 1
     end,
   }
+  -- C# plugin
   use {
     'OmniSharp/omnisharp-vim'
+  }
+  use {
+    'ap/vim-css-color'
   }
 end)
 
