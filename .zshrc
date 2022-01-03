@@ -130,7 +130,7 @@ alias ohmyzsh="thunar ~/.oh-my-zsh"
 # ls
 alias l='exa -lh'
 alias ll='exa -lah'
-alias la='exa -A'
+alias la='ls -A'
 alias lm='exa -m'
 alias lr='exa -R'
 alias lg='exa -l --group-directories-first'
