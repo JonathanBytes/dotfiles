@@ -71,7 +71,12 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  autojump
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,12 +128,12 @@ alias zshconfig="geany ~/.zshrc"
 alias ohmyzsh="thunar ~/.oh-my-zsh"
 
 # ls
-alias l='ls -lh'
-alias ll='ls -lah'
-alias la='ls -A'
-alias lm='ls -m'
-alias lr='ls -R'
-alias lg='ls -l --group-directories-first'
+alias l='exa -lh'
+alias ll='exa -lah'
+alias la='exa -A'
+alias lm='exa -m'
+alias lr='exa -R'
+alias lg='exa -l --group-directories-first'
 
 # git
 alias gcl='git clone --depth 1'
@@ -142,5 +147,8 @@ alias n='nvim'
 
 # Trash-cli
 alias rm='trash-put'
+
+# Cat with colors
+alias cat='bat'
 
 neofetch
