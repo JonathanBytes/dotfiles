@@ -63,6 +63,7 @@ hooks.add("install_plugins", function(use)
   use {
     'ap/vim-css-color'
   }
+  use {'neoclide/coc.nvim', branch = 'release'}
 end)
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)
