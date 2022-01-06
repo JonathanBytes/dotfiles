@@ -160,26 +160,24 @@ inline-mode = false
 
 enable-click = true
 enable-scroll = true
-reverse-scroll = true
+reverse-scroll = false
 
-fuzzy-match = true
+# fuzzy-match = true
 
-; ws-icon-[0-9]+ = label;icon
-; Note that the label needs to correspond with the bspwm workspace name
-ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-2 = III;
-ws-icon-3 = IV;
-ws-icon-4 = V;
-ws-icon-5 = VI;
-ws-icon-6 = VII;
-ws-icon-7 = VIII;
-ws-icon-default = 
+# ; ws-icon-[0-9]+ = label;icon
+# ; Note that the label needs to correspond with the bspwm workspace name
+# ws-icon-0 = I;
+# ws-icon-1 = II;
+# ws-icon-2 = III;
+# ws-icon-3 = IV;
+# ws-icon-4 = V;
+# ws-icon-5 = VI;
+# ws-icon-6 = VII;
+# ws-icon-7 = VIII;
+# ws-icon-default = 
 
-format = <label-state>
-format-font = 2
-
-label-monitor = eDP1 
+# format = <label-state>
+# format-font = 2
 
 ; If any values for label-dimmed-N are defined, the workspace/mode
 ; colors will get overridden with those values if the monitor is out of focus
@@ -205,9 +203,9 @@ label-occupied-background = ${color.BACKGROUND}
 label-occupied-padding = 1
 
 label-urgent = %name%
-label-urgent-foreground = ${color.RED}
+label-urgent-foreground = ${color.ALTRED}
 label-urgent-background = ${color.BACKGROUND}
-label-urgent-underline = ${color.RED}
+label-urgent-underline = ${color.ALTRED}
 label-urgent-padding = 1
 
 label-empty = %name%
@@ -215,9 +213,9 @@ label-empty-foreground = ${color.FOREGROUND}
 label-empty-padding = 1
 
 ; Separator in between workspaces
-label-separator = "∙"
-label-separator-padding = 0
-label-separator-foreground = ${color.ALTBLACK}
+# label-separator = "∙"
+# label-separator-padding = 0
+# label-separator-foreground = ${color.ALTBLACK}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
