@@ -64,6 +64,19 @@ hooks.add("install_plugins", function(use)
     'ap/vim-css-color'
   }
   use {'neoclide/coc.nvim', branch = 'release'}
+  use {
+    'sudar/vim-arduino-syntax'
+  }
+  use {
+    'SirVer/ultisnips',
+    config = function()
+      vim.g.UltiSnipsExpandTrigger="<tab>"
+      vim.g.UltiSnipsJumpForwardTrigger="<c-b>"
+      vim.g.UltiSnipsJumpBackwardTrigger="<c-z>"
+    end,
+  }
+  use 'honza/vim-snippets'
+  use 'sudar/vim-arduino-snippets'
 end)
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)
