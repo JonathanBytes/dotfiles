@@ -174,7 +174,7 @@ M.mappings.plugins = {
       prev_buffer = "<S-Tab>",
    },
    comment = {
-      toggle = "<leader>/",
+      toggle = "<leader>c",
    },
 
    dashboard = {
