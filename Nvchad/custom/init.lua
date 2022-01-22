@@ -37,16 +37,13 @@ hooks.add("install_plugins", function(use)
       require'hop'.setup() 
     end
   }
-  -- Scrollbar
-  use {
-    'Xuyuanp/scrollbar.nvim',
-    config = scrollbar, 
-  }
+  
   -- HTML live server
   use {
     'turbio/bracey.vim',
     config = bracey,
   }
+  
   -- Minimap
   use {
     'wfxr/minimap.vim',
@@ -56,27 +53,28 @@ hooks.add("install_plugins", function(use)
       vim.g.minimap_auto_start_win_enter = 1
     end,
   }
+  
   -- C# plugin
-  use {
-    'OmniSharp/omnisharp-vim'
-  }
-  use {
-    'ap/vim-css-color'
-  }
+  use 'OmniSharp/omnisharp-vim'
+
+  -- CSS colorizer
+  use 'ap/vim-css-color'
+  
+  -- Autocomplete
   use {'neoclide/coc.nvim', branch = 'release'}
-  use {
-    'sudar/vim-arduino-syntax'
-  }
-  use {
-    'SirVer/ultisnips',
-    config = function()
-      vim.g.UltiSnipsExpandTrigger="<tab>"
-      vim.g.UltiSnipsJumpForwardTrigger="<c-b>"
-      vim.g.UltiSnipsJumpBackwardTrigger="<c-z>"
-    end,
-  }
-  use 'honza/vim-snippets'
-  use 'sudar/vim-arduino-snippets'
+
+  -- Arduino Syntax
+  -- use 'sudar/vim-arduino-syntax'
+  -- use {
+  --   'SirVer/ultisnips',
+  --   config = function()
+  --     vim.g.UltiSnipsExpandTrigger="<tab>"
+  --     vim.g.UltiSnipsJumpForwardTrigger="<c-b>"
+  --     vim.g.UltiSnipsJumpBackwardTrigger="<c-z>"
+  --   end,
+  -- }
+  -- use 'honza/vim-snippets'
+  -- use 'sudar/vim-arduino-snippets'
 end)
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)

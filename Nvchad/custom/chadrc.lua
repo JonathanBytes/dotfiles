@@ -61,7 +61,7 @@ M.plugins = {
       better_escape = true, -- map to <ESC> with no lag
       feline = true, -- statusline
       gitsigns = true,
-      lspsignature = true, -- lsp enhancements
+      lspsignature = false, -- lsp enhancements
       telescope_media = false,
       vim_matchup = true, -- improved matchit
       cmp = true,
@@ -93,6 +93,7 @@ M.plugins = {
             "dashboard",
             "NvimTree",
             "terminal",
+            "minimap",
          },
          shown = {},
 
