@@ -14,7 +14,8 @@ hooks.add("setup_mappings", function(map)
    map("n", "<leader>q", ":q <CR>", opt)
    map("n", "<leader>s", ":HopChar2 <CR>", opt)
    map("n", "<leader>f", "/", opt)
-   map("n", "<F5>", ":w<CR>:!python % <CR>", opt)
+   -- map("n", "<F5>", ":w<CR>:!python % <CR>", opt)
+   map("n", "<F5>", ":w<CR>:ter python3 %<CR>", opt)
    map("n", "<leader>m", ":MinimapToggle<CR>:MinimapRefresh<CR>", opt)
    map("n", "<F9>", ":!mcs % <CR>", opt)
 end)
@@ -62,19 +63,7 @@ hooks.add("install_plugins", function(use)
   
   -- Autocomplete
   use {'neoclide/coc.nvim', branch = 'release'}
-
-  -- Arduino Syntax
-  -- use 'sudar/vim-arduino-syntax'
-  -- use {
-  --   'SirVer/ultisnips',
-  --   config = function()
-  --     vim.g.UltiSnipsExpandTrigger="<tab>"
-  --     vim.g.UltiSnipsJumpForwardTrigger="<c-b>"
-  --     vim.g.UltiSnipsJumpBackwardTrigger="<c-z>"
-  --   end,
-  -- }
-  -- use 'honza/vim-snippets'
-  -- use 'sudar/vim-arduino-snippets'
+  
 end)
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)
