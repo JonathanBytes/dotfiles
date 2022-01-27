@@ -80,5 +80,8 @@ $HOME/.local/bin/startup
 bspcomp
 bspfloat &
 
+# Huion tablet setup
+$HOME/.config/bspwm/bin/huion-setup
+
 # Random Wallpaper
 $HOME/.config/bspwm/bin/randomWallpaper &

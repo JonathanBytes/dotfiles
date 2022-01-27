@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+xsetwacom set "HUION Huion Tablet stylus" PressureCurve 0 100 100 100
+xsetwacom set "HUION Huion Tablet stylus" button 3 key Shift Ctrl E
+xsetwacom set "HUION Huion Tablet stylus" button 2 key Shift Ctrl P
+xsetwacom set "HUION Huion Tablet stylus" button 1 1
+xsetwacom set "HUION Huion Tablet Pad pad" button 8 key Super return
+xsetwacom set "HUION Huion Tablet Pad pad" button 3 key Super S
+xsetwacom set "HUION Huion Tablet Pad pad" button 1 key Ctrl Y
+xsetwacom set "HUION Huion Tablet Pad pad" button 2 key Ctrl Z
