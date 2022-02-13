@@ -63,6 +63,13 @@ hooks.add("install_plugins", function(use)
   
   -- Autocomplete
   use {'neoclide/coc.nvim', branch = 'release'}
+
+  use {
+    'lifepillar/vim-gruvbox8',
+    config = function()
+     vim.cmd("colorscheme gruvbox8")
+    end,
+  }
   
 end)
 

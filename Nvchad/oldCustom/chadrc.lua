@@ -8,7 +8,7 @@ local M = {}
 
 M.ui = {
    theme = "gruvbox",
-   transparency = "true",
+   transparency = false,
 }
  
 M.options = {

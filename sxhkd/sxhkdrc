@@ -17,6 +17,12 @@ super + t
 
 ##---------- Rofi Launcher & Menus ----------##
 
+# Rofi emojis
+super + e
+       rofimoji --selector rofi --selector-args="-theme ~/.config/bspwm/rofi/themes/launcher.rasi" 
+       ##rofi -show emoji -modi emoji -theme ~/.config/bspwm/rofi/themes/launcher.rasi  
+       ##rofi -modi "emoji:/usr/lib/python3.10/site-packages/picker/rofimoji.py" -show emoji -theme ~/config/bspwm/rofi/themes/launcher.rasi
+
 # Rofi App Launcher
 alt + F1
 	sh ~/.config/bspwm/rofi/bin/launcher
@@ -25,7 +31,7 @@ alt + F1
 super + n
 	nmd
 
-# Rofi jhemes Menu
+# Rofi themes Menu
 ctrl + alt + t
 	sh ~/.config/bspwm/rofi/bin/themes
 
@@ -41,7 +47,7 @@ super + shift + {b,f,e,k,n}
 
 # Terminal Apps
 ctrl + alt + {v,n,r,h,b}
-	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e {vim,nvim,ranger,htop,bashtop}
+	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e {vim,nvim,ranger,htop,btop}
 
 # Color Picker
 super + p

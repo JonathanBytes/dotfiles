@@ -46,6 +46,3 @@ let g:better_escape_shortcut = 'jk'
 
 nmap <Leader>e :NERDTreeToggle<CR>
 nmap <C-n> :NERDTreeClose<CR>
-
-
-

@@ -143,7 +143,7 @@ alias gc='git commit -m'
 alias gp='git push'
 
 # Nvim
-alias n='nvim'
+alias n='~/.local/bin/lvim'
 
 # Trash-cli
 alias rm='trash-put'

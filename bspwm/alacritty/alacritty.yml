@@ -32,7 +32,7 @@ window:
 ## scrolling
   history: 10000
   multiplier: 3
-  opacity: 0.95
+  opacity: 0.998
 
 ## Background opacity
 # background_opacity: 0.95
