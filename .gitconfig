@@ -1,0 +1,7 @@
+[user]
+	email = jonathancardonaramirez@gmail.com
+	name = Jonathan ArchDell
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
