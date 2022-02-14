@@ -21,7 +21,7 @@ getcolors() {
 }
 getcolors
 
-bspc config border_width 1
+bspc config border_width 2
 bspc config window_gap 10
 bspc config split_ratio 0.50
 
@@ -35,7 +35,6 @@ bspc config gapless_monocle true
 bspc config paddingless_monocle true
 bspc config single_monocle false
 bspc config focus_follows_pointer false 
-
 
 ## Autostart -------------------------------------------------#
 

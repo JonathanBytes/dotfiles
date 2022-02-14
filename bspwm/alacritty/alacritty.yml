@@ -22,8 +22,8 @@ window:
     lines: 25
 
   padding:
-    x: 10
-    y: 10
+    x: 6
+    y: 6
 
   decorations: full
   startup_mode: Windowed
@@ -32,7 +32,7 @@ window:
 ## scrolling
   history: 10000
   multiplier: 3
-  opacity: 0.998
+  opacity: 1 
 
 ## Background opacity
 # background_opacity: 0.95

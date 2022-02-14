@@ -79,7 +79,6 @@ ramp-8 = 
 ramp-9 = 
 ramp-font = 2
 ramp-foreground = ${color.MAGENTA}
-
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/brightness]

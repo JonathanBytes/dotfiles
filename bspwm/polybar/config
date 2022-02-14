@@ -21,10 +21,10 @@ wm-restack = bspwm
 bottom = false
 fixed-center = true
 
-width = 100%
-height = 24
-offset-x = 0
-offset-y = 0
+width = 1344
+height = 26
+offset-x = 11
+offset-y = 11
 
 background = ${color.BACKGROUND}
 foreground = ${color.FOREGROUND}
@@ -81,10 +81,10 @@ wm-restack = bspwm
 bottom = false
 fixed-center = true
 
-width = 100%
-height = 24
-offset-x = 0
-offset-y = 0
+width = 1898 
+height = 26
+offset-x = 11
+offset-y = 11
 
 background = ${color.BACKGROUND}
 foreground = ${color.FOREGROUND}
