@@ -152,3 +152,4 @@ alias rm='trash-put'
 alias cat='bat'
 
 neofetch
+export PATH="$PATH:$HOME/.spicetify"
