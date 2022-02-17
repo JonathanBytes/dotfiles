@@ -152,4 +152,6 @@ alias rm='trash-put'
 # Cat with colors
 alias cat='bat'
 
+# Python alias
+alias p='python'
 neofetch
