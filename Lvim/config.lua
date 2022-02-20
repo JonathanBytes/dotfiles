@@ -36,6 +36,10 @@ lvim.keys.normal_mode["<C-a>"] = ":%y+<cr>"
 lvim.keys.normal_mode["<leader>ss"] = ":HopChar2 <cr>"
 lvim.keys.normal_mode["<leader>m"] = ":MinimapToggle <cr>"
 lvim.keys.normal_mode["<F5>"] = ":w<CR>:ter python3 %<CR>"
+lvim.keys.normal_mode["<leader>t"] = ":ter <CR> i"
+lvim.keys.normal_mode["<leader>vt"] = ":vs<CR>:ter <CR> i"
+lvim.keys.normal_mode["<leader>ht"] = ":sp<CR>:ter <CR> i"
+lvim.keys.normal_mode["<leader>vs"] = ":vs<CR>"
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
