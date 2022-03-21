@@ -151,4 +151,7 @@ alias cat='bat'
 # Python alias
 alias p='python'
 
+# PDF reader alias
+alias z='zathura'
+
 neofetch

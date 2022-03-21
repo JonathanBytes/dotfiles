@@ -184,18 +184,14 @@ lvim.plugins = {
       vim.g.bracey_refresh_on_save = 1
     end,
   },
-  -- {
-  --   'wfxr/minimap.vim',
-  --   run = "cargo install --locked code-minimap",
-  --   config = function ()
-  --     vim.cmd ("let g:minimap_width = 10")
-  --     -- vim.cmd ("let g:minimap_auto_start = 0")
-  --     -- vim.cmd ("let g:minimap_auto_start_win_enter = 0")
-  --   end,
-  -- },
+  -- Easymotion
   {
     'phaazon/hop.nvim',
     branch = 'v1', -- optional but strongly recommended
+  },
+  {
+    'neoclide/coc.nvim',
+    branch = 'release',
   },
 }
 
