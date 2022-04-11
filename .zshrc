@@ -154,4 +154,10 @@ alias p='python'
 # PDF reader alias
 alias z='zathura'
 
+# Misc
+alias matlab='export _JAVA_AWT_WM_NONREPARENTING=1;matlab'
+alias o='octave'
+alias b='btop'
+
+
 neofetch

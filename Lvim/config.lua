@@ -174,7 +174,6 @@ lvim.plugins = {
   {
     "morhetz/gruvbox",
   },
-
   {
   -- HTML live server
     "turbio/bracey.vim",
@@ -192,6 +191,12 @@ lvim.plugins = {
   {
     'neoclide/coc.nvim',
     branch = 'release',
+  },
+  {
+    'daeyun/vim-matlab',
+  },
+  {
+    'mikea1729/octave.vim'
   },
 }
 
