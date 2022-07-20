@@ -89,4 +89,4 @@ $HOME/.config/bspwm/bin/randomWallpaper &
 # flashfocus &
 
 # Inhibiting desktop idleness
-# caffeine &
+caffeine &
