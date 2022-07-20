@@ -8,7 +8,7 @@
 [core]
 	editor = lvim
 [color]
-    ui = true
+    ui = auto
 [color "branch"]
     current = yellow reverse
     local = yellow
