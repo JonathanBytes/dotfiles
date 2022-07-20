@@ -159,5 +159,11 @@ alias matlab='export _JAVA_AWT_WM_NONREPARENTING=1;matlab'
 alias o='octave'
 alias b='btop'
 
+# Create directory and cd to it
+mkcdir ()
+{
+    mkdir -p -- "$1" &&
+       cd -P -- "$1"
+}
 
 neofetch
