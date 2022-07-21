@@ -9,27 +9,31 @@ an executable
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 -- general
-
 lvim.log.level = "warn"
 lvim.format_on_save = true
-
---------------------------------
 -- Relative number
 vim.opt.rnu = true
 -- Word wrap
 vim.opt.wrap = true
+-- Inicialice better motion
+require('hop').setup()
 -- Colorscheme
 lvim.colorscheme = "gruvbox"
 vim.cmd ("let g:gruvbox_contrast_dark= 'medium'")
--- Inicialice better motion
-require('hop').setup()
+-- vim.cmd ("let g:gruvbox_material_palette = 'mix'")
+-- StatusLine
+lvim.builtin.lualine.style = "default"
+lvim.builtin.lualine.options.theme = "gruvbox-material"
+lvim.builtin.lualine.options.component_separators = '/'
+lvim.builtin.lualine.options.section_separators = { left = ' ', right = ' ' }
+-- keymappings [view all the defaults by pressing <leader>Lk]
+lvim.leader = "space"
 
--- Own keymapping
-  -- Better motion keymap
-lvim.keys.normal_mode["<leader>ss"] = ":HopChar2 <cr>"
+-- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<leader>fn"] = ":ene!<cr>"
 lvim.keys.normal_mode["<C-a>"] = ":%y+<cr>"
+lvim.keys.normal_mode["<leader>ss"] = ":HopChar2 <cr>"
 lvim.keys.normal_mode["<leader>m"] = ":MinimapToggle <cr>"
 lvim.keys.normal_mode["<F5>"] = ":w<CR>:ter python3 %<CR>"
 lvim.keys.normal_mode["<leader>t"] = ":ter <CR> i"
@@ -37,21 +41,13 @@ lvim.keys.normal_mode["<leader>vt"] = ":vs<CR>:ter <CR> i"
 lvim.keys.normal_mode["<leader>ht"] = ":sp<CR>:ter <CR> i"
 lvim.keys.normal_mode["<leader>vs"] = ":vs<CR>"
 
--- Editing default keymapping
+-- unmap a default keymapping
+-- lvim.keys.normal_mode["<C-Up>"] = false
+
+-- edit a default keymapping
+-- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 lvim.keys.normal_mode["<leader>f"] = false
 lvim.keys.normal_mode["<leader>ff"] = ":Telescope find_files<cr>"
-
--- TODO: User Config for predefined plugins
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
---------------------------------
-
--- keymappings [view all the defaults by pressing <leader>Lk]
-lvim.leader = "space"
--- unmap a default keymapping
--- vim.keymap.del("n", "<C-Up>")
--- override a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
@@ -77,20 +73,21 @@ lvim.leader = "space"
 --   name = "+Trouble",
 --   r = { "<cmd>Trouble lsp_references<cr>", "References" },
 --   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
+--   d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnostics" },
 --   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
 --   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
+--   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
 -- }
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.alpha.active = true
-lvim.builtin.alpha.mode = "dashboard"
+lvim.builtin.dashboard.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
+lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.nvimtree.quit_on_open = 1
+
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -101,11 +98,11 @@ lvim.builtin.treesitter.ensure_installed = {
   "lua",
   "python",
   "typescript",
-  "tsx",
   "css",
   "rust",
   "java",
   "yaml",
+  "html",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -116,17 +113,13 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- ---@usage disable automatic installation of servers
 -- lvim.lsp.automatic_servers_installation = false
 
--- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
--- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
--- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
--- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pyright", opts)
+-- ---@usage Select which servers should be configured manually. Requires `:LvimCacheRest` to take effect.
+-- See the full default list `:lua print(vim.inspect(lvim.lsp.override))`
+-- vim.list_extend(lvim.lsp.override, { "pyright" })
 
--- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
--- ---`:LvimInfo` lists which server(s) are skiipped for the current filetype
--- vim.tbl_map(function(server)
---   return server ~= "emmet_ls"
--- end, lvim.lsp.automatic_configuration.skipped_servers)
+-- ---@usage setup a server -- see: https://www.lunarvim.org/languages/#overriding-the-default-configuration
+-- local opts = {} -- check the lspconfig documentation for a list of all possible options
+-- require("lvim.lsp.manager").setup("pylsp", opts)
 
 -- -- you can set a custom on_attach function that will be used for all the language servers
 -- -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
@@ -181,23 +174,8 @@ lvim.plugins = {
   {
     "morhetz/gruvbox",
   },
-  -- Easymotion
   {
-    'phaazon/hop.nvim',
-    branch = 'v2', -- optional but strongly recommended
-    config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
-      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  },
-  {
-    'daeyun/vim-matlab',
-  },
-  {
-    'mikea1729/octave.vim'
-  },
   -- HTML live server
-  {
     "turbio/bracey.vim",
     run = "npm install --prefix server",
     config = function()
@@ -205,18 +183,28 @@ lvim.plugins = {
       vim.g.bracey_refresh_on_save = 1
     end,
   },
+  -- Easymotion
+  {
+      'phaazon/hop.nvim',
+      branch = 'v1', -- optional but strongly recommended
+      config = function()
+        -- you can configure Hop the way you like here; see :h hop-config
+        require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      end
+  },
+  {
+    'neoclide/coc.nvim',
+    branch = 'release',
+  },
+  {
+    'daeyun/vim-matlab',
+  },
+  {
+    'mikea1729/octave.vim'
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = { "*.json", "*.jsonc" },
---   -- enable wrap mode for json files only
---   command = "setlocal wrap",
--- })
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
+-- lvim.autocommands.custom_groups = {
+--   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
+-- }
