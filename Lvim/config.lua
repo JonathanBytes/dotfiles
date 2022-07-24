@@ -36,6 +36,14 @@ vim.g.gruvbox_transparent = true
 vim.cmd("let g:minimap_width = 8")
 -- vim.cmd("let g:minimap_close_filetypes = ['nvim-tree']")
 
+-- Jump to line :number
+require('numb').setup {
+  show_numbers = true, -- Enable 'number' for the window while peeking
+  show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+  number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
+  centered_peeking = true, -- Peeked line will be centered relative to window
+}
+
 -- Scrollbar setup
 vim.cmd [[
 augroup ScrollbarInit
@@ -333,6 +341,8 @@ lvim.plugins = {
   { 'mfussenegger/nvim-dap-python' },
   -- Surrounding ys ds cs (you, delete and change surround)
   { 'kylechui/nvim-surround' },
+  -- Numb, jump to line while :number
+  { 'nacro90/numb.nvim' },
 
 }
 
