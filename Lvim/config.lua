@@ -1,6 +1,5 @@
 --[[
 lvim is the global options objectupdatetime
-
 Linters should be
 filled in as strings with either
 a global executable or a path to
@@ -53,7 +52,7 @@ lvim.keys.normal_mode["<F5>"] = ":lua require'dap'.continue()<CR>"
 lvim.keys.normal_mode["<F10>"] = ":lua require'dap'.step_over()<CR>"
 lvim.keys.normal_mode["<F11>"] = ":lua require'dap'.step_into()<CR>"
 lvim.keys.normal_mode["<F12>"] = ":lua require'dap'.step_out()<CR>"
-lvim.keys.normal_mode["<leader>B"] = ":lua require'dap'.toggle_breakpoint()<CR>"
+lvim.builtin.which_key.mappings["B"] = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle debug breakpoint" }
 lvim.keys.normal_mode["<leader>dv"] = ":lua require'dapui'.toggle()<CR>"
 
 require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
@@ -109,17 +108,17 @@ lvim.keys.normal_mode["<leader>ff"] = ":Telescope find_files<cr>"
 
 -- Own keymapping
 lvim.builtin.which_key.mappings["ss"] = { "<cmd>HopChar2 <cr>", "Hop 2 Char fast motion" } -- Better motion keymap
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["<leader>fn"] = ":ene!<cr>"
-lvim.keys.normal_mode["<C-a>"] = ":%y+<cr>"
+lvim.keys.normal_mode["<C-s>"] = ":w<cr>" -- Save
+lvim.keys.normal_mode["<leader>fn"] = ":ene!<cr>" -- Open new tab
+lvim.keys.normal_mode["<C-a>"] = ":%y+<cr>" -- Copy all buffer
 lvim.builtin.which_key.mappings["m"] = { "<cmd>MinimapToggle <cr>", "Toggle Minimap" }
--- lvim.keys.normal_mode["<F5>"] = ":w<CR>:ter python3 %<CR>"
-lvim.keys.normal_mode["<F6>"] = ":w<CR>:ter mcs % <CR>" -- mono name.exe to run the compiled file
-lvim.keys.normal_mode["<leader>t"] = ":ter <CR> i"
+-- lvim.keys.normal_mode["<F5>"] = ":w<CR>:ter python3 %<CR>" -- Run python file
+lvim.keys.normal_mode["<F6>"] = ":w<CR>:ter mcs % <CR>" -- compile c# file, mono name.exe to run the compiled file
+lvim.builtin.which_key.mappings["t"] = { ":ter <CR> i", "Open a terminal" }
 lvim.keys.normal_mode["<leader>vt"] = ":vs<CR>:ter <CR> i"
 lvim.keys.normal_mode["<leader>ht"] = ":sp<CR>:ter <CR> i"
 lvim.keys.normal_mode["<leader>vs"] = ":vs<CR>"
-lvim.keys.normal_mode["<leader>n"] = ":set rnu! | :set nu! <CR>"
+lvim.builtin.which_key.mappings["n"] = { ":set rnu! | :set nu! <CR>", "Toggle numbers sidebar" }
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
