@@ -1,5 +1,5 @@
 --[[
-lvim is the global options object
+lvim is the global options objectupdatetime
 
 Linters should be
 filled in as strings with either
@@ -18,20 +18,113 @@ lvim.format_on_save = true
 vim.opt.rnu = true
 -- Word wrap
 vim.opt.wrap = true
+
 -- Colorscheme
-lvim.colorscheme = "gruvbox"
-vim.cmd ("let g:gruvbox_contrast_dark= 'medium'")
+lvim.colorscheme = "gruvbox-flat"
+vim.g.gruvbox_flat_style = "dark"
+vim.g.gruvbox_transparent = true
+-- vim.cmd("let g:gruvbox_material_background= 'medium'")
+-- vim.cmd("let g:gruvbox_material_foreground= 'mix'")
+-- vim.cmd("let g:gruvbox_contrast_dark= 'medium'")
+
 -- Inicialice better motion
 require('hop').setup()
 
+-- Minimap config
+vim.cmd("let g:minimap_width = 10")
+-- vim.cmd("let g:minimap_close_filetypes = ['nvim-tree']")
+
+-- Scrollbar setup
+vim.cmd [[
+augroup ScrollbarInit
+  autocmd!
+  autocmd WinScrolled,VimResized,QuitPre * silent! lua require('scrollbar').show()
+  autocmd WinEnter,FocusGained           * silent! lua require('scrollbar').show()
+  autocmd WinLeave,BufLeave,BufWinLeave,FocusLost            * silent! lua require('scrollbar').clear()
+augroup end
+]]
+
+-- Debugging setup
+lvim.builtin.dap.active = true
+lvim.keys.normal_mode["<F5>"] = ":lua require'dap'.continue()<CR>"
+lvim.keys.normal_mode["<F10>"] = ":lua require'dap'.step_over()<CR>"
+lvim.keys.normal_mode["<F11>"] = ":lua require'dap'.step_into()<CR>"
+lvim.keys.normal_mode["<F12>"] = ":lua require'dap'.step_out()<CR>"
+lvim.keys.normal_mode["<leader>B"] = ":lua require'dap'.toggle_breakpoint()<CR>"
+lvim.keys.normal_mode["<leader>dv"] = ":lua require'dapui'.toggle()<CR>"
+
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+require('dapui').setup()
+require('nvim-dap-virtual-text').setup()
+
+-- require('dap').configurations.cs = {
+--   {
+--     type = 'cs';
+--     request = 'launch';
+--     name = "Launch file";
+--     program = "${file}";
+--     csPath = function()
+--       return '/usr/bin/netcoredbg'
+--     end;
+--   },
+-- }
+-- require('dap').adapters.cs = {
+--   type = 'executable';
+--   command = 'netcoredbg';
+--   args = { '/usr/bin/netcoredbg' };
+-- }
+local dap = require('dap')
+-- C# setup for dap
+dap.adapters.coreclr = {
+  type = 'executable',
+  command = '/usr/bin/netcoredbg',
+  args = { '--interpreter=vscode' }
+}
+dap.configurations.cs = {
+  {
+    type = "coreclr",
+    name = "launch - netcoredbg",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+    end,
+  },
+}
+-- JS setup for dap
+dap.adapters.node2 = {
+  type = 'executable',
+  command = 'node',
+  args = { os.getenv('HOME') .. '/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js' },
+}
+dap.configurations.javascript = {
+  {
+    name = 'Launch',
+    type = 'node2',
+    request = 'launch',
+    program = '${file}',
+    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    protocol = 'inspector',
+    console = 'integratedTerminal',
+  },
+  {
+    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
+    name = 'Attach to process',
+    type = 'node2',
+    request = 'attach',
+    processId = require 'dap.utils'.pick_process,
+  },
+}
+
 -- Own keymapping
-  -- Better motion keymap
-lvim.keys.normal_mode["<leader>ss"] = ":HopChar2 <cr>"
+
+lvim.keys.normal_mode["<leader>ss"] = ":HopChar2 <cr>" -- Better motion keymap
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<leader>fn"] = ":ene!<cr>"
 lvim.keys.normal_mode["<C-a>"] = ":%y+<cr>"
 lvim.keys.normal_mode["<leader>m"] = ":MinimapToggle <cr>"
-lvim.keys.normal_mode["<F5>"] = ":w<CR>:ter python3 %<CR>"
+-- lvim.keys.normal_mode["<F5>"] = ":w<CR>:ter python3 %<CR>"
+lvim.keys.normal_mode["<F6>"] = ":w<CR>:ter mcs % <CR>" -- mono name.exe to run the compiled file
 lvim.keys.normal_mode["<leader>t"] = ":ter <CR> i"
 lvim.keys.normal_mode["<leader>vt"] = ":vs<CR>:ter <CR> i"
 lvim.keys.normal_mode["<leader>ht"] = ":sp<CR>:ter <CR> i"
@@ -175,19 +268,17 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Additional Plugins
 lvim.plugins = {
   -- Colorscheme
-  {
-    "sainnhe/gruvbox-material",
-  },
-  {
-    "morhetz/gruvbox",
-  },
+  -- { "sainnhe/gruvbox-material", },
+  -- { "morhetz/gruvbox", },
+  -- { 'lifepillar/vim-gruvbox8' },
+  { 'eddyekofo94/gruvbox-flat.nvim' },
   -- Easymotion
   {
     'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
-      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   },
   {
@@ -205,6 +296,38 @@ lvim.plugins = {
       vim.g.bracey_refresh_on_save = 1
     end,
   },
+  -- Code minimap
+  {
+    'wfxr/minimap.vim',
+    run = "cargo install --locked code-minimap",
+    -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
+    config = function()
+      vim.cmd("let g:minimap_width = 10")
+      -- vim.cmd("let g:minimap_auto_start = 1")
+      -- vim.cmd("let g:minimap_auto_start_win_enter = 1")
+    end,
+  },
+  -- Indent line
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('indent-blankline').setup {
+        show_current_context = true,
+        show_current_context_start = true,
+      }
+    end,
+  },
+  -- Simply scrollbar
+  {
+    'Xuyuanp/scrollbar.nvim',
+  },
+  -- Debugging tools
+  -- { 'mfussenegger/nvim-dap' }, -- already installed on core plugs
+  { 'rcarriga/nvim-dap-ui' },
+  { 'theHamsta/nvim-dap-virtual-text' },
+  { 'nvim-telescope/telescope-dap.nvim' },
+  { 'mfussenegger/nvim-dap-python' },
+
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
