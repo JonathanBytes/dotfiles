@@ -9,7 +9,6 @@ an executable
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 -- general
-
 lvim.log.level = "warn"
 lvim.format_on_save = true
 
@@ -18,6 +17,13 @@ lvim.format_on_save = true
 vim.opt.rnu = true
 -- Word wrap
 vim.opt.wrap = true
+-- Rainbow parentesis
+lvim.builtin.treesitter.rainbow.enable = true
+-- Surround
+require("nvim-surround").setup()
+-- Spelling
+lvim.builtin.which_key.mappings["o"] = { "<cmd>set spell!<CR>", "Toggle word spelling" }
+vim.opt.spelllang = { 'es' }
 
 -- Colorscheme
 lvim.colorscheme = "gruvbox-flat"
@@ -27,11 +33,8 @@ vim.g.gruvbox_transparent = true
 -- vim.cmd("let g:gruvbox_material_foreground= 'mix'")
 -- vim.cmd("let g:gruvbox_contrast_dark= 'medium'")
 
--- Inicialice better motion
-require('hop').setup()
-
 -- Minimap config
-vim.cmd("let g:minimap_width = 10")
+vim.cmd("let g:minimap_width = 8")
 -- vim.cmd("let g:minimap_close_filetypes = ['nvim-tree']")
 
 -- Scrollbar setup
@@ -56,24 +59,8 @@ lvim.keys.normal_mode["<leader>dv"] = ":lua require'dapui'.toggle()<CR>"
 require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 require('dapui').setup()
 require('nvim-dap-virtual-text').setup()
-
--- require('dap').configurations.cs = {
---   {
---     type = 'cs';
---     request = 'launch';
---     name = "Launch file";
---     program = "${file}";
---     csPath = function()
---       return '/usr/bin/netcoredbg'
---     end;
---   },
--- }
--- require('dap').adapters.cs = {
---   type = 'executable';
---   command = 'netcoredbg';
---   args = { '/usr/bin/netcoredbg' };
--- }
 local dap = require('dap')
+
 -- C# setup for dap
 dap.adapters.coreclr = {
   type = 'executable',
@@ -116,23 +103,23 @@ dap.configurations.javascript = {
   },
 }
 
--- Own keymapping
+-- Editing default keymapping
+lvim.keys.normal_mode["<leader>f"] = false
+lvim.keys.normal_mode["<leader>ff"] = ":Telescope find_files<cr>"
 
-lvim.keys.normal_mode["<leader>ss"] = ":HopChar2 <cr>" -- Better motion keymap
+-- Own keymapping
+lvim.builtin.which_key.mappings["ss"] = { "<cmd>HopChar2 <cr>", "Hop 2 Char fast motion" } -- Better motion keymap
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<leader>fn"] = ":ene!<cr>"
 lvim.keys.normal_mode["<C-a>"] = ":%y+<cr>"
-lvim.keys.normal_mode["<leader>m"] = ":MinimapToggle <cr>"
+lvim.builtin.which_key.mappings["m"] = { "<cmd>MinimapToggle <cr>", "Toggle Minimap" }
 -- lvim.keys.normal_mode["<F5>"] = ":w<CR>:ter python3 %<CR>"
 lvim.keys.normal_mode["<F6>"] = ":w<CR>:ter mcs % <CR>" -- mono name.exe to run the compiled file
 lvim.keys.normal_mode["<leader>t"] = ":ter <CR> i"
 lvim.keys.normal_mode["<leader>vt"] = ":vs<CR>:ter <CR> i"
 lvim.keys.normal_mode["<leader>ht"] = ":sp<CR>:ter <CR> i"
 lvim.keys.normal_mode["<leader>vs"] = ":vs<CR>"
-
--- Editing default keymapping
-lvim.keys.normal_mode["<leader>f"] = false
-lvim.keys.normal_mode["<leader>ff"] = ":Telescope find_files<cr>"
+lvim.keys.normal_mode["<leader>n"] = ":set rnu! | :set nu! <CR>"
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -269,9 +256,27 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.plugins = {
   -- Colorscheme
   -- { "sainnhe/gruvbox-material", },
-  -- { "morhetz/gruvbox", },
+  { "morhetz/gruvbox", },
   -- { 'lifepillar/vim-gruvbox8' },
   { 'eddyekofo94/gruvbox-flat.nvim' },
+  { 'p00f/nvim-ts-rainbow',
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        highlight = {
+          -- ...
+        },
+        -- ...
+        rainbow = {
+          enable = true,
+          -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+          extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+          max_file_lines = nil, -- Do not enable for files with more than n lines, int
+          -- colors = {}, -- table of hex strings
+          -- termcolors = {} -- table of colour name strings
+        }
+      }
+    end
+  },
   -- Easymotion
   {
     'phaazon/hop.nvim',
@@ -279,6 +284,7 @@ lvim.plugins = {
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
       require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      require('hop').setup()
     end
   },
   {
@@ -302,7 +308,6 @@ lvim.plugins = {
     run = "cargo install --locked code-minimap",
     -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
     config = function()
-      vim.cmd("let g:minimap_width = 10")
       -- vim.cmd("let g:minimap_auto_start = 1")
       -- vim.cmd("let g:minimap_auto_start_win_enter = 1")
     end,
@@ -327,6 +332,8 @@ lvim.plugins = {
   { 'theHamsta/nvim-dap-virtual-text' },
   { 'nvim-telescope/telescope-dap.nvim' },
   { 'mfussenegger/nvim-dap-python' },
+  -- Surrounding ys ds cs (you, delete and change surround)
+  { 'kylechui/nvim-surround' },
 
 }
 
