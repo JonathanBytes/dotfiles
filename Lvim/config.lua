@@ -43,6 +43,8 @@ require('numb').setup {
   number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
   centered_peeking = true, -- Peeked line will be centered relative to window
 }
+-- Init Hop
+require('hop').setup()
 
 -- Scrollbar setup
 vim.cmd [[
@@ -191,6 +193,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "typescript",
   "tsx",
   "css",
+  "html",
   "rust",
   "java",
   "yaml",
@@ -292,7 +295,6 @@ lvim.plugins = {
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
       require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-      require('hop').setup()
     end
   },
   {

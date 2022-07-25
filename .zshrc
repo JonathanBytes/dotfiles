@@ -11,6 +11,17 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
+# zsh parameter completion for the dotnet CLI
+
+_dotnet_zsh_complete()
+{
+  local completions=("$(dotnet complete "$words")")
+
+  reply=( "${(ps:\n:)completions}" )
+}
+
+compctl -K _dotnet_zsh_complete dotnet
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -161,6 +172,7 @@ alias z='zathura'
 alias matlab='export _JAVA_AWT_WM_NONREPARENTING=1;matlab'
 alias o='octave'
 alias b='btop'
+alias smbshare='cd /tmp/sambashare'
 
 # Create directory and cd to it
 mkcdir ()

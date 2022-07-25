@@ -22,7 +22,7 @@ getcolors() {
 getcolors
 
 bspc config border_width 2
-bspc config window_gap 10
+bspc config window_gap 16
 bspc config split_ratio 0.50
 
 bspc config focused_border_color "$WHITE" 
@@ -39,7 +39,7 @@ bspc config focus_follows_pointer false
 ## Autostart -------------------------------------------------#
 
 # Kill if already running
-killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager polybar flashfocus caffeine
+killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager polybar flashfocus caffeine oneko
 ps -ef | grep randomWallpaper | grep -v grep | awk '{print $2}' | xargs kill -9
 
 # Lauch notification daemon
@@ -85,8 +85,8 @@ $HOME/.config/bspwm/bin/huion-setup
 # Random Wallpaper
 $HOME/.config/bspwm/bin/randomWallpaper &
 
-# Focus windows animation
-# flashfocus &
+# Cat follows the mouse
+( (( RANDOM%2 == 0 )) && oneko -tora || echo 1 ) &
 
 # Inhibiting desktop idleness
 caffeine &
