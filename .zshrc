@@ -181,5 +181,5 @@ mkcdir ()
        cd -P -- "$1"
 }
 
-neofetch
-
+# neofetch
+pokemon-colorscripts -r 1 --no-title

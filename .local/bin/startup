@@ -14,4 +14,3 @@ bspc rule -r *:*
 bash $HOME/.config/bspwm/bin/bsprules.sh
 
 $HOME/.config/bspwm/bin/bspbar
-

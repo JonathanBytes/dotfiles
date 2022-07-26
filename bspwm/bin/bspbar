@@ -4,7 +4,7 @@
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 killall -q polybar
 
-while pgrep -w $UID -x polybar >/dev/null; do sleep 1; done
+while pgrep -w $UID -x polybar >/dev/null; do sleep 3; done
 
 ## Files and Directories
 DIR="$HOME/.config/bspwm/polybar"

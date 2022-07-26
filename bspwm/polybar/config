@@ -26,7 +26,7 @@ height = 26
 offset-x = 11
 offset-y = 11
 
-background = ${color.BACKGROUND}
+background = #00
 foreground = ${color.FOREGROUND}
 
 radius-top = 0.0
@@ -35,7 +35,7 @@ radius-bottom = 0.0
 line-size = 2
 line-color = ${color.BLUE}
 
-border-size = 4
+border-size = 0
 border-color = ${color.BACKGROUND}
 
 padding = 1
@@ -44,14 +44,15 @@ module-margin-right = 0
 
 font-0 = "Fira Code:style=Retina:size=10;3"
 font-1 = "Iosevka Nerd Font:size=12;3"
-font-2 = "google\-mdi:size=12;3"
+font-2 = "jonathancustomfont:size=13;3"
+# font-2 = "google\-mdi:size=12;3"
 font-3 = "Iosevka:style=bold:"size=12;3"
-font-4 = "brave:size=15;3"
-font-5 = "JonathanCustomFont:size=13;3"
+font-4 = "Roboto:size=12:weight=bold;2"
+font-5 = "Iosevka Nerd Font:size=15.4;4"
 
-modules-left = bspwm mpd
-modules-center = network 
-modules-right = volume sep backlight sep toggletouchpad sep ethernet sep battery sep date
+modules-left = sepleft bspwm sepright
+modules-center = sepleft speeed sepright
+modules-right = sepleft volume sep backlight sep toggletouchpad sep ethernet sep network sep battery battery-combined-tlp sep date sepright
 
 separator =
 spacing = 0
@@ -86,7 +87,7 @@ height = 26
 offset-x = 11
 offset-y = 11
 
-background = ${color.BACKGROUND}
+background = #00
 foreground = ${color.FOREGROUND}
 
 radius-top = 0.0
@@ -95,23 +96,24 @@ radius-bottom = 0.0
 line-size = 2
 line-color = ${color.BLUE}
 
-border-size = 4
+border-size = 0
 border-color = ${color.BACKGROUND}
 
 padding = 1
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "Fira Code:style=Retina:size=10;3"
+font-0 = "Fira Code Retina:style=Retina:size=10;3"
 font-1 = "Iosevka Nerd Font:size=12;3"
-font-2 = "google\-mdi:size=12;3"
-font-3 = "Iosevka:style=bold:"size=12;3"
-font-4 = "brave:size=15;3"
-font-5 = "JonathanCustomFont:size=13;3"
+# font-2 = "google\-mdi:size=12;3"
+font-2 = "jonathancustomfont:size=13;3"
+font-3 = "Iosevka:style=bold:size=12;3"
+font-4 = "Roboto:size=12:weight=bold;2"
+font-5 = "Iosevka Nerd Font:size=15.4;4"
 
-modules-left = bspwm 
-modules-center = network 
-modules-right = volume sep ethernet sep date
+modules-left = sepleft bspwm sepright
+modules-center = 
+modules-right = sepleft volume sep ethernet sep network sep date sepright
 
 separator =
 spacing = 0

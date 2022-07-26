@@ -18,27 +18,30 @@ use-ui-max = false
 ; Default: 5
 interval = 5
 
-format-volume = <ramp-volume> <label-volume>
+format-volume = "<ramp-volume><label-volume>"
+format-volume-background = ${color.BACKGROUND}
 
 format-muted = <label-muted>
-format-muted-prefix = 婢
+format-muted-background = ${color.BACKGROUND}
+format-muted-prefix = " 婢"
 format-muted-prefix-font = 2
 format-muted-prefix-foreground = ${color.RED}
+format-muted-prefix-background = ${color.BACKGROUND}
 
-label-volume = %percentage%%
+label-volume = " %percentage%%"
 label-muted = " Mute"
-label-muted-foreground = #757575
+label-muted-foreground = ${color.BLACK}
 
-ramp-volume-0 = 奄
-ramp-volume-1 = 奄
-ramp-volume-2 = 奄
-ramp-volume-3 = 奔
-ramp-volume-4 = 奔
-ramp-volume-5 = 奔
-ramp-volume-6 = 墳
-ramp-volume-7 = 墳
-ramp-volume-8 = 墳
-ramp-volume-9 = 墳
+ramp-volume-0 = " 奄"
+ramp-volume-1 = " 奄"
+ramp-volume-2 = " 奄"
+ramp-volume-3 = " 奔"
+ramp-volume-4 = " 奔"
+ramp-volume-5 = " 奔"
+ramp-volume-6 = " 墳"
+ramp-volume-7 = " 墳"
+ramp-volume-8 = " 墳"
+ramp-volume-9 = " 墳"
 ramp-volume-font = 2
 ramp-volume-foreground = ${color.BLUE}
 
@@ -63,9 +66,11 @@ type = internal/xbacklight
 
 card = intel_backlight
 
-format = <ramp> <label>
+format = <ramp>
+format-background = ${color.BACKGROUND}
 
-label = %percentage%%
+label = " %percentage%%"
+label-background = ${color.BACKGROUND}
 
 ramp-0 = 
 ramp-1 = 
@@ -79,6 +84,7 @@ ramp-8 = 
 ramp-9 = 
 ramp-font = 2
 ramp-foreground = ${color.MAGENTA}
+ramp-background = ${color.BACKGROUND}
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/brightness]
@@ -112,42 +118,54 @@ type = internal/battery
 
 full-at = 99
 
+# click-left = /home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh
+
 battery = ${system.battery}
 adapter = ${system.adapter}
 
 poll-interval = 2
 time-format = %H:%M
 
-format-charging = <animation-charging> <label-charging>
+# format-charging = <animation-charging> <label-charging>
+format-charging = <animation-charging>
 format-charging-prefix = 
 
-format-discharging = <ramp-capacity> <label-discharging>
+# format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = <ramp-capacity>
 
 format-full = <label-full>
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-font = 2
 format-full-prefix-foreground = ${color.RED}
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
-label-full = %percentage%%
+# label-full = "Full"
+label-full = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:} Full %{A}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+# ramp-capacity-0 = 
+# ramp-capacity-1 = 
+# ramp-capacity-2 = 
+# ramp-capacity-3 = 
+# ramp-capacity-4 =  
+ramp-capacity-0 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
+ramp-capacity-1 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
+ramp-capacity-2 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
+ramp-capacity-3 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
+ramp-capacity-4 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
 ramp-capacity-font = 2
 ramp-capacity-foreground = ${color.YELLOW}
+ramp-capacity-background = ${color.BACKGROUND}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
+animation-charging-0 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
+animation-charging-1 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
+animation-charging-2 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
+animation-charging-3 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
+animation-charging-4 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
 animation-charging-font = 2
 animation-charging-foreground = ${color.GREEN}
-animation-charging-framerate = 750
+animation-charging-background = ${color.BACKGROUND}
+animation-charging-framerate = 300
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -209,6 +227,7 @@ label-urgent-padding = 1
 
 label-empty = %name%
 label-empty-foreground = ${color.FOREGROUND}
+label-empty-background = ${color.BACKGROUND}
 label-empty-padding = 1
 
 ; Separator in between workspaces
@@ -223,17 +242,20 @@ type = internal/date
 
 interval = 1.0
 
-time = %I:%M %p
-time-alt = %A, %d %B %Y
+# time-alt = %A, %d %B %Y
+time = %t 
+time-alt = %I:%M %p
 
 format = <label>
-format-prefix = " "
-format-prefix-font = 3
-format-prefix-foreground = ${color.ALTWHITE}
+# format-prefix = " "
+# format-prefix-font = 2
+# format-prefix-foreground = ${color.ALTWHITE}
 
-label = %time%
+label = "%{A3:~/polybar-scripts/popup-calendar/popup-calendar.sh --popup &:} %time%%{A}"
 label-font = 1
+label-background = ${color.BACKGROUND}
 
+click-right = ~/polybar-scripts/popup-calendar/popup-calendar.sh --popup &
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/mpd]
@@ -287,13 +309,19 @@ interval = 1.0
 accumulate-stats = true
 unknown-as-up = true
 
-format-connected = <label-connected>
-format-connected-prefix = " "
+# format-connected = <label-connected>
+format-connected = "%{A1:nmd &:}%{A}"
+format-connected-foreground = ${color.CYAN}
+format-connected-background = ${color.BACKGROUND}
+# format-connected-prefix = " "
 format-connected-prefix-font = 3
 format-connected-prefix-foreground = ${color.CYAN}
 
-format-disconnected = <label-disconnected>
-format-disconnected-prefix = " "
+# format-disconnected = <label-disconnected>
+format-disconnected = "%{A1:nmd &:}%{A}"
+format-disconnected-foreground = ${color.ALTRED}
+format-disconnected-background = ${color.BACKGROUND}
+# format-disconnected-prefix = ""
 format-disconnected-prefix-font = 3
 format-disconnected-prefix-foreground = ${color.ALTRED}
 
@@ -314,33 +342,45 @@ interval = 1.0
 accumulate-stats = true
 unknown-as-up = true
 
-format-connected = <ramp-signal> <label-connected>
+# format-connected = <ramp-signal> <label-connected>
+format-connected = <ramp-signal>
 
-format-disconnected = <label-disconnected>
-format-disconnected-prefix = " "
+format-disconnected = "" 
+format-disconnected-foreground = ${color.ALTRED}
+format-disconnected-background = ${color.BACKGROUND}
+# format-disconnected-prefix = " "
 format-disconnected-prefix-font = 3
 format-disconnected-prefix-foreground = ${color.ALTRED}
 
 label-connected = "%{A1:nmd &:}%essid%%{A}"
 label-disconnected = "%{A1:nmd &:}Disconnected%{A}"
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 ramp-signal-font = 3
 ramp-signal-foreground = ${color.CYAN}
+ramp-signal-background = ${color.BACKGROUND}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/sep]
 type = custom/text
-content = "•"
+content = " "
 
 content-background = ${color.BACKGROUND}
 content-foreground = ${color.BLACK}
 content-padding = 1 
+content-font = 5
+
+[module/xwindow]
+type = internal/xwindow
+; Label with mouse actions (A1: left click; A2: middle click; A3: right click)
+label = %{A1:i3-msg floating toggle:}%{A2:xdotool getwindowfocus windowkill:}%{A3:i3-msg move scratchpad:}%title:0:30:...%%{A}%{A}%{A}
+label-background = #03315c
+label-padding = 3
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -352,10 +392,59 @@ type = custom/script
 tail = true
 label-foreground = ${color.WHITE}
 label-background = ${color.BACKGROUND}
+label-font = 2
 interval = 1.0
 
 exec = ~/.config/bspwm/polybar/scripts/toggletouchpad-icon.sh &
 click-left = ~/.config/bspwm/polybar/scripts/toggletouchpad.sh
+
+[module/xxxwindow]
+type = custom/script
+interval = 2
+exec = ~/.config/bspwm/polybar/scripts/xxxwindow.sh
+
+[module/battery-combined-tlp]
+type = custom/script
+exec = /home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/battery-combined-tlp.sh
+click-left = /home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh
+
+interval = 1.0
+
+[module/popup-calendar]
+type = custom/script
+exec = ~/polybar-scripts/popup-calendar/popup-calendar.sh
+interval = 5
+click-right = ~/polybar-scripts/popup-calendar/popup-calendar.sh --popup &
+
+[module/speeed]
+
+type = internal/network
+# interface = wlan0
+interface = ${system.network_interface}
+interval = 1.0
+label-connected = "  %downspeed% | %upspeed%  "
+label-disconnected = Disconnected
+label-connected-background = ${color.BACKGROUND}
+label-connected-foreground = ${color.BLACK}
+label-disconnected-background = ${color.BACKGROUND}
+label-disconnected-foreground = ${color.BLACK}
+
+content-padding = 1 
+content-font = 1
+
+[module/sepleft]
+type = custom/text
+
+content = %{T6}%{T-}
+content-foreground = ${color.BACKGROUND}
+content-font = 6 
+
+[module/sepright]
+type = custom/text
+
+content = %{T6}%{T-}
+content-foreground = ${color.BACKGROUND}
+content-font = 6 
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;;	    __________  ______

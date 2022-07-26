@@ -346,6 +346,10 @@ lvim.plugins = {
   { 'kylechui/nvim-surround' },
   -- Numb, jump to line while :number
   { 'nacro90/numb.nvim' },
+  { "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, },
+  -- Uptime extension wakatime
+  { 'wakatime/vim-wakatime' },
 
 }
 
