@@ -52,7 +52,7 @@ font-5 = "Iosevka Nerd Font:size=15.4;4"
 
 modules-left = sepleft bspwm sepright
 modules-center = sepleft speeed sepright
-modules-right = sepleft volume sep backlight sep toggletouchpad sep ethernet sep network sep battery battery-combined-tlp sep date sepright
+modules-right = sepleft volume sep backlight sep toggletouchpad sep ethernet sep network sep battery battery-combined-tlp sep date sysmenu sepright
 
 separator =
 spacing = 0

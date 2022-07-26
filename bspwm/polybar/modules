@@ -407,6 +407,8 @@ exec = ~/.config/bspwm/polybar/scripts/xxxwindow.sh
 type = custom/script
 exec = /home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/battery-combined-tlp.sh
 click-left = /home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh
+label-background = ${color.BACKGROUND}
+label-foreground = ${color.FOREGROUND}
 
 interval = 1.0
 
@@ -445,6 +447,15 @@ type = custom/text
 content = %{T6}%{T-}
 content-foreground = ${color.BACKGROUND}
 content-font = 6 
+
+[module/sysmenu]
+type = custom/text
+content = 襤
+
+content-foreground = ${color.RED}
+content-background = ${color.BACKGROUND}
+click-left = sh ~/.config/bspwm/rofi/bin/powermenu &
+click-right = ~/.config/polybar/pwidgets/scripts/powermenu.sh &
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;;	    __________  ______

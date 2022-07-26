@@ -20,6 +20,8 @@ vim.opt.wrap = true
 lvim.builtin.treesitter.rainbow.enable = true
 -- Surround
 require("nvim-surround").setup()
+-- Colorizer
+require 'colorizer'.setup()
 -- Spelling
 lvim.builtin.which_key.mappings["o"] = { "<cmd>set spell!<CR>", "Toggle word spelling" }
 vim.opt.spelllang = { 'es' }
@@ -350,6 +352,8 @@ lvim.plugins = {
     setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, },
   -- Uptime extension wakatime
   { 'wakatime/vim-wakatime' },
+  -- Colorizer
+  { 'norcalli/nvim-colorizer.lua' },
 
 }
 
