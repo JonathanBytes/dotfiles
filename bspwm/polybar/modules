@@ -118,7 +118,7 @@ type = internal/battery
 
 full-at = 99
 
-# click-left = /home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh
+# click-left = /home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh
 
 battery = ${system.battery}
 adapter = ${system.adapter}
@@ -141,7 +141,7 @@ format-full = <label-full>
 label-charging = %percentage%%
 label-discharging = %percentage%%
 # label-full = "Full"
-label-full = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
+label-full = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
 label-full-background = ${color.BACKGROUND}
 label-full-foreground = ${color.RED}
 
@@ -150,20 +150,20 @@ label-full-foreground = ${color.RED}
 # ramp-capacity-2 = 
 # ramp-capacity-3 = 
 # ramp-capacity-4 =  
-ramp-capacity-0 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
-ramp-capacity-1 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
-ramp-capacity-2 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
-ramp-capacity-3 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
-ramp-capacity-4 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
+ramp-capacity-0 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
+ramp-capacity-1 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
+ramp-capacity-2 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
+ramp-capacity-3 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
+ramp-capacity-4 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
 ramp-capacity-font = 2
 ramp-capacity-foreground = ${color.YELLOW}
 ramp-capacity-background = ${color.BACKGROUND}
 
-animation-charging-0 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
-animation-charging-1 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
-animation-charging-2 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
-animation-charging-3 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
-animation-charging-4 = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
+animation-charging-0 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
+animation-charging-1 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
+animation-charging-2 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
+animation-charging-3 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
+animation-charging-4 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
 animation-charging-font = 2
 animation-charging-foreground = ${color.GREEN}
 animation-charging-background = ${color.BACKGROUND}
@@ -253,11 +253,11 @@ format = <label>
 # format-prefix-font = 2
 # format-prefix-foreground = ${color.ALTWHITE}
 
-label = "%{A3:~/polybar-scripts/popup-calendar/popup-calendar.sh --popup &:} %time%%{A}"
+label = "%{A3:~/.config/bspwm/polybar/scripts/popup-calendar/popup-calendar.sh --popup &:} %time%%{A}"
 label-font = 1
 label-background = ${color.BACKGROUND}
 
-click-right = ~/polybar-scripts/popup-calendar/popup-calendar.sh --popup &
+click-right = ~/.config/bspwm/polybar/scripts/popup-calendar/popup-calendar.sh --popup &
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/mpd]
@@ -396,8 +396,8 @@ exec = ~/.config/bspwm/polybar/scripts/xxxwindow.sh
 
 [module/battery-combined-tlp]
 type = custom/script
-exec = /home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/battery-combined-tlp.sh
-click-left = /home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh
+exec = /home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/battery-combined-tlp.sh
+click-left = /home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh
 label-background = ${color.BACKGROUND}
 label-foreground = ${color.FOREGROUND}
 
@@ -405,9 +405,9 @@ interval = 1.0
 
 [module/popup-calendar]
 type = custom/script
-exec = ~/polybar-scripts/popup-calendar/popup-calendar.sh
+exec = ~/.config/bspwm/polybar/scripts/popup-calendar/popup-calendar.sh
 interval = 5
-click-right = ~/polybar-scripts/popup-calendar/popup-calendar.sh --popup &
+click-right = ~/.config/bspwm/polybar/scripts/popup-calendar/popup-calendar.sh --popup &
 
 [module/speeed]
 
