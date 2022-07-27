@@ -134,14 +134,16 @@ format-charging-prefix =
 format-discharging = <ramp-capacity>
 
 format-full = <label-full>
-format-full-prefix = " "
-format-full-prefix-font = 2
-format-full-prefix-foreground = ${color.RED}
+# format-full-prefix = " "
+# format-full-prefix-font = 2
+# format-full-prefix-foreground = ${color.RED}
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
 # label-full = "Full"
-label-full = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:} Full %{A}
+label-full = %{A1:/home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/change.sh:}%{A}
+label-full-background = ${color.BACKGROUND}
+label-full-foreground = ${color.RED}
 
 # ramp-capacity-0 = 
 # ramp-capacity-1 = 
@@ -244,7 +246,7 @@ interval = 1.0
 
 # time-alt = %A, %d %B %Y
 time = %t 
-time-alt = %I:%M %p
+time-alt = %I:%M %p %t
 
 format = <label>
 # format-prefix = " "
@@ -421,8 +423,8 @@ click-right = ~/polybar-scripts/popup-calendar/popup-calendar.sh --popup &
 [module/speeed]
 
 type = internal/network
-# interface = wlan0
-interface = ${system.network_interface}
+interface = wlan0
+# interface = ${system.network_interface}
 interval = 1.0
 label-connected = "  %downspeed% | %upspeed%  "
 label-disconnected = Disconnected
