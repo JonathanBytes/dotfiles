@@ -311,21 +311,13 @@ interval = 1.0
 accumulate-stats = true
 unknown-as-up = true
 
-# format-connected = <label-connected>
 format-connected = "%{A1:nmd &:}%{A}"
 format-connected-foreground = ${color.CYAN}
 format-connected-background = ${color.BACKGROUND}
-# format-connected-prefix = " "
-format-connected-prefix-font = 3
-format-connected-prefix-foreground = ${color.CYAN}
 
-# format-disconnected = <label-disconnected>
 format-disconnected = "%{A1:nmd &:}%{A}"
 format-disconnected-foreground = ${color.ALTRED}
 format-disconnected-background = ${color.BACKGROUND}
-# format-disconnected-prefix = ""
-format-disconnected-prefix-font = 3
-format-disconnected-prefix-foreground = ${color.ALTRED}
 
 label-connected = "%{A1:networkmanager_dmenu &:}%downspeed% | %upspeed%%{A}"
 label-disconnected = "%{A1:networkmanager_dmenu &:}Offline%{A}"
@@ -344,24 +336,21 @@ interval = 1.0
 accumulate-stats = true
 unknown-as-up = true
 
-# format-connected = <ramp-signal> <label-connected>
 format-connected = <ramp-signal>
 
-format-disconnected = "" 
+format-disconnected = "%{A1:nmd &:}%{A}"
 format-disconnected-foreground = ${color.ALTRED}
 format-disconnected-background = ${color.BACKGROUND}
-# format-disconnected-prefix = " "
 format-disconnected-prefix-font = 3
-format-disconnected-prefix-foreground = ${color.ALTRED}
 
 label-connected = "%{A1:nmd &:}%essid%%{A}"
 label-disconnected = "%{A1:nmd &:}Disconnected%{A}"
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = "%{A1:sh /home/jonathan/config/bspwm/rofi/bin/network &:}%{A}"
+ramp-signal-1 = "%{A1:sh /home/jonathan/config/bspwm/rofi/bin/network &:}%{A}"
+ramp-signal-2 = "%{A1:sh /home/jonathan/config/bspwm/rofi/bin/network &:}%{A}"
+ramp-signal-3 = "%{A1:sh /home/jonathan/config/bspwm/rofi/bin/network &:}%{A}"
+ramp-signal-4 = "%{A1:sh /home/jonathan/config/bspwm/rofi/bin/network &:}%{A}"
 ramp-signal-font = 3
 ramp-signal-foreground = ${color.CYAN}
 ramp-signal-background = ${color.BACKGROUND}

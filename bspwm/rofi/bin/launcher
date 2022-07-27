@@ -7,7 +7,7 @@ DIR="$HOME/.config/bspwm"
 
 rofi \
 	-show drun \
-	-modi run,drun,ssh \
+	-modi run,drun,ssh -show-icons \
 	-no-lazy-grab \
 	-scroll-method 0 \
 	-drun-match-fields all \

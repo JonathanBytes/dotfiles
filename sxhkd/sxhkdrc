@@ -20,8 +20,6 @@ super + t
 # Rofi emojis
 super + e
        rofimoji --selector rofi --selector-args="-theme ~/.config/bspwm/rofi/themes/launcher.rasi" 
-       ##rofi -show emoji -modi emoji -theme ~/.config/bspwm/rofi/themes/launcher.rasi  
-       ##rofi -modi "emoji:/usr/lib/python3.10/site-packages/picker/rofimoji.py" -show emoji -theme ~/config/bspwm/rofi/themes/launcher.rasi
 
 # Rofi App Launcher
 alt + F1
