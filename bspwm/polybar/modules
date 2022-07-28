@@ -366,6 +366,15 @@ content-foreground = ${color.BLACK}
 content-padding = 1 
 content-font = 5
 
+[module/sep2]
+type = custom/text
+content = ""
+
+content-background = ${color.BACKGROUND}
+content-foreground = ${color.BLACK}
+content-padding = 1 
+content-font = 5
+
 [module/xwindow]
 type = internal/xwindow
 ; Label with mouse actions (A1: left click; A2: middle click; A3: right click)
@@ -447,6 +456,13 @@ content-foreground = ${color.RED}
 content-background = ${color.BACKGROUND}
 click-left = sh ~/.config/bspwm/rofi/bin/powermenu &
 click-right = ~/.config/polybar/pwidgets/scripts/powermenu.sh &
+
+[module/updates]
+type = custom/script
+exec = ~/config/bspwm/polybar/scripts/updates-pacman-aurhelper/updates-pacman-aurhelper.sh
+interval = 600
+label-background = ${color.BACKGROUND}
+label-foreground = ${color.FOREGROUND}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;;	    __________  ______
