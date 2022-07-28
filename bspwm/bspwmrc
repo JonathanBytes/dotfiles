@@ -89,7 +89,7 @@ $HOME/.config/bspwm/bin/randomWallpaper &
 sleep .25
 
 # Cat follows the mouse
-( (( RANDOM%2 == 0 )) && oneko -tora || echo 1 ) &
+onekoRandStart.sh &
 
 # Inhibiting desktop idleness
 caffeine &
