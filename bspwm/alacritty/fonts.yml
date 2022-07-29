@@ -5,23 +5,23 @@
 font:
   # Normal (roman) font face
   normal:
-    family: "Fira Code Nerd Font"
-    style: Retina 
+    family: "FiraCode Nerd Font"
+    style: Regular 
 
   # Bold font face
   bold:
-    family: "Fira Code"
+    family: "FiraCode Nerd Font"
     style: Bold
 
   # Italic font face
   italic:
-    family: "Fira Code"
+    family: "FiraCode iScript"
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: "Fira Code"
-    style: Bold Italic
+    family: "FiraCode iScript"
+    style: Bold
 
   # Point size
   size: 15

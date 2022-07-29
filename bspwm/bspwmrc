@@ -77,11 +77,11 @@ exec mpd &
 # Start bspwm scripts
 bspcolors
 $HOME/.local/bin/startup 
-bspcomp
+bspcomp 
 bspfloat &
 
 # Huion tablet setup
-$HOME/.config/bspwm/bin/huion-setup
+$HOME/.config/bspwm/bin/huion-setup &
 
 # Random Wallpaper
 $HOME/.config/bspwm/bin/randomWallpaper &

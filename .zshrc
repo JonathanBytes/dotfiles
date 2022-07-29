@@ -10,6 +10,7 @@ export EDITOR="$VISUAL"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
+export XCURSOR_THEME=Pear
 
 # zsh parameter completion for the dotnet CLI
 

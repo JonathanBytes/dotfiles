@@ -16,6 +16,8 @@ lvim.format_on_save = true
 vim.opt.rnu = true
 -- Word wrap
 vim.opt.wrap = true
+-- Reduce Bottom gap
+vim.opt.cmdheight = 1
 -- Rainbow parentesis
 lvim.builtin.treesitter.rainbow.enable = true
 -- Surround
@@ -135,6 +137,8 @@ lvim.builtin.which_key.mappings["n"] = { ":set rnu! | :set nu! <CR>", "Toggle nu
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
+lvim.builtin.lualine.sections.lualine_a = { "mode" }
+lvim.builtin.lualine.sections.lualine_z = {}
 --------------------------------
 
 -- keymappings [view all the defaults by pressing <leader>Lk]

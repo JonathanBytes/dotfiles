@@ -112,7 +112,7 @@ font-4 = "Roboto:size=12:weight=bold;2"
 font-5 = "Iosevka Nerd Font:size=15.4;4"
 
 modules-left = sepleft bspwm sep2 updates sepright
-modules-center = speeed
+modules-center = sepleft speeed sepright
 modules-right = sepleft volume sep ethernet sep network sep date sepright
 
 separator =

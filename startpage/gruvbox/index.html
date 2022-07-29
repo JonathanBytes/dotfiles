@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>New Tab</title>
+  <meta charset="utf-8" />
+  <link type="text/css" rel="stylesheet" href="./assets/css/style.css" media="screen, projection" />
+  <script src="./assets/js/iconify.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <main id="container" class="fade">
+    <section id="header">
+      <h1 id="header-time">00:00</h1>
+      <h2 id="header-date">Date</h2>
+      <h2>Wellcome back Jonathan!</h2>
+    </section>
+    <br />
+    <br />
+    <div id="searchBox">
+      <input id="searchbar" autocomplete="off" type="text" title="Search" autofocus onkeydown="search(event)"
+        placeholder="search..." />
+    </div>
+    <br />
+    <section id="apps">
+      <h3>> Bookmarks</h3>
+      <div id="apps-container">
+        <a class="apps-item" style="--bg-hover: #458588" href="https://wiki.archlinux.org/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="mdi:arch"> </span>
+          </div>
+          <div class="apps-text">
+            <span>ArchLinux</span>
+            <span>wiki.archlinux.org</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #b16286" href="https://www.reddit.com/r/unixporn/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="bi:reddit"></span>
+          </div>
+          <div class="apps-text">
+            <span>r/unixporn</span>
+            <span>reddit.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #689d6a" href="https://www.overleaf.com/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="cib:overleaf"></span>
+          </div>
+          <div class="apps-text">
+            <span>Overleaf</span>
+            <span>overleaf.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #fb4934" href="https://www.netflix.com/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="mdi-netflix"></span>
+          </div>
+          <div class="apps-text">
+            <span>Netflix</span>
+            <span>netflix.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #83a598" href="https://www.linkedin.com/feed/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="ant-design:linkedin-filled"></span>
+          </div>
+          <div class="apps-text">
+            <span>LinkedIn</span>
+            <span>linkedin.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #b8bb26" href="https://web.whatsapp.com/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="fa-brands:whatsapp-square"></span>
+          </div>
+          <div class="apps-text">
+            <span>Whatsapp</span>
+            <span>whatsapp.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #cc241d" href="https://app4.utp.edu.co/pe/index.php">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="ic:baseline-school"></span>
+          </div>
+          <div class="apps-text">
+            <span>UTP</span>
+            <span>utp.edu.co</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #cc241d" href="https://moodle.isep.ipp.pt/acesso/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="fa-solid:university"></span>
+          </div>
+          <div class="apps-text">
+            <span>Moodle</span>
+            <span>moodle.isep.ipp.pt</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #417B7D" href="https://www.songsterr.com/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="mdi:guitar-electric"></span>
+          </div>
+          <div class="apps-text">
+            <span>Songsterr</span>
+            <span>songsterr.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #D6C8A3" href="https://wakatime.com/dashboard">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="simple-icons:wakatime"></span>
+          </div>
+          <div class="apps-text">
+            <span>WakaTime</span>
+            <span>wakatime.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #a89984" href="https://github.com/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="mdi-github"></span>
+          </div>
+          <div class="apps-text">
+            <span>Github</span>
+            <span>github.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #fe8019" href="https://gitlab.com/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="ant-design:gitlab-filled"></span>
+          </div>
+          <div class="apps-text">
+            <span>Gitlab</span>
+            <span>gitlab.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #a89984" href="https://mail.google.com/mail/u/1/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="mdi-google"></span>
+          </div>
+          <div class="apps-text">
+            <span>Gmail</span>
+            <span>gmail.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #2978ad" href="https://outlook.live.com/mail/0/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="zmdi:outlook"></span>
+          </div>
+          <div class="apps-text">
+            <span>Outlook</span>
+            <span>outlook.live.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #2978ad"
+          href="https://utpedu-my.sharepoint.com/personal/jonathan_cardona1_utp_edu_co/_layouts/15/onedrive.aspx?login_hint=jonathan%2Ecardona1%40utp%2Eedu%2Eco">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="entypo-social:onedrive"></span>
+          </div>
+          <div class="apps-text">
+            <span>OneDrive</span>
+            <span>onedrive.live.com</span>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section id="apps">
+      <h3>> ShareSpot</h3>
+      <div id="apps-container">
+        <a class="apps-item" style="--bg-hover: #98971a" href="https://console-vip.helium.com/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="mdi:console-line"></span>
+          </div>
+          <div class="apps-text">
+            <span>Helium Console</span>
+            <span>console.helium.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #83a598" href="https://cloud.digitalocean.com/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="la:digital-ocean"></span>
+          </div>
+          <div class="apps-text">
+            <span>Digital Ocean</span>
+            <span>cloud.digitalocean.com</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #a89984" href="https://github.com/ShareSpotPT">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="mdi-github"></span>
+          </div>
+          <div class="apps-text">
+            <span>ShareSpotPT Repo</span>
+            <span>github.com/ShareSpotPT</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #689d6a" href="https://s01.oss.sonatype.org/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="simple-icons:apachemaven"></span>
+          </div>
+          <div class="apps-text">
+            <span>Maven Central</span>
+            <span>oss.sonatype.org</span>
+          </div>
+        </a>
+    </section>
+    <section id="apps">
+      <h3>> Development</h3>
+      <div id="apps-container">
+        <a class="apps-item" style="--bg-hover: #fb4934" href="http://localhost:4200/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="fluent:window-dev-tools-16-regular"></span>
+          </div>
+          <div class="apps-text">
+            <span>4200 Dev Endpoint</span>
+            <span>localhost:4200</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #fe8019" href="http://localhost:80/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="fluent:window-dev-tools-16-regular"></span>
+          </div>
+          <div class="apps-text">
+            <span>80 Dev Endpoint</span>
+            <span>localhost:80</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #b8bb26" href="https://localhost:443/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="fluent:window-dev-tools-16-regular"></span>
+          </div>
+          <div class="apps-text">
+            <span>443 Dev Endpoint</span>
+            <span>localhost:443</span>
+          </div>
+        </a>
+        <a class="apps-item" style="--bg-hover: #a89984" href="http://location-tracking.sharespot.dev/">
+          <div class="apps-icon">
+            <span class="iconify icon" data-icon="clarity:internet-of-things-solid"></span>
+          </div>
+          <div class="apps-text">
+            <span>Sensae Console</span>
+            <span>location-tracking.sharespot.dev</span>
+          </div>
+        </a>
+      </div>
+      </div>
+    </section>
+  </main>
+  <script src="./assets/js/script.js" type="text/javascript"></script>
+</body>
+
+</html>
