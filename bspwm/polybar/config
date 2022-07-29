@@ -50,7 +50,7 @@ font-3 = "Iosevka:style=bold:"size=12;3"
 font-4 = "Roboto:size=12:weight=bold;2"
 font-5 = "Iosevka Nerd Font:size=15.4;4"
 
-modules-left = sepleft bspwm sep2 updates sepright
+modules-left = sepleft bspwm updates sepright
 modules-center = sepleft speeed sepright
 modules-right = sepleft volume sep backlight sep toggletouchpad sep ethernet sep network sep battery battery-combined-tlp sep date sysmenu sepright
 
@@ -111,7 +111,7 @@ font-3 = "Iosevka:style=bold:size=12;3"
 font-4 = "Roboto:size=12:weight=bold;2"
 font-5 = "Iosevka Nerd Font:size=15.4;4"
 
-modules-left = sepleft bspwm sep2 updates sepright
+modules-left = sepleft bspwm updates sepright
 modules-center = sepleft speeed sepright
 modules-right = sepleft volume sep ethernet sep network sep date sepright
 

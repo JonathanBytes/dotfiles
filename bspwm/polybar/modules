@@ -368,7 +368,7 @@ content-font = 5
 
 [module/sep2]
 type = custom/text
-content = ""
+content = ""
 
 content-background = ${color.BACKGROUND}
 content-foreground = ${color.BLACK}
