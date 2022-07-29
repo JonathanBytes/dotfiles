@@ -174,6 +174,9 @@ alias matlab='export _JAVA_AWT_WM_NONREPARENTING=1;matlab'
 alias o='octave'
 alias b='btop'
 alias smbshare='cd /tmp/sambashare'
+alias term='wezterm start --cwd $PWD'
+alias dn='dotnet new'
+alias dr='dotnet run'
 
 # Create directory and cd to it
 mkcdir ()

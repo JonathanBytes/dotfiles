@@ -22,6 +22,12 @@ vim.opt.cmdheight = 1
 lvim.builtin.treesitter.rainbow.enable = true
 -- Surround
 require("nvim-surround").setup()
+-- Renamer
+require("renamer").setup()
+-- vim.api.nvim_set_keymap('i', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+lvim.keys.insert_mode["<F2>"] = { "<cmd>lua require(\"renamer\").rename()<cr>", { noremap = true, silent = true } }
+lvim.keys.visual_mode["<leader>rn"] = { "<cmd>lua require(\"renamer\").rename()<cr>", { noremap = true, silent = true } }
+lvim.builtin.which_key.mappings["rn"] = { "<cmd>lua require(\"renamer\").rename()<CR>", "Rename" }
 -- Colorizer
 require 'colorizer'.setup()
 -- Spelling
@@ -49,6 +55,11 @@ require('numb').setup {
 }
 -- Init Hop
 require('hop').setup()
+
+-- Bracey config
+-- vim.g.bracey_server_allow_remote_connections = 1
+-- vim.g.bracey_refresh_on_save = 1
+-- vim.g.bracey_server_path = 'https://localhost'
 
 -- Scrollbar setup
 vim.cmd [[
@@ -116,11 +127,16 @@ dap.configurations.javascript = {
   },
 }
 
+-- https://www.vim.org/scripts/script.php?script_id=3133
+
 -- Editing default keymapping
 lvim.keys.normal_mode["<leader>f"] = false
 lvim.keys.normal_mode["<leader>ff"] = ":Telescope find_files<cr>"
 
 -- Own keymapping
+vim.cmd [[
+nmap <2-LeftMouse> <Plug>(openbrowser-open)
+]]
 lvim.builtin.which_key.mappings["ss"] = { "<cmd>HopChar2 <cr>", "Hop 2 Char fast motion" } -- Better motion keymap
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>" -- Save
 lvim.keys.normal_mode["<leader>fn"] = ":ene!<cr>" -- Open new tab
@@ -358,7 +374,12 @@ lvim.plugins = {
   { 'wakatime/vim-wakatime' },
   -- Colorizer
   { 'norcalli/nvim-colorizer.lua' },
-
+  -- Open URLs
+  { 'tyru/open-browser.vim' },
+  -- Liveview html
+  { 'tamago324/vim-browsersync' },
+  -- Rename names
+  { 'filipdutescu/renamer.nvim' },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

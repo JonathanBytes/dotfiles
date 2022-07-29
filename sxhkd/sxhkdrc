@@ -15,6 +15,9 @@ super + shift + Return
 super + t
 	bspterm -s	
 
+super + ctrl + Return
+  bspterm -d
+
 ##---------- Rofi Launcher & Menus ----------##
 
 # Rofi emojis
