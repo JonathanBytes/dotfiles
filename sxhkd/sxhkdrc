@@ -20,6 +20,10 @@ super + ctrl + Return
 
 ##---------- Rofi Launcher & Menus ----------##
 
+# Roficlip https://github.com/seamus-45/roficlip
+super + z
+  rofi -modi "clipboard:roficlip.py --show" -show clipboard -theme ~/.config/bspwm/rofi/themes/launcher.rasi
+
 # Rofi emojis
 super + e
        rofimoji --selector rofi --selector-args="-theme ~/.config/bspwm/rofi/themes/launcher.rasi" 

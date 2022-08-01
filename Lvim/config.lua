@@ -380,6 +380,8 @@ lvim.plugins = {
   { 'tamago324/vim-browsersync' },
   -- Rename names
   { 'filipdutescu/renamer.nvim' },
+  { 'kovetskiy/sxhkd-vim' },
+
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

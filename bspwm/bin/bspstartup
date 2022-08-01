@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Restart WM
-# bspc wm -r
+# Adjust screen resolution
+autorandr --change
 
 # Set workspaces if external monitor
 bash $HOME/.config/bspwm/bin/setWorkspaces.sh
@@ -12,8 +12,6 @@ bash $HOME/.config/bspwm/bin/setWorkspaces.sh
 bspc rule -r *:*
 
 bash $HOME/.config/bspwm/bin/bsprules.sh
-
-notify-send -i display "Display profile" "$AUTORANDR_CURRENT_PROFILE"
 
 $HOME/.config/bspwm/bin/randomWallpaper &
 
