@@ -42,6 +42,7 @@ bspc config focus_follows_pointer false
 # Kill if already running
 killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager polybar caffeine oneko clipster
 ps -ef | grep randomWallpaper | grep -v grep | awk '{print $2}' | xargs kill -9
+ps -ef | grep roficlip | grep -v grep | awk '{print $2}' | xargs kill -9
 
 # Lauch notification daemon
 dunst \
@@ -69,7 +70,7 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 xfce4-power-manager &
 
 # Clipboard daemon
-# clipster -d &
+roficlip.py --daemon &
 
 # Fix cursor
 xsetroot -cursor_name left_ptr
@@ -87,7 +88,7 @@ bspfloat &
 $HOME/.config/bspwm/bin/huion-setup &
 
 # Random Wallpaper
-$HOME/.config/bspwm/bin/randomWallpaper &
+# $HOME/.config/bspwm/bin/randomWallpaper &
 
 sleep .25
 
