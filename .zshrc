@@ -151,8 +151,10 @@ alias lg='exa -l --group-directories-first'
 alias gcl='git clone --depth 1'
 alias gi='git init'
 alias ga='git add'
+alias gaa='git add .'
 alias gc='git commit -m'
 alias gp='git push'
+alias gcp='git checkout -b'
 
 # Nvim
 alias n='~/.local/bin/lvim'
