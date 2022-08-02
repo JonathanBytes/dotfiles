@@ -346,11 +346,11 @@ format-disconnected-prefix-font = 3
 label-connected = "%{A1:nmd &:}%essid%%{A}"
 label-disconnected = "%{A1:nmd &:}Disconnected%{A}"
 
-ramp-signal-0 = "%{A1:sh /home/jonathan/config/bspwm/rofi/bin/network &:}%{A}"
-ramp-signal-1 = "%{A1:sh /home/jonathan/config/bspwm/rofi/bin/network &:}%{A}"
-ramp-signal-2 = "%{A1:sh /home/jonathan/config/bspwm/rofi/bin/network &:}%{A}"
-ramp-signal-3 = "%{A1:sh /home/jonathan/config/bspwm/rofi/bin/network &:}%{A}"
-ramp-signal-4 = "%{A1:sh /home/jonathan/config/bspwm/rofi/bin/network &:}%{A}"
+ramp-signal-0 = "%{A1:sh /home/jonathan/.config/bspwm/rofi/bin/network &:}%{A}"
+ramp-signal-1 = "%{A1:sh /home/jonathan/.config/bspwm/rofi/bin/network &:}%{A}"
+ramp-signal-2 = "%{A1:sh /home/jonathan/.config/bspwm/rofi/bin/network &:}%{A}"
+ramp-signal-3 = "%{A1:sh /home/jonathan/.config/bspwm/rofi/bin/network &:}%{A}"
+ramp-signal-4 = "%{A1:sh /home/jonathan/.config/bspwm/rofi/bin/network &:}%{A}"
 ramp-signal-font = 3
 ramp-signal-foreground = ${color.CYAN}
 ramp-signal-background = ${color.BACKGROUND}
@@ -459,7 +459,7 @@ click-right = ~/.config/polybar/pwidgets/scripts/powermenu.sh &
 
 [module/updates]
 type = custom/script
-exec = ~/config/bspwm/polybar/scripts/updates-pacman-aurhelper/updates-pacman-aurhelper.sh
+exec = ~/.config/bspwm/polybar/scripts/updates-pacman-aurhelper/updates-pacman-aurhelper.sh
 interval = 600
 label-background = ${color.BACKGROUND}
 label-foreground = ${color.FOREGROUND}

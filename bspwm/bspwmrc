@@ -87,9 +87,6 @@ bspfloat &
 # Huion tablet setup
 $HOME/.config/bspwm/bin/huion-setup &
 
-# Random Wallpaper
-# $HOME/.config/bspwm/bin/randomWallpaper &
-
 sleep .25
 
 # Cat follows the mouse
