@@ -26,6 +26,8 @@ This is a wip (and my first) dotfiles repo. Please be kind with me 😅
   - [AutoJump](https://github.com/wting/autojump): A cd command that learns
   - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh): Fish-like autosuggestions for zsh 
   - [zsh-syntax-highloghting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md): Fish shell like syntax highlighting for zsh
+- [trash-cli](https://github.com/andreafrancia/trash-cli): Command line interface to the freedesktop.org trashcan
+- [exa](https://the.exa.website/): A modern replacement for ls
 
 ### ⌨️  Terminal
 
@@ -38,6 +40,7 @@ Terminal stuff, scripts and TUIs.
 
 #### Scripts
 
+- [neofetch]()
 - [pokemon-colorscripts](https://gitlab.com/phoneybadger/pokemon-colorscripts): some scripts to print out images of pokemons to terminal 
 - [oneko](https://github.com/tie/oneko): Cat follows cursor
 - [cmatrix](https://github.com/abishekvashok/cmatrix)
@@ -61,6 +64,7 @@ Text editor
 - [sddm](https://github.com/sddm/sddm): Display manager
 - [ bspwm ](https://github.com/baskerville/bspwm): Window manager
 - [sxhkd](https://github.com/baskerville/sxhkd): Hotkeys daemon
+- [picom](https://github.com/pijulius/picom): Rounded corners, animations and transparency
 - Fonts
   - Caskaydia Cove Nerd Font
   - FiraCode Nerd Font
