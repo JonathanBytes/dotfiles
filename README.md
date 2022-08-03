@@ -1,5 +1,5 @@
 <h1 align="center">
-~/. dotfiles <br/>
+<a name="top">~/. dotfiles</a> <br/>
 <sup><sub>By JonathanBytes</sub></sup>
 </h1>
 
@@ -7,9 +7,8 @@ dotfiles based on [`bspwm`](https://github.com/baskerville/bspwm) window manager
 
 This is a wip (and my first) dotfiles repo. Please be kind with me 😅
 
----
 
-### 📦 Contents
+## 📦 Contents
 
 - [🐚 Shell](#shell)
 - [⌨️  Terminal](#terminal)
