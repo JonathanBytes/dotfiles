@@ -1,13 +1,7 @@
 <h1 align="center">
-<a name="top">~/. dotfiles</a> <br/>
+~/. dotfiles <br/>
 <sup><sub>By JonathanBytes</sub></sup>
 </h1>
-
-[![Codacy rating][badge-codacy]][link-codacy]
-[![CodeFactor rating][badge-codefactor]][link-codefactor]
-[![License][badge-license]][link-license]
-[![Repo analytics][badge-analytics]][link-analytics]
-[![Tweet][badge-twitter]][link-twitter]
 
 dotfiles based on [`bspwm`](https://github.com/baskerville/bspwm) window manager and [`gruvbox`](https://github.com/morhetz/gruvbox) color scheme.
 
