@@ -215,8 +215,10 @@ lvim.plugins = {
   -- Numb, jump to line while :number
   { 'nacro90/numb.nvim' },
   -- Markdown preview
-  { "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, },
+  {
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  },
   -- Uptime extension wakatime
   { 'wakatime/vim-wakatime' },
   -- Colorizer
