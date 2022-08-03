@@ -21,7 +21,7 @@ wm-restack = bspwm
 bottom = false
 fixed-center = true
 
-width = 1344
+width = 1322
 height = 26
 offset-x = 11
 offset-y = 11
@@ -42,11 +42,10 @@ padding = 1
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "Fira Code:style=Retina:size=10;3"
+font-0 = "CaskaydiaCove Nerd Font:style=Book:size=11;3"
 font-1 = "Iosevka Nerd Font:size=12;3"
 font-2 = "jonathancustomfont:size=13;3"
-# font-2 = "google\-mdi:size=12;3"
-font-3 = "Iosevka:style=bold:"size=12;3"
+font-3 = "Iosevka:style=bold:size=12;3"
 font-4 = "Roboto:size=12:weight=bold;2"
 font-5 = "Iosevka Nerd Font:size=15.4;4"
 
@@ -103,9 +102,8 @@ padding = 1
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "Fira Code Retina:style=Retina:size=10;3"
+font-0 = "CaskaydiaCove Nerd Font:style=Book:size=10;3"
 font-1 = "Iosevka Nerd Font:size=12;3"
-# font-2 = "google\-mdi:size=12;3"
 font-2 = "jonathancustomfont:size=13;3"
 font-3 = "Iosevka:style=bold:size=12;3"
 font-4 = "Roboto:size=12:weight=bold;2"

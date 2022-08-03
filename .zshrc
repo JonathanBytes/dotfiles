@@ -136,7 +136,7 @@ rehash_precmd() {
 add-zsh-hook -Uz precmd rehash_precmd
 
 # omz
-alias zshconfig="geany ~/.zshrc"
+alias zshconfig="lvim ~/.zshrc"
 alias ohmyzsh="thunar ~/.oh-my-zsh"
 
 # ls

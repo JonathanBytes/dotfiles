@@ -50,17 +50,6 @@ ramp-headphones-1 = 
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/bna]
-type = custom/text
-
-content = " NA"
-content-prefix = 
-content-prefix-font = 2
-content-prefix-foreground = ${color.RED}
-content-padding = 0
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
 [module/backlight]
 type = internal/xbacklight
 
@@ -118,38 +107,23 @@ type = internal/battery
 
 full-at = 99
 
-# click-left = /home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh
-
 battery = ${system.battery}
 adapter = ${system.adapter}
 
 poll-interval = 2
 time-format = %H:%M
 
-# format-charging = <animation-charging> <label-charging>
 format-charging = <animation-charging>
-format-charging-prefix = 
 
-# format-discharging = <ramp-capacity> <label-discharging>
 format-discharging = <ramp-capacity>
-
 format-full = <label-full>
-# format-full-prefix = " "
-# format-full-prefix-font = 2
-# format-full-prefix-foreground = ${color.RED}
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
-# label-full = "Full"
 label-full = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
 label-full-background = ${color.BACKGROUND}
 label-full-foreground = ${color.RED}
 
-# ramp-capacity-0 = 
-# ramp-capacity-1 = 
-# ramp-capacity-2 = 
-# ramp-capacity-3 = 
-# ramp-capacity-4 =  
 ramp-capacity-0 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
 ramp-capacity-1 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
 ramp-capacity-2 = %{A1:/home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/change.sh:}%{A}
@@ -314,10 +288,12 @@ unknown-as-up = true
 format-connected = "%{A1:nmd &:}%{A}"
 format-connected-foreground = ${color.CYAN}
 format-connected-background = ${color.BACKGROUND}
+format-connected-font = 2
 
 format-disconnected = "%{A1:nmd &:}%{A}"
 format-disconnected-foreground = ${color.ALTRED}
 format-disconnected-background = ${color.BACKGROUND}
+format-disconnected-font = 2
 
 label-connected = "%{A1:networkmanager_dmenu &:}%downspeed% | %upspeed%%{A}"
 label-disconnected = "%{A1:networkmanager_dmenu &:}Offline%{A}"
@@ -341,7 +317,7 @@ format-connected = <ramp-signal>
 format-disconnected = "%{A1:nmd &:}%{A}"
 format-disconnected-foreground = ${color.ALTRED}
 format-disconnected-background = ${color.BACKGROUND}
-format-disconnected-prefix-font = 3
+format-disconnected-font = 3
 
 label-connected = "%{A1:nmd &:}%essid%%{A}"
 label-disconnected = "%{A1:nmd &:}Disconnected%{A}"
@@ -392,7 +368,7 @@ type = custom/script
 tail = true
 label-foreground = ${color.WHITE}
 label-background = ${color.BACKGROUND}
-label-font = 2
+label-font = 3
 interval = 1.0
 
 exec = ~/.config/bspwm/polybar/scripts/toggletouchpad-icon.sh &
@@ -451,6 +427,7 @@ content-font = 6
 [module/sysmenu]
 type = custom/text
 content = 襤
+content-font = 2
 
 content-foreground = ${color.RED}
 content-background = ${color.BACKGROUND}
