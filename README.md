@@ -17,7 +17,7 @@ This is a wip (and my first) dotfiles repo. Please be kind with me 😅
 
 ---
 
-### 🐚 Shell (up to date) 
+### 🐚 Shell 
 
 - [zsh](https://www.zsh.org/): Shell
 - [oh-my-zsh](https://ohmyz.sh/#install): Shell framework (Plugin manager and more)

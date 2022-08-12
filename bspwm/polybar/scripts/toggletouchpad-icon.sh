@@ -6,10 +6,7 @@ state=${temp_state: -1}
 
 if [ $state == 0 ]
 then
-  #label-foreground = ${color.CYAN}
   echo ""
 else
-  #label-foreground = ${color.RED}
-  # echo ""
 	echo "%{F#FA5841}%{u-}"
 fi

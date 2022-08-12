@@ -11,6 +11,13 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 export XCURSOR_THEME=Pear
+# Edit .zshrc and add this line
+export PATH=$HOME/.config/rofi/bin:$PATH
+
+# Iraf binaries path
+export PATH=$HOME/.iraf/bin/:$PATH
+
+export PATH=$HOME/Downloads/ds9Installer/SAOImageDS9/bin/:$PATH
 
 # zsh parameter completion for the dotnet CLI
 
@@ -179,6 +186,9 @@ alias smbshare='cd /tmp/sambashare'
 alias term='wezterm start --cwd $PWD'
 alias dn='dotnet new'
 alias dr='dotnet run'
+
+# Iraf
+alias irafds9='/usr/local/bin/irafStart.sh'
 
 # Create directory and cd to it
 mkcdir ()

@@ -1,1 +1,5 @@
-autojump-zsh firefox libstdc++ i686 gcc gcc-c++ ranger zathura gcc git libconfig-devel libdrm-devel libev-devel libX11-devel libX11-xcb libXext-devel libxcb-devel mesa-libGL-devel meson pcre-devel pixman-devel uthash-devel xcb-util-image-devel xcb-util-renderutil-devel xorg-x11-proto-devel trash-cli exa dnf cmake autorandr yad feh
+sudo dnf install sddm util-linux-user
+sudo systemctl enable sddm
+sudo systemctl set-default graphical.target
+
+autojump-zsh firefox libstdc++ i686 gcc gcc-c++ ranger zathura gcc git libconfig-devel libdrm-devel libev-devel libX11-devel libX11-xcb libXext-devel libxcb-devel mesa-libGL-devel meson pcre-devel pixman-devel uthash-devel xcb-util-image-devel xcb-util-renderutil-devel xorg-x11-proto-devel trash-cli exa dnf cmake autorandr yad feh tar zsh zsh-autosuggestions zsh-syntax-highlighting dbus-devel
