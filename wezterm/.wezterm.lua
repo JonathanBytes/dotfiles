@@ -8,7 +8,7 @@ return {
     -- family = 'FiraCode Nerd Font',
     family = 'CaskaydiaCove Nerd Font Mono',
   },
-  font_size = 15.0,
+  font_size = 13.0,
   color_schemes = {
     -- Override the builtin Gruvbox dark scheme with our modification.
     ['Gruvbox Dark'] = scheme,

@@ -197,5 +197,10 @@ mkcdir ()
        cd -P -- "$1"
 }
 
-# neofetch
-pokemon-colorscripts -r 1 --no-title
+number=$(($RANDOM % 2))
+
+if [[ $number == 0 ]]; then
+  pokemon-colorscripts -r 1 --no-title
+else
+  {neofetch}
+fi

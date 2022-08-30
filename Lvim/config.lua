@@ -48,11 +48,13 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
+  "latex",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
+----------------------------------------------------
 -- Additional Plugins
 lvim.plugins = {
   -- Colorscheme
@@ -152,9 +154,19 @@ lvim.plugins = {
   -- Rename names
   { 'filipdutescu/renamer.nvim' },
   { 'kovetskiy/sxhkd-vim' },
+  -- Latex live view
+  { 'xuhdev/vim-latex-live-preview' },
+  -- Fancy error virtual text
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  },
+  -- Latex text fold
+  { 'matze/vim-tex-fold' },
 }
-
--------------------------------
+----------------------------------------------------
 -- Relative number
 vim.opt.rnu = true
 -- Word wrap
@@ -298,4 +310,12 @@ lvim.builtin.which_key.mappings["n"] = { ":set rnu! | :set nu! <CR>", "Toggle nu
 lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_z = {}
---------------------------------
+
+require("lsp_lines").setup()
+-- Disable virtual_text since it's redundant due to lsp_lines.
+vim.diagnostic.config({
+  virtual_text = false,
+})
+vim.diagnostic.config({ virtual_lines = true })
+lvim.lsp.diagnostics.virtual_text = false
+----------------------------------------------------
