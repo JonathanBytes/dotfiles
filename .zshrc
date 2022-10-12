@@ -189,6 +189,7 @@ alias dr='dotnet run'
 
 # Iraf
 alias irafds9='/usr/local/bin/irafStart.sh'
+alias iraf='ecl'
 
 # Create directory and cd to it
 mkcdir ()

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-number=$(($RANDOM % 3))
+number=$(($RANDOM % 6))
 
 if [[ $number == 0 ]]; then
   oneko -tora & 
