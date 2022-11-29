@@ -3,8 +3,6 @@
 
 ##---------- Test keybindings ----------##
 
-ctrl + alt + Delete
-	wezterm start -- btop 
 
 ##---------- Keybindings for bspwm ----------##
 
@@ -183,5 +181,9 @@ alt + shift + {Left,Down,Up,Right}
 # Hide/Unhide Window
 super + shift + i
 	winmask
+
+# Open Task and hardware manager (btop)
+ctrl + alt + Delete
+	wezterm start -- btop 
 
 ##---------- EOF ----------##
