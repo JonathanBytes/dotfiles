@@ -1,6 +1,11 @@
 ## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
+##---------- Test keybindings ----------##
+
+ctrl + alt + Delete
+	wezterm start -- btop 
+
 ##---------- Keybindings for bspwm ----------##
 
 # Terminal (alacritty)
