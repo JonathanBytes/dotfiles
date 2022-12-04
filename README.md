@@ -3,7 +3,10 @@
 <sup><sub>By JonathanBytes</sub></sup>
 </h1>
 
+<div align="center">
+
 ![GitHub Repo stars](https://img.shields.io/github/stars/JonathanBytes/dotfiles?style=for-the-badge&color=7DAEA3) ![GitHub last commit](https://img.shields.io/github/last-commit/JonathanBytes/dotfiles?style=for-the-badge&color=7DAEA3) ![GitHub repo size](https://img.shields.io/github/repo-size/JonathanBytes/dotfiles?style=for-the-badge&color=7DAEA3)
+</div>
 
 dotfiles based on [`bspwm`](https://github.com/baskerville/bspwm) window manager and [`gruvbox`](https://github.com/morhetz/gruvbox) color scheme.
 
