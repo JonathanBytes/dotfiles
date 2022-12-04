@@ -191,6 +191,9 @@ alias dr='dotnet run'
 alias irafds9='/usr/local/bin/irafStart.sh'
 alias iraf='ecl'
 
+# LaTex preset
+alias docStart='cp ~/LaTex/* .'
+
 # Create directory and cd to it
 mkcdir ()
 {

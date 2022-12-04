@@ -272,6 +272,7 @@ lvim.keys.normal_mode["<leader>f"] = false
 lvim.keys.normal_mode["<leader>ff"] = ":Telescope find_files<cr>"
 
 -- Own keymapping
+lvim.keys.normal_mode["<C-enter>"] = ":w<cr> :TexlabBuild<cr>" -- Save
 vim.cmd [[
 nmap <2-LeftMouse> <Plug>(openbrowser-open)
 ]]
