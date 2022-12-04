@@ -1,6 +1,9 @@
 <h1 align="center">
 <a name="top">~/. dotfiles</a> <br/>
 <sup><sub>By JonathanBytes</sub></sup>
+
+![GitHub Repo stars](https://img.shields.io/github/stars/JonathanBytes/dotfiles?style=for-the-badge&color=7DAEA3) ![GitHub last commit](https://img.shields.io/github/last-commit/JonathanBytes/dotfiles?style=for-the-badge&color=7DAEA3) ![GitHub repo size](https://img.shields.io/github/repo-size/JonathanBytes/dotfiles?style=for-the-badge&color=7DAEA3)
+
 </h1>
 
 dotfiles based on [`bspwm`](https://github.com/baskerville/bspwm) window manager and [`gruvbox`](https://github.com/morhetz/gruvbox) color scheme.
