@@ -20,9 +20,20 @@ This is a work in progress :hammer: (and my first) dotfiles repo. Please be kind
     * [Terminal emulator](#terminal-emulator)
     * [Scripts](#scripts)
     * [TUI](#tui)
-    * [Nvim :hammer:](#-nvim)
+    * [Nvim :hammer:](#nvim)
   - [:zap: System :hammer:](#system)
   - [:sparkles: GUI Apps :hammer:](#gui-apps)
+
+  * [Contents](#package-contents)
+   * [Shell](#shell-shell)
+   * [Terminal](#keyboard-terminal)
+      * [Terminal emulator](#terminal-emulator)
+      * [Scripts](#scripts)
+      * [TUI](#tui)
+      * [Nvim <g-emoji class="g-emoji" alias="hammer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f528.png">🔨</g-emoji>](#nvim-hammer)
+   * [System <g-emoji class="g-emoji" alias="hammer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f528.png">🔨</g-emoji>](#zap-system-hammer)
+   * [GUI apps <g-emoji class="g-emoji" alias="hammer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f528.png">🔨</g-emoji>](#sparkles-gui-apps-hammer)
+
 
 ---
 
