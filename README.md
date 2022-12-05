@@ -20,7 +20,7 @@ This is a work in progress :hammer: (and my first) dotfiles repo. Please be kind
     * [Terminal emulator](#terminal-emulator)
     * [Scripts](#scripts)
     * [TUI](#tui)
-    * [Nvim :hammer:](#nvim-wip)
+    * [Nvim :hammer:](#nvim)
   - [:zap: System :hammer:](#system)
   - [:sparkles: GUI Apps :hammer:](#gui-apps)
 
