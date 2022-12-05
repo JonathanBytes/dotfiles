@@ -14,8 +14,8 @@ This is a work in progress :hammer: (and my first) dotfiles repo. Please be kind
 
 ## :package: Contents 
 
-  - :package: [Contents](#package-contents)
-  - :shell: [Shell](#shell-shell)
+  - [:package: Contents](#package-contents)
+  - [:shell: Shell](#shell-shell)
   - [:keyboard: Terminal](#keyboard-terminal)
     * [Terminal emulator](#terminal-emulator)
     * [Scripts](#scripts)
@@ -23,18 +23,7 @@ This is a work in progress :hammer: (and my first) dotfiles repo. Please be kind
     * [Nvim :hammer:](#nvim-hammer)
   - [:zap: System :hammer:](#zap-system-hammer)
   - [:sparkles: GUI Apps :hammer:](#sparkles-gui-apps-hammer)
-
-  * [Contents](#package-contents)
-   * [Shell](#shell-shell)
-   * [Terminal](#keyboard-terminal)
-      * [Terminal emulator](#terminal-emulator)
-      * [Scripts](#scripts)
-      * [TUI](#tui)
-      * [Nvim <g-emoji class="g-emoji" alias="hammer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f528.png">🔨</g-emoji>](#nvim-hammer)
-   * [System <g-emoji class="g-emoji" alias="hammer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f528.png">🔨</g-emoji>](#zap-system-hammer)
-   * [GUI apps <g-emoji class="g-emoji" alias="hammer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f528.png">🔨</g-emoji>](#sparkles-gui-apps-hammer)
-
-
+  
 ---
 
 ## :shell: Shell 
