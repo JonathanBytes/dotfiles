@@ -15,14 +15,14 @@ This is a work in progress :hammer: (and my first) dotfiles repo. Please be kind
 ## :package: Contents 
 
   - :package: [Contents](#package-contents)
-  - [:shell: Shell](#shell)
-  - [:keyboard: Terminal](#terminal)
+  - :shell: [Shell](#shell-shell)
+  - [:keyboard: Terminal](#keyboard-terminal)
     * [Terminal emulator](#terminal-emulator)
     * [Scripts](#scripts)
     * [TUI](#tui)
-    * [Nvim :hammer:](#nvim)
-  - [:zap: System :hammer:](#system)
-  - [:sparkles: GUI Apps :hammer:](#gui-apps)
+    * [Nvim :hammer:](#nvim-hammer)
+  - [:zap: System :hammer:](#zap-system-hammer)
+  - [:sparkles: GUI Apps :hammer:](#sparkles-gui-apps-hammer)
 
   * [Contents](#package-contents)
    * [Shell](#shell-shell)
