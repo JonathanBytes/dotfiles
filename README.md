@@ -14,7 +14,7 @@ This is a work in progress :hammer: (and my first) dotfiles repo. Please be kind
 
 ## :package: Contents 
 
-  - :package: [Contents](#contents)
+  - :package: [Contents](#package-contents)
   - [:shell: Shell](#shell)
   - [:keyboard: Terminal](#terminal)
     * [Terminal emulator](#terminal-emulator)
