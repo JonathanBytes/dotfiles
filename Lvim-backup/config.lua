@@ -148,6 +148,8 @@ lvim.plugins = {
   },
   -- Latex text fold
   { 'matze/vim-tex-fold' },
+  -- Coc for emojis
+  -- { 'neoclide/coc.nvim' },
 }
 ----------------------------------------------------
 -- Relative number
@@ -272,6 +274,7 @@ lvim.keys.normal_mode["<leader>f"] = false
 lvim.keys.normal_mode["<leader>ff"] = ":Telescope find_files<cr>"
 
 -- Own keymapping
+lvim.keys.normal_mode["<C-enter>"] = ":w<cr> :TexlabBuild<cr>" -- Save
 vim.cmd [[
 nmap <2-LeftMouse> <Plug>(openbrowser-open)
 ]]
@@ -287,6 +290,8 @@ lvim.keys.normal_mode["<leader>vt"] = ":vs<CR>:ter <CR> i"
 lvim.keys.normal_mode["<leader>ht"] = ":sp<CR>:ter <CR> i"
 lvim.keys.normal_mode["<leader>vs"] = ":vs<CR>"
 lvim.builtin.which_key.mappings["n"] = { ":set rnu! | :set nu! <CR>", "Toggle numbers sidebar" }
+lvim.keys.normal_mode["<S-l>"] = ":bnext<cr>"
+lvim.keys.normal_mode["<S-h>"] = ":bprev<cr>"
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -301,4 +306,6 @@ vim.diagnostic.config({
 })
 vim.diagnostic.config({ virtual_lines = true })
 lvim.lsp.diagnostics.virtual_text = false
+
+-- vim.cmd [[ au BufNewFile,BufRead /*.md setf markdown ]]
 ----------------------------------------------------

@@ -148,6 +148,8 @@ lvim.plugins = {
   },
   -- Latex text fold
   { 'matze/vim-tex-fold' },
+  -- Coc for emojis
+  -- { 'neoclide/coc.nvim' },
 }
 ----------------------------------------------------
 -- Relative number
@@ -304,4 +306,6 @@ vim.diagnostic.config({
 })
 vim.diagnostic.config({ virtual_lines = true })
 lvim.lsp.diagnostics.virtual_text = false
+
+-- vim.cmd [[ au BufNewFile,BufRead /*.md setf markdown ]]
 ----------------------------------------------------

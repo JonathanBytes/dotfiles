@@ -10,19 +10,23 @@
 
 dotfiles based on [`bspwm`](https://github.com/baskerville/bspwm) window manager and [`gruvbox`](https://github.com/morhetz/gruvbox) color scheme.
 
-This is a wip (and my first) dotfiles repo. Please be kind with me 😅
+This is a work in progress :hammer: (and my first) dotfiles repo. Please be kind with me 😅
 
+## :package: Contents 
 
-## 📦 Contents
-
-- [🐚 Shell](#shell)
-- [⌨️  Terminal](#terminal)
-- [⚡ System](#system)
-- [✨ GUI Apps](#gui-apps)
+  - [:package: Contents](#contents)
+  - [:shell: Shell](#shell)
+  - [:keyboard: Terminal](#terminal)
+    * [Terminal emulator](#terminal-emulator)
+    * [Scripts](#scripts)
+    * [TUI](#tui)
+    * [Nvim :hammer:](#nvim-wip)
+  - [:zap: System :hammer:](#system)
+  - [:sparkles: GUI Apps :hammer:](#gui-apps)
 
 ---
 
-### 🐚 Shell 
+## :shell: Shell 
 
 - [zsh](https://www.zsh.org/): Shell
 - [oh-my-zsh](https://ohmyz.sh/#install): Shell framework (Plugin manager and more)
@@ -34,16 +38,16 @@ This is a wip (and my first) dotfiles repo. Please be kind with me 😅
 - [trash-cli](https://github.com/andreafrancia/trash-cli): Command line interface to the freedesktop.org trashcan
 - [exa](https://the.exa.website/): A modern replacement for ls
 
-### ⌨️  Terminal
+## :keyboard: Terminal
 
 Terminal stuff, scripts and TUIs.
 
-#### Terminal emulator
+### Terminal emulator
 
 - [wezterm](https://github.com/wez/wezterm): Terminal emulator
 - [alacritty](https://github.com/alacritty/alacritty): Terminal emulator
 
-#### Scripts
+### Scripts
 
 - [neofetch]()
 - [pokemon-colorscripts](https://gitlab.com/phoneybadger/pokemon-colorscripts): some scripts to print out images of pokemons to terminal 
@@ -52,19 +56,19 @@ Terminal stuff, scripts and TUIs.
 - [pipes.sh](https://github.com/pipeseroni/pipes.sh)
 - [hollywood](https://github.com/dustinkirkland/hollywood)
 
-#### TUI
+### TUI
 
-- [btop](https://github.com/aristocratos/btop): A monitor of resources
+
 - [nvim](#nvim): Text editor
 - [ranger](https://github.com/ranger/ranger): A VIM-inspired filemanager for the console
 - [zathura](https://pwmt.org/projects/zathura/): A document viewer
   - [zathura-gruvbox](https://github.com/eastack/zathura-gruvbox): The gruvbox color theme for Zathura 
 
-#### Nvim (wip)
+### Nvim :hammer:
 
 Text editor
 
-### ⚡ System (wip)
+## :zap: System :hammer:
 
 - [sddm](https://github.com/sddm/sddm): Display manager
 - [ bspwm ](https://github.com/baskerville/bspwm): Window manager
@@ -85,6 +89,6 @@ Text editor
 - [Lxappearance](https://github.com/lxde/lxappearance): LXDE GTK+ theme switcher 
   - [gruvbox-material-gtk](https://github.com/TheGreatMcPain/gruvbox-material-gtk): Gruvbox Material for GTK, Gnome, Cinnamon, XFCE, Unity, Plank and Icons 
 
-### ✨ GUI apps (wip)
+## :sparkles: GUI apps :hammer:
 
 - [Thunar](https://gitlab.xfce.org/xfce/thunar): File manager
