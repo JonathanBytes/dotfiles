@@ -201,10 +201,11 @@ mkcdir ()
        cd -P -- "$1"
 }
 
-number=$(($RANDOM % 2))
-
+number=$(($RANDOM % 3))
 if [[ $number == 0 ]]; then
   pokemon-colorscripts -r 1 --no-title
-else
+elif [[ $number == 1 ]]; then
   {neofetch}
+else
+  {nitch}
 fi
