@@ -2,18 +2,26 @@
 lvim.log.level = "warn"
 lvim.format_on_save = true
 
-
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
-lvim.builtin.dap.active = true
+vim.opt.rnu = true -- Relative number
+vim.opt.wrap = true -- Word wrap
+vim.opt.cmdheight = 1 -- Reduce Bottom gap
+lvim.builtin.treesitter.rainbow.enable = true -- Rainbow parentesis
+lvim.builtin.which_key.mappings["o"] = { "<cmd>set spell!<CR>", "Toggle word spelling" } -- Spelling
+vim.opt.spelllang = { 'es' } -- Spelling
+
+-- Editing default keymapping
+lvim.keys.normal_mode["<leader>f"] = false
+lvim.keys.normal_mode["<leader>fn"] = ":ene!<cr>" -- Open new tab
+-- lvim.keys.normal_mode["<leader>ff"] = ":Telescope find_files<cr>"
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -34,14 +42,11 @@ lvim.builtin.treesitter.ensure_installed = {
   "latex",
 }
 
-lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enabled = true
-
 ----------------------------------------------------
 -- Additional Plugins
 lvim.plugins = {
   -- Colorscheme
-  -- { "sainnhe/gruvbox-material", },
+  { "sainnhe/gruvbox-material", },
   { "morhetz/gruvbox", },
   -- { 'lifepillar/vim-gruvbox8' },
   { 'eddyekofo94/gruvbox-flat.nvim' },
@@ -98,22 +103,22 @@ lvim.plugins = {
     end,
   },
   -- Indent line
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    config = function()
-      require('indent-blankline').setup {
-        show_current_context = true,
-        show_current_context_start = true,
-      }
-    end,
-  },
+  -- {
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   config = function()
+  --     require('indent-blankline').setup {
+  --       show_current_context = true,
+  --       show_current_context_start = true,
+  --     }
+  --   end,
+  -- },
   -- Simply scrollbar
   {
     'Xuyuanp/scrollbar.nvim',
   },
   -- Debugging tools
   -- { 'mfussenegger/nvim-dap' }, -- already installed on core plugs
-  { 'rcarriga/nvim-dap-ui' },
+  -- { 'rcarriga/nvim-dap-ui' },
   { 'theHamsta/nvim-dap-virtual-text' },
   { 'nvim-telescope/telescope-dap.nvim' },
   { 'mfussenegger/nvim-dap-python' },
@@ -150,41 +155,35 @@ lvim.plugins = {
   { 'matze/vim-tex-fold' },
   -- Coc for emojis
   -- { 'neoclide/coc.nvim' },
+  { "max397574/better-escape.nvim",
+    config = function()
+      require("better_escape").setup
+      {
+        mapping = { "jk", "jj" }, -- a table with mappings to use
+        timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
+        clear_empty_lines = false, -- clear line after escaping if there is only whitespace
+        keys = "<Esc>", -- keys used for escaping, if it is a function will use the result everytime
+        -- example(recommended)
+        -- keys = function()
+        --   return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
+        -- end,
+      }
+    end,
+  },
 }
 ----------------------------------------------------
--- Relative number
-vim.opt.rnu = true
--- Word wrap
-vim.opt.wrap = true
--- Reduce Bottom gap
-vim.opt.cmdheight = 1
--- Rainbow parentesis
-lvim.builtin.treesitter.rainbow.enable = true
--- Surround
-require("nvim-surround").setup()
--- Renamer
-require("renamer").setup()
--- vim.api.nvim_set_keymap('i', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
-lvim.keys.insert_mode["<F2>"] = { "<cmd>lua require(\"renamer\").rename()<cr>", { noremap = true, silent = true } }
-lvim.keys.visual_mode["<leader>rn"] = { "<cmd>lua require(\"renamer\").rename()<cr>", { noremap = true, silent = true } }
-lvim.builtin.which_key.mappings["rn"] = { "<cmd>lua require(\"renamer\").rename()<CR>", "Rename" }
--- Colorizer
-require 'colorizer'.setup()
--- Spelling
-lvim.builtin.which_key.mappings["o"] = { "<cmd>set spell!<CR>", "Toggle word spelling" }
-vim.opt.spelllang = { 'es' }
+
+require("nvim-surround").setup() -- Surround
+require("renamer").setup() -- Renamer
+require 'colorizer'.setup() -- Colorizer
 
 -- Colorscheme
 lvim.colorscheme = "gruvbox-flat"
 vim.g.gruvbox_flat_style = "dark"
 vim.g.gruvbox_transparent = true
--- vim.cmd("let g:gruvbox_material_background= 'medium'")
--- vim.cmd("let g:gruvbox_material_foreground= 'mix'")
--- vim.cmd("let g:gruvbox_contrast_dark= 'medium'")
 
 -- Minimap config
 vim.cmd("let g:minimap_width = 8")
--- vim.cmd("let g:minimap_close_filetypes = ['nvim-tree']")
 
 -- Jump to line :number
 require('numb').setup {
@@ -195,11 +194,6 @@ require('numb').setup {
 }
 -- Init Hop
 require('hop').setup()
-
--- Bracey config
--- vim.g.bracey_server_allow_remote_connections = 1
--- vim.g.bracey_refresh_on_save = 1
--- vim.g.bracey_server_path = 'https://localhost'
 
 -- Scrollbar setup
 vim.cmd [[
@@ -212,7 +206,6 @@ augroup end
 ]]
 
 -- Debugging setup
-lvim.builtin.dap.active = true
 lvim.keys.normal_mode["<F5>"] = ":lua require'dap'.continue()<CR>"
 lvim.keys.normal_mode["<F10>"] = ":lua require'dap'.step_over()<CR>"
 lvim.keys.normal_mode["<F11>"] = ":lua require'dap'.step_into()<CR>"
@@ -220,67 +213,14 @@ lvim.keys.normal_mode["<F12>"] = ":lua require'dap'.step_out()<CR>"
 lvim.builtin.which_key.mappings["B"] = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle debug breakpoint" }
 lvim.keys.normal_mode["<leader>dv"] = ":lua require'dapui'.toggle()<CR>"
 
-require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
-require('dapui').setup()
-require('nvim-dap-virtual-text').setup()
-local dap = require('dap')
-
--- C# setup for dap
-dap.adapters.coreclr = {
-  type = 'executable',
-  command = '/usr/bin/netcoredbg',
-  args = { '--interpreter=vscode' }
-}
-dap.configurations.cs = {
-  {
-    type = "coreclr",
-    name = "launch - netcoredbg",
-    request = "launch",
-    program = function()
-      return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
-    end,
-  },
-}
--- JS setup for dap
-dap.adapters.node2 = {
-  type = 'executable',
-  command = 'node',
-  args = { os.getenv('HOME') .. '/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js' },
-}
-dap.configurations.javascript = {
-  {
-    name = 'Launch',
-    type = 'node2',
-    request = 'launch',
-    program = '${file}',
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = 'inspector',
-    console = 'integratedTerminal',
-  },
-  {
-    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
-    name = 'Attach to process',
-    type = 'node2',
-    request = 'attach',
-    processId = require 'dap.utils'.pick_process,
-  },
-}
-
--- https://www.vim.org/scripts/script.php?script_id=3133
-
--- Editing default keymapping
-lvim.keys.normal_mode["<leader>f"] = false
-lvim.keys.normal_mode["<leader>ff"] = ":Telescope find_files<cr>"
-
 -- Own keymapping
 lvim.keys.normal_mode["<C-enter>"] = ":w<cr> :TexlabBuild<cr>" -- Save
 vim.cmd [[
 nmap <2-LeftMouse> <Plug>(openbrowser-open)
 ]]
+
 lvim.builtin.which_key.mappings["ss"] = { "<cmd>HopChar2 <cr>", "Hop 2 Char fast motion" } -- Better motion keymap
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>" -- Save
-lvim.keys.normal_mode["<leader>fn"] = ":ene!<cr>" -- Open new tab
 lvim.keys.normal_mode["<C-a>"] = ":%y+<cr>" -- Copy all buffer
 lvim.builtin.which_key.mappings["m"] = { "<cmd>MinimapToggle <cr>", "Toggle Minimap" }
 -- lvim.keys.normal_mode["<F5>"] = ":w<CR>:ter python3 %<CR>" -- Run python file
@@ -293,8 +233,6 @@ lvim.builtin.which_key.mappings["n"] = { ":set rnu! | :set nu! <CR>", "Toggle nu
 lvim.keys.normal_mode["<S-l>"] = ":bnext<cr>"
 lvim.keys.normal_mode["<S-h>"] = ":bprev<cr>"
 
--- TODO: User Config for predefined plugins
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_z = {}
@@ -306,6 +244,3 @@ vim.diagnostic.config({
 })
 vim.diagnostic.config({ virtual_lines = true })
 lvim.lsp.diagnostics.virtual_text = false
-
--- vim.cmd [[ au BufNewFile,BufRead /*.md setf markdown ]]
-----------------------------------------------------
