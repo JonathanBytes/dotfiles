@@ -175,6 +175,7 @@ lvim.plugins = {
 
 require("nvim-surround").setup() -- Surround
 require("renamer").setup() -- Renamer
+lvim.keys.insert_mode["<F2>"] = { "<cmd>lua require(\"renamer\").rename()<cr>", { noremap = true, silent = true } }
 require 'colorizer'.setup() -- Colorizer
 
 -- Colorscheme
