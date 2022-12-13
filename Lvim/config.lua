@@ -230,6 +230,7 @@ lvim.builtin.which_key.mappings["t"] = { ":ter <CR> i", "Open a terminal" }
 lvim.keys.normal_mode["<leader>vt"] = ":vs<CR>:ter <CR> i"
 lvim.keys.normal_mode["<leader>ht"] = ":sp<CR>:ter <CR> i"
 lvim.keys.normal_mode["<leader>vs"] = ":vs<CR>"
+lvim.keys.normal_mode["<leader>hs"] = ":horizontal split<CR>"
 lvim.builtin.which_key.mappings["n"] = { ":set rnu! | :set nu! <CR>", "Toggle numbers sidebar" }
 lvim.keys.normal_mode["<S-l>"] = ":bnext<cr>"
 lvim.keys.normal_mode["<S-h>"] = ":bprev<cr>"
