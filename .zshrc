@@ -16,6 +16,8 @@ export PATH=$HOME/.config/rofi/bin:$PATH
 
 # Iraf binaries path
 export PATH=$HOME/.iraf/bin/:$PATH
+# Iraf environment variable
+export iraf=home/jonathan/Downloads/irafInstaller/iraf-2.17/
 
 export PATH=$HOME/Downloads/ds9Installer/SAOImageDS9/bin/:$PATH
 

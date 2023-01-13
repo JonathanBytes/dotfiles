@@ -213,6 +213,7 @@ lvim.keys.normal_mode["<F11>"] = ":lua require'dap'.step_into()<CR>"
 lvim.keys.normal_mode["<F12>"] = ":lua require'dap'.step_out()<CR>"
 lvim.builtin.which_key.mappings["B"] = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle debug breakpoint" }
 lvim.keys.normal_mode["<leader>dv"] = ":lua require'dapui'.toggle()<CR>"
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 
 -- Own keymapping
 lvim.keys.normal_mode["<C-enter>"] = ":w<cr> :TexlabBuild<cr>" -- Save
