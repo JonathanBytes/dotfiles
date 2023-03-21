@@ -3,6 +3,8 @@
 	name = Jonathan ArchDell
 [credential]
 	helper = store
+	helper = 
+	helper = /usr/bin/git-credential-manager
 [init]
 	defaultBranch = main
 [core]
@@ -22,3 +24,10 @@
     added = yellow
     changed = green
     untracked = cyan
+[safe]
+	directory = /usr/share/webapps/jonathanbytesWeb
+	directory = /usr/share/webapps/jonathanbytesWeb
+	directory = /usr/share/webapps/jonathanbytes
+	directory = /usr/share/webapps/jonathanbytes
+[credential "https://dev.azure.com"]
+	useHttpPath = true

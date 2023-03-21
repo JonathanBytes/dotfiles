@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+# export PIPEWIRE_LATENCY="128/48000"
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$PATH:$HOME/.spicetify"
 export PATH="$PATH:$HOME/.local/bin/"
@@ -20,6 +21,7 @@ export PATH=$HOME/.iraf/bin/:$PATH
 export iraf=home/jonathan/Downloads/irafInstaller/iraf-2.17/
 
 export PATH=$HOME/Downloads/ds9Installer/SAOImageDS9/bin/:$PATH
+export PYTHONPATH=$HOME/.local/lib/python3.10/site-packages:$PYTHONPATH
 
 # zsh parameter completion for the dotnet CLI
 

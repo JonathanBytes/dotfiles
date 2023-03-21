@@ -13,6 +13,7 @@ bspc rule -r *:*
 
 bash $HOME/.config/bspwm/bin/bsprules.sh
 
+# Script for random wallpapers
 $HOME/.config/bspwm/bin/randomWallpaper &
 
 $HOME/.config/bspwm/bin/bspbar
