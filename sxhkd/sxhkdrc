@@ -121,8 +121,8 @@ ctrl + shift + {q,r}
 	bspc {quit,wm -r}
 	
 # Split horizontal, vertical or cancel
-super + {h,v,q}
-	bspc node -p {east,south,cancel}
+# super + {h,v,q}
+# 	bspc node -p {east,south,cancel}
 
 # Preselect the ratio
 super + ctrl + {1-9}
@@ -177,6 +177,10 @@ super + alt + {Left,Right,Up,Down}
 ## Move floating windows
 alt + shift + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+## Change focused window
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
 
 # Hide/Unhide Window
 super + shift + i
