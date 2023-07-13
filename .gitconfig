@@ -5,6 +5,7 @@
 	helper = store
 	helper = 
 	helper = /usr/bin/git-credential-manager
+	credentialStore = gpg
 [init]
 	defaultBranch = main
 [core]
