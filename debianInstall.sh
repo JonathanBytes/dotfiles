@@ -26,7 +26,7 @@ cp -R wallpapers/ /home/$username/Pictures/
 chown -R $username:$username /home/$username
 
 # Installing Essential Programs 
-nala install --no-install-recommends sddm 
+nala install --no-install-recommends sddm -y
 sddm --example-config > sddm.conf
 mv sddm.conf /etc/
 systemctl enable sddm
