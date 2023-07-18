@@ -27,9 +27,11 @@ chown -R $username:$username /home/$username
 
 # Installing Essential Programs 
 nala install --no-install-recommends sddm 
+sddm --example-config > sddm.conf
+mv sddm.conf /etc/
 systemctl enable sddm
 systemctl set-default graphical.target
-nala install feh kitty rofi thunar lxpolkit x11-xserver-utils unzip wget pipewire-audio qpwgraph pavucontrol build-essential libx11-dev bspwm polybar ranger neovim -y
+nala install feh kitty rofi thunar lxpolkit x11-xserver-utils unzip wget pipewire-audio qpwgraph pavucontrol build-essential libx11-dev bspwm polybar ranger neovim curl -y
 systemctl --user --now enable wireplumber.service
 curl -LO https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Debian12.deb
 nala install -y ./wezterm-nightly.Debian12.deb
