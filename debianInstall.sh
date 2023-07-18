@@ -21,13 +21,15 @@ cd $builddir
 mkdir -p /home/$username/.config
 mkdir -p /home/$username/.fonts
 mkdir -p /home/$username/Pictures
-cp -R dotconfig/* /home/$username/.config/
+cp -R * /home/$username/.config/
 cp -R wallpapers/ /home/$username/Pictures/
-mv user-dirs.dirs /home/$username/.config
 chown -R $username:$username /home/$username
 
 # Installing Essential Programs 
-nala install feh kitty rofi picom thunar nitrogen lxpolkit x11-xserver-utils unzip wget pipewire-audio pavucontrol build-essential libx11-dev libxft-dev libxinerama-dev -y
+nala install --no-install-recommends sddm 
+systemctl enable sddm
+systemctl set-default graphical.target
+nala install feh kitty rofi thunar lxpolkit x11-xserver-utils unzip wget pipewire-audio qpwgraph pavucontrol build-essential libx11-dev bspwm polybar ranger neovim -y
 systemctl --user --now enable wireplumber.service
 curl -LO https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Debian12.deb
 nala install -y ./wezterm-nightly.Debian12.deb
@@ -40,7 +42,8 @@ ninja -C build
 sudo ninja -C build install
 
 # Installing Other less important Programs
-nala install neofetch neovim sddm -y
+nala install neofetch -y
+# SDDM theme
 
 cd $builddir 
 nala install fonts-font-awesome -y
