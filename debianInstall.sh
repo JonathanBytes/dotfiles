@@ -31,8 +31,7 @@ sddm --example-config > sddm.conf
 mv sddm.conf /etc/
 systemctl enable sddm
 systemctl set-default graphical.target
-nala install feh kitty rofi thunar lxpolkit x11-xserver-utils unzip wget pipewire-audio qpwgraph pavucontrol build-essential libx11-dev bspwm polybar ranger neovim curl -y
-systemctl --user --now enable wireplumber.service
+nala install feh kitty rofi thunar lxpolkit x11-xserver-utils unzip wget pipewire-audio qpwgraph pavucontrol build-essential libx11-dev bspwm polybar ranger neovim curl ninja-build -y
 curl -LO https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Debian12.deb
 nala install -y ./wezterm-nightly.Debian12.deb
 nala install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libev-dev libx11-xcb-dev -y
@@ -53,3 +52,6 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.z
 unzip FiraCode.zip -d /home/$username/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip
 unzip CascadiaCode.zip -d /home/$username/.fonts
+
+exit
+systemctl --user --now enable wireplumber.service
