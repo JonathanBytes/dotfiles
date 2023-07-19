@@ -43,7 +43,10 @@ ninja -C build
 sudo ninja -C build install
 
 # Installing Other less important Programs
-nala install neofetch -y
+nala install neofetch firefox -y
+echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | tee /etc/apt/sources.list.d/notion-repackaged.list
+nala update
+nala install notion-app-enhanced
 # SDDM theme
 
 cd $builddir 

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+while true; do
+  # feh --randomize --bg-fill ~/Pictures/Wallpapers/gruvbox/*
+  feh --randomize --bg-fill ~/.config/hypr/themes/apatheia/wallpapers/
+  sleep 30m
+done

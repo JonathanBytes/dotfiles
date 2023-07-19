@@ -1,0 +1,4 @@
+#!/bin/sh
+ps -ef | grep randomWallpaper | grep -v grep | awk '{print $2}' | xargs kill -9
+while pgrep -x randomWallpaper >/dev/null; do sleep 0.5; done
+$HOME/.config/hypr/themes/apatheia/scripts/randomWallpaper &
