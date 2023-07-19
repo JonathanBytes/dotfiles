@@ -42,14 +42,14 @@ ninja -C build
 sudo ninja -C build install
 
 # Installing Other less important Programs
-nala install neofetch firefox -y
+nala install neofetch firefox-esr btop cmatrix -y
 echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | tee /etc/apt/sources.list.d/notion-repackaged.list
 nala update
 nala install notion-app-enhanced
 # SDDM theme
 
 cd $builddir 
-nala install fonts-font-awesome -y
+nala install fonts-font-awesome fonts-roboto -y
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip
 unzip FiraCode.zip -d /home/$username/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip
@@ -57,3 +57,4 @@ unzip CascadiaCode.zip -d /home/$username/.fonts
 
 exit
 systemctl --user --now enable wireplumber.service
+fc-cache -fv
