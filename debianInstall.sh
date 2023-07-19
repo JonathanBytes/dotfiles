@@ -46,7 +46,7 @@ cd $builddir
 nala install neofetch firefox-esr btop cmatrix nsnake -y
 echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | tee /etc/apt/sources.list.d/notion-repackaged.list
 nala update
-nala install notion-app-enhanced
+nala install notion-app-enhanced -y
 cd /usr/local/bin
 git clone https://github.com/seamus-45/roficlip.git
 cd roficlip
