@@ -34,10 +34,10 @@ nala install feh kitty rofi thunar python3-pip python3-full python3-yaml pipx lx
 arandr
 autorandr --save undock --default
 curl -fsSL https://fnm.vercel.app/install | bash
-source /home/jonathan/.bashrc
+source /home/$username/.bashrc
 fnm install --lts
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source "$HOME/.cargo/env"
+source /home/$username/.cargo/env
 cargo add openssl
 curl -LO https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Debian12.deb
 nala install -y ./wezterm-nightly.Debian12.deb
