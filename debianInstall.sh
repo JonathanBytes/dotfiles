@@ -18,11 +18,10 @@ apt install nala -y
 
 # Making .config and Moving config files and wallpapers to Pictures
 cd $builddir
-mkdir -p /home/$username/.config
-mkdir -p /home/$username/.fonts
 mkdir -p /home/$username/Pictures
-cp -R * /home/$username/.config/
+cp -R .config/ /home/$username/.config/
 cp -R wallpapers/ /home/$username/Pictures/
+cp -R .fonts/ /home/$username/
 chown -R $username:$username /home/$username
 
 # Installing Essential Programs 
