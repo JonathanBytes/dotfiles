@@ -30,7 +30,7 @@ sddm --example-config > sddm.conf
 mv sddm.conf /etc/
 systemctl enable sddm
 systemctl set-default graphical.target
-nala install feh kitty rofi thunar lxpolkit x11-xserver-utils unzip wget pipewire-audio qpwgraph pavucontrol build-essential libx11-dev bspwm polybar ranger neovim curl ninja-build meson arandr -y
+nala install feh kitty rofi thunar pip pyton3-full python3-yaml pipx lxpolkit x11-xserver-utils unzip wget pipewire-audio qpwgraph pavucontrol build-essential libx11-dev bspwm polybar ranger neovim curl ninja-build meson arandr -y
 curl -LO https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Debian12.deb
 nala install -y ./wezterm-nightly.Debian12.deb
 nala install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libev-dev libx11-xcb-dev libpcre3-dev cmake -y
@@ -40,12 +40,17 @@ meson --buildtype=release . build
 ninja -C build
 # To install the binaries in /usr/local/bin (optional)
 sudo ninja -C build install
+cd $builddir
 
 # Installing Other less important Programs
-nala install neofetch firefox-esr btop cmatrix -y
+nala install neofetch firefox-esr btop cmatrix nsnake -y
 echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | tee /etc/apt/sources.list.d/notion-repackaged.list
 nala update
 nala install notion-app-enhanced
+cd /usr/local/bin
+git clone https://github.com/seamus-45/roficlip.git
+cd roficlip
+pip install docopt pyxdg pygobject pyyaml notify2 --break-system-packages
 # SDDM theme
 
 cd $builddir 
