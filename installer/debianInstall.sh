@@ -22,7 +22,6 @@ mkdir -p /home/$username/Pictures
 mkdir -p /home/$username/.config
 ln -s $builddir/.config/* /home/$username/.config/
 ln -s $builddir/wallpapers/ /home/$username/Pictures/
-find . -mindepth 1 -maxdepth 1 ! -name '.config' ! -name 'wallpapers' ! -name '.git' ! -name 'usr' ! -name 'etc' ! -name 'README.md' ! -name 'installer' ! -name '70-synaptics.conf' -execdir sh -c 'ln -s "$(realpath "$0")" "/home/$username/$0"' {} \;
 chown -R $username:$username /home/$username
 
 # Installing Essential Programs 
