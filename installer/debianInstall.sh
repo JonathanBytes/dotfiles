@@ -22,7 +22,7 @@ mkdir -p /home/$username/Pictures
 mkdir -p /home/$username/.config
 ln -s .config/* /home/$username/.config/
 ln -s wallpapers/ /home/$username/Pictures/
-find . -mindepth 1 -maxdepth 1 ! -name '.config' ! -name 'wallpapers' ! -name '.git' ! -name 'usr' ! -name 'etc' ! -name 'README.md' ! -name 'installer' ! -name '70-synaptics.conf' -exec ln -s {} /home/jonathan/ \;
+find . -mindepth 1 -maxdepth 1 ! -name '.config' ! -name 'wallpapers' ! -name '.git' ! -name 'usr' ! -name 'etc' ! -name 'README.md' ! -name 'installer' ! -name '70-synaptics.conf' -exec ln -s "$(pwd)/{}" /home/$username/ \;
 chown -R $username:$username /home/$username
 
 # Installing Essential Programs 
