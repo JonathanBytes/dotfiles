@@ -17,12 +17,12 @@ apt upgrade -y
 apt install nala -y
 
 # Making .config and Moving config files and wallpapers to Pictures
-cd ../$builddir
+cd ..$builddir
 mkdir -p /home/$username/Pictures
 mkdir -p /home/$username/.config
 ln -s .config/* /home/$username/.config/
 ln -s wallpapers/ /home/$username/Pictures/
-find . -mindepth 1 -maxdepth 1 ! -name '.config' ! -name 'wallpapers' ! -name '.git' ! -name 'usr' ! -name 'etc' ! -name 'README.md' ! -name 'installer' ! -name '70-synaptics.conf' -exec sh -c 'ln -s "$(realpath "$0")" "/home/$username/$0"' {} \;
+find . -mindepth 1 -maxdepth 1 ! -name '.config' ! -name 'wallpapers' ! -name '.git' ! -name 'usr' ! -name 'etc' ! -name 'README.md' ! -name 'installer' ! -name '70-synaptics.conf' -execdir sh -c 'ln -s "$(realpath "$0")" "/home/$username/$0"' {} \;
 chown -R $username:$username /home/$username
 
 # Installing Essential Programs 
@@ -49,7 +49,7 @@ meson --buildtype=release . build
 ninja -C build
 # To install the binaries in /usr/local/bin (optional)
 sudo ninja -C build install
-cd ../$builddir
+cd ..$builddir
 
 # Installing Other less important Programs
 nala install neofetch firefox-esr btop cmatrix nsnake -y
@@ -62,7 +62,7 @@ cd roficlip
 pip install docopt pyxdg pygobject pyyaml notify2 --break-system-packages
 # SDDM theme
 
-cd ../$builddir 
+cd ..$builddir 
 nala install fonts-font-awesome fonts-roboto -y
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip
 unzip FiraCode.zip -d /home/$username/.fonts
