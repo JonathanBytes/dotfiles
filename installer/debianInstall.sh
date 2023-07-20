@@ -20,8 +20,8 @@ apt install nala -y
 cd ..$builddir
 mkdir -p /home/$username/Pictures
 mkdir -p /home/$username/.config
-ln -s .config/* /home/$username/.config/
-ln -s wallpapers/ /home/$username/Pictures/
+ln -s $builddir/.config/* /home/$username/.config/
+ln -s $builddir/wallpapers/ /home/$username/Pictures/
 find . -mindepth 1 -maxdepth 1 ! -name '.config' ! -name 'wallpapers' ! -name '.git' ! -name 'usr' ! -name 'etc' ! -name 'README.md' ! -name 'installer' ! -name '70-synaptics.conf' -execdir sh -c 'ln -s "$(realpath "$0")" "/home/$username/$0"' {} \;
 chown -R $username:$username /home/$username
 
