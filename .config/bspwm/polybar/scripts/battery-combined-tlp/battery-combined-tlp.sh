@@ -1,6 +1,6 @@
 #!/bin/sh
 
-state=$(cat /home/jonathan/polybar-scripts/polybar-scripts/battery-combined-tlp/var)
+state=$(cat /home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/var)
 
 if [ $state == 0 ]
 then
