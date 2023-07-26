@@ -8,7 +8,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source /home/$USER/.cargo/env
 cargo add openssl
 cd /usr/local/bin
-git clone https://github.com/seamus-45/roficlip.git
+sudo git clone https://github.com/seamus-45/roficlip.git
 cd roficlip
 pip install docopt pyxdg pygobject pyyaml notify2 --break-system-packages
 systemctl --user --now enable wireplumber.service
