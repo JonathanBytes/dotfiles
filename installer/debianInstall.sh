@@ -20,7 +20,7 @@ apt install nala -y
 cd $builddir
 mkdir -p /home/$username/Pictures
 mkdir -p /home/$username/.config
-ln -s $builddir/.config/* /home/$username/.config/
+ln -s $builddir/.config/* /home/$username/.configud
 ln -s $builddir/wallpapers/ /home/$username/Pictures/
 chown -R $username:$username /home/$username
 

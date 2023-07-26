@@ -1,4 +1,4 @@
-find . -mindepth 1 -maxdepth 1 ! -name '.config' ! -name 'wallpapers' ! -name '.git' ! -name 'usr' ! -name 'etc' ! -name 'README.md' ! -name 'installer' ! -name '70-synaptics.conf' -execdir sh -c 'ln -s "$(realpath "$0")" "/home/$USER/$0"' {} \;
+sudo find . -mindepth 1 -maxdepth 1 ! -name '.config' ! -name 'wallpapers' ! -name '.git' ! -name 'usr' ! -name 'etc' ! -name 'README.md' ! -name 'installer' ! -name '70-synaptics.conf' -execdir sh -c 'ln -s "$(realpath "$0")" "/home/$USER/$0"' {} \;
 arandr
 autorandr --save undock --default
 curl -fsSL https://fnm.vercel.app/install | bash
