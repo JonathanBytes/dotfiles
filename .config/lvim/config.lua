@@ -143,7 +143,7 @@ lvim.plugins = {
   { 'filipdutescu/renamer.nvim' },
   { 'kovetskiy/sxhkd-vim' },
   -- Latex live view
-  { 'xuhdev/vim-latex-live-preview' },
+  -- { 'xuhdev/vim-latex-live-preview' },
   -- Fancy error virtual text
   {
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
