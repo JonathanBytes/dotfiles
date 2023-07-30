@@ -33,6 +33,7 @@ systemctl set-default graphical.target
 nala install feh kitty rofi thunar python3-pip python3-full python3-yaml pipx lxpolkit x11-xserver-utils unzip wget pipewire-audio qpwgraph pavucontrol build-essential libx11-dev bspwm polybar ranger neovim curl ninja-build meson arandr autorandr libssl-dev -y
 curl -LO https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Debian12.deb
 nala install -y ./wezterm-nightly.Debian12.deb
+rm wezterm-nightly.Debian12.deb
 nala install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libev-dev libx11-xcb-dev libpcre3-dev cmake -y
 git clone https://github.com/jonaburg/picom
 cd picom
@@ -40,6 +41,7 @@ meson --buildtype=release . build
 ninja -C build
 # To install the binaries in /usr/local/bin (optional)
 ninja -C build install
+
 cd $builddir
 
 # Installing Other less important Programs
@@ -48,10 +50,3 @@ echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | tee /etc/apt
 nala update
 nala install notion-app-enhanced -y
 # SDDM theme
-
-cd $builddir 
-nala install fonts-font-awesome fonts-roboto -y
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip
-unzip FiraCode.zip -d /home/$username/.fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip
-unzip CascadiaCode.zip -d /home/$username/.fonts
