@@ -1,7 +1,7 @@
 #!/bin/bash
 
 builddir=$(pwd)
-sudo find . -mindepth 1 -maxdepth 1 ! -name '.config' ! -name 'wallpapers' ! -name '.git' ! -name 'usr' ! -name 'etc' ! -name 'README.md' ! -name 'installer' ! -name 'picom' ! -name '70-synaptics.conf' -execdir sh -c 'username=$(id -u -n 1000) && ln -s "$(realpath "$0")" "/home/$username/$0"' {} \;
+find . -mindepth 1 -maxdepth 1 ! -name '.config' ! -name 'wallpapers' ! -name '.git' ! -name 'usr' ! -name 'etc' ! -name 'README.md' ! -name 'installer' ! -name 'picom' ! -name '70-synaptics.conf' -execdir sh -c 'username=$(id -u -n 1000) && ln -s "$(realpath "$0")" "/home/$username/$0"' {} \;
 arandr
 autorandr --save undock --default
 curl -fsSL https://fnm.vercel.app/install | bash
