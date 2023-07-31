@@ -30,7 +30,7 @@ sddm --example-config > sddm.conf
 mv sddm.conf /etc/
 systemctl enable sddm
 systemctl set-default graphical.target
-nala install feh kitty rofi thunar python3-pip python3-full python3-yaml pipx lxpolkit x11-xserver-utils unzip wget pipewire-audio qpwgraph pavucontrol build-essential libx11-dev bspwm polybar ranger neovim curl ninja-build meson arandr autorandr libssl-dev -y
+nala install feh kitty rofi thunar xutils xinput python3-pip python3-full python3-yaml pipx lxpolkit x11-xserver-utils unzip wget pipewire-audio qpwgraph pavucontrol build-essential libx11-dev bspwm polybar ranger neovim curl ninja-build meson arandr autorandr libssl-dev -y
 curl -LO https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Debian12.deb
 nala install -y ./wezterm-nightly.Debian12.deb
 rm wezterm-nightly.Debian12.deb
