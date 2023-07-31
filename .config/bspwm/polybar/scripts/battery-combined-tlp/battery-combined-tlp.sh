@@ -7,5 +7,10 @@ then
   echo ""
 else
   battery=$(acpi -i | head -n 1 | awk '{print $4}' | sed 's/.$//;s/.$//')
-  echo " $battery %"
+  if [ $battery == 100 ]
+  then
+    echo "100 %"
+  else
+    echo " $battery %"
+  fi
 fi
