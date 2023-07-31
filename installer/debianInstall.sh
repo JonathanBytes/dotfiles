@@ -45,7 +45,8 @@ ninja -C build install
 cd $builddir
 
 # Installing Other less important Programs
-nala install neofetch firefox-esr btop cmatrix nsnake oneko -y
+nala install tree zsh neofetch firefox-esr btop cmatrix nsnake oneko -y
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | tee /etc/apt/sources.list.d/notion-repackaged.list
 nala update
 nala install notion-app-enhanced -y
