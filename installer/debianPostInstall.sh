@@ -3,13 +3,14 @@
 builddir=$(pwd)
 find . -mindepth 1 -maxdepth 1 ! -name '.config' ! -name 'wallpapers' ! -name '.git' ! -name 'usr' ! -name 'etc' ! -name 'README.md' ! -name 'installer' ! -name 'picom' ! -name '70-synaptics.conf' -execdir sh -c 'username=$(id -u -n 1000) && ln -s "$(realpath "$0")" "/home/$username/$0"' {} \;
 arandr
-autorandr --save undock --default
+autorandr --save undock 
+autorandr --default undock
 curl -fsSL https://fnm.vercel.app/install | bash
 source /home/$USER/.bashrc
-fnm install --lts
+$HOME/.local/share/fnm/fnm install --lts
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source /home/$USER/.cargo/env
-cargo add openssl
+$HOME/.cargo/bin/cargo add openssl
 
 cd /usr/local/bin
 sudo git clone https://github.com/seamus-45/roficlip.git

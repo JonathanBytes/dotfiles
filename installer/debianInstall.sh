@@ -20,7 +20,7 @@ apt install nala -y
 cd $builddir
 mkdir -p /home/$username/Pictures
 mkdir -p /home/$username/.config
-ln -s $builddir/.config/* /home/$username/.configud
+ln -s $builddir/.config/* /home/$username/.config
 ln -s $builddir/wallpapers/ /home/$username/Pictures/
 chown -R $username:$username /home/$username
 
@@ -50,3 +50,5 @@ echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | tee /etc/apt
 nala update
 nala install notion-app-enhanced -y
 # SDDM theme
+
+reboot
