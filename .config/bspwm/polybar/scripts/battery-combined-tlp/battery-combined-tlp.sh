@@ -10,6 +10,9 @@ else
   if [ $battery == 100 ]
   then
     echo " 100%"
+  elif [ $battery == "chargin" ]
+  then
+    echo " Connecting"
   else
     echo " $battery%"
   fi
