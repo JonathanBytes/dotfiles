@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 state=$(cat /home/jonathan/.config/bspwm/polybar/scripts/battery-combined-tlp/var)
 
