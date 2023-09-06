@@ -199,7 +199,7 @@ alias iraf='ecl'
 alias docStart='cp ~/LaTex/* .'
 
 # Ngrok deployment
-alias deploy='ngrok http --domain=flounder-optimum-dassie.ngrok-free.app'
+alias deploy='ngrok http --domain=wombat-grown-walrus.ngrok-free.app'
 
 # Create directory and cd to it
 mkcdir ()
