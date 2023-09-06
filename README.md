@@ -14,7 +14,9 @@ This is a work in progress :hammer: (and my first) dotfiles repo. Please be kind
 
 Installation script:
 
-`curl -L https://jonathanbytes.com/install | bash`
+```bash
+curl -L https://jonathanbytes.com/install | bash
+```
 > Only for debian, for now.
 
 
