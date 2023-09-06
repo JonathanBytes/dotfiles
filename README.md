@@ -12,6 +12,12 @@ dotfiles based on [`bspwm`](https://github.com/baskerville/bspwm) window manager
 
 This is a work in progress :hammer: (and my first) dotfiles repo. Please be kind with me 😅
 
+Installation script:
+
+`curl -L https://jonathanbytes.com/install | bash`
+> Only for debian, for now.
+
+
 ## :package: Contents 
 
   - [:package: Contents](#package-contents)
