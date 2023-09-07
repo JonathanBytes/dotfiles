@@ -30,7 +30,7 @@ sddm --example-config > sddm.conf
 mv sddm.conf /etc/
 systemctl enable sddm
 systemctl set-default graphical.target
-nala install feh kitty rofi thunar xutils xinput python3-pip python3-full python3-yaml pipx lxpolkit x11-xserver-utils unzip wget pipewire-audio qpwgraph pavucontrol build-essential libx11-dev bspwm polybar ranger neovim curl ninja-build meson arandr autorandr libssl-dev -y
+nala install acpi bat feh kitty rofi thunar xutils xinput python3-pip python3-full python3-yaml pipx lxpolkit x11-xserver-utils unzip wget pipewire-audio qpwgraph pavucontrol build-essential libx11-dev bspwm polybar ranger curl ninja-build meson arandr autorandr libssl-dev -y
 curl -LO https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Debian12.deb
 nala install -y ./wezterm-nightly.Debian12.deb
 rm wezterm-nightly.Debian12.deb
@@ -43,10 +43,19 @@ ninja -C build
 ninja -C build install
 
 cd $builddir
-
 # Installing Other less important Programs
-nala install tree zsh neofetch firefox-esr btop cmatrix nsnake oneko -y
+ 
+wget https://raw.githubusercontent.com/unxsh/nitch/main/setup.sh && sh setup.sh
+git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git
+cd pokemon-colorscripts
+sudo ./install.sh
+
+cd $builddir
+
+nala install exa trash-cli tree zsh neofetch firefox-esr btop cmatrix nsnake oneko zsh-autosuggestions zsh-syntax-highlighting -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | tee /etc/apt/sources.list.d/notion-repackaged.list
 nala update
 nala install notion-app-enhanced -y

@@ -86,7 +86,7 @@ lvim.plugins = {
   -- HTML live server
   {
     "turbio/bracey.vim",
-    run = "npm install --prefix server",
+    build = "npm install --prefix server",
     config = function()
       vim.g.bracey_server_allow_remote_connections = 1
       vim.g.bracey_refresh_on_save = 1
@@ -95,7 +95,7 @@ lvim.plugins = {
   -- Code minimap
   {
     'wfxr/minimap.vim',
-    run = "cargo install --locked code-minimap",
+    build = "cargo install --locked code-minimap",
     -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
     config = function()
       -- vim.cmd("let g:minimap_auto_start = 1")
@@ -129,7 +129,7 @@ lvim.plugins = {
   -- Markdown preview
   {
     "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
+    build = function() vim.fn["mkdp#util#install"]() end,
   },
   -- Uptime extension wakatime
   { 'wakatime/vim-wakatime' },
@@ -146,7 +146,7 @@ lvim.plugins = {
   -- { 'xuhdev/vim-latex-live-preview' },
   -- Fancy error virtual text
   {
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    url = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
     config = function()
       require("lsp_lines").setup()
     end,
@@ -247,4 +247,4 @@ vim.diagnostic.config({
   virtual_text = false,
 })
 vim.diagnostic.config({ virtual_lines = true })
-lvim.lsp.diagnostics.virtual_text = false
+vim.diagnostic.config({ virtual_text = false })

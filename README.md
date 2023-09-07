@@ -16,6 +16,9 @@ Installation script:
 
 ```bash
 curl -L https://jonathanbytes.com/install | bash
+
+# or with wget
+wget -O - https://jonathanbytes.com/install | bash
 ```
 > Only for debian, for now.
 

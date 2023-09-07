@@ -8,9 +8,15 @@ autorandr --default undock
 curl -fsSL https://fnm.vercel.app/install | bash
 source /home/$USER/.bashrc
 $HOME/.local/share/fnm/fnm install --lts
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source /home/$USER/.cargo/env
 $HOME/.cargo/bin/cargo add openssl
+$HOME/.cargo/bin/cargo install --git https://github.com/MordechaiHadad/bob.git
+bob install stable
+bob use stable
+sudo nala install python3-neovim
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 
 cd /usr/local/bin
 sudo git clone https://github.com/seamus-45/roficlip.git
@@ -20,7 +26,7 @@ pip install docopt pyxdg pygobject pyyaml notify2 --break-system-packages
 systemctl --user --now enable wireplumber.service
 
 cd $builddir 
-nala install fonts-font-awesome fonts-roboto -y
+sudo nala install fonts-font-awesome fonts-roboto -y
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip
 unzip FiraCode.zip -d /home/$USER/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip

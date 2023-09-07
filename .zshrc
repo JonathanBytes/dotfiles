@@ -6,6 +6,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$PATH:$HOME/.spicetify"
 export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
 export VISUAL=lvim
 export EDITOR="$VISUAL"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -23,6 +24,8 @@ export iraf=home/jonathan/Downloads/irafInstaller/iraf-2.17/
 export PATH=$HOME/Downloads/ds9Installer/SAOImageDS9/bin/:$PATH
 export PYTHONPATH=$HOME/.local/lib/python3.10/site-packages:$PYTHONPATH
 
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+
 # zsh parameter completion for the dotnet CLI
 
 _dotnet_zsh_complete()
@@ -38,6 +41,7 @@ compctl -K _dotnet_zsh_complete dotnet
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ 
 ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
@@ -103,11 +107,9 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  autojump
-  zsh-autosuggestions
-  zsh-syntax-highlighting
   )
-
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
