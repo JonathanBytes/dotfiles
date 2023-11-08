@@ -218,3 +218,21 @@ elif [[ $number == 1 ]]; then
 else
   {nitch}
 fi
+
+# bun completions
+[ -s "/home/jonathan/.bun/_bun" ] && source "/home/jonathan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/jonathan/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+# fnm
+export PATH="/home/jonathan/.local/share/fnm:$PATH"
+eval "`fnm env`"
