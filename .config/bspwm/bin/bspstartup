@@ -16,4 +16,7 @@ bash $HOME/.config/bspwm/bin/bsprules.sh
 # Script for random wallpapers
 $HOME/.config/bspwm/bin/randomWallpaper &
 
+# Battery notification when low
+$HOME/.config/bspwm/bin/batterylow &
+
 $HOME/.config/bspwm/bin/bspbar
