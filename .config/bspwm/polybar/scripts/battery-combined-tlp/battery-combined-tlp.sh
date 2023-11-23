@@ -12,7 +12,7 @@ else
     echo " 100%"
   elif [ $battery == "chargin" ]
   then
-    echo " ..."
+    echo "  "
   else
     echo " $battery%"
   fi
