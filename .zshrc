@@ -23,6 +23,7 @@ export iraf=home/jonathan/Downloads/irafInstaller/iraf-2.17/
 
 export PATH=$HOME/Downloads/ds9Installer/SAOImageDS9/bin/:$PATH
 export PYTHONPATH=$HOME/.local/lib/python3.10/site-packages:$PYTHONPATH
+export EIGEN3_INCLUDE_DIR=/usr/include/eigen3
 
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
@@ -236,3 +237,18 @@ esac
 # fnm
 export PATH="/home/jonathan/.local/share/fnm:$PATH"
 eval "`fnm env`"
+# pip zsh completion start
+#compdef -P pip[0-9.]#
+__pip() {
+  compadd $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$((CURRENT-1)) \
+             PIP_AUTO_COMPLETE=1 $words[1] 2>/dev/null )
+}
+if [[ $zsh_eval_context[-1] == loadautofunc ]]; then
+  # autoload from fpath, call function directly
+  __pip "$@"
+else
+  # eval/source/. command, register function for later
+  compdef __pip -P 'pip[0-9.]#'
+fi
+# pip zsh completion end

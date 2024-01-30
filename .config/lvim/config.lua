@@ -11,12 +11,12 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
-vim.opt.rnu = true -- Relative number
-vim.opt.wrap = true -- Word wrap
-vim.opt.cmdheight = 1 -- Reduce Bottom gap
-lvim.builtin.treesitter.rainbow.enable = true -- Rainbow parentesis
+vim.opt.rnu = true                                                                       -- Relative number
+vim.opt.wrap = true                                                                      -- Word wrap
+vim.opt.cmdheight = 1                                                                    -- Reduce Bottom gap
+lvim.builtin.treesitter.rainbow.enable = true                                            -- Rainbow parentesis
 lvim.builtin.which_key.mappings["o"] = { "<cmd>set spell!<CR>", "Toggle word spelling" } -- Spelling
-vim.opt.spelllang = { 'es' } -- Spelling
+vim.opt.spelllang = { 'es' }                                                             -- Spelling
 
 -- Editing default keymapping
 lvim.keys.normal_mode["<leader>f"] = false
@@ -50,7 +50,8 @@ lvim.plugins = {
   { "morhetz/gruvbox", },
   -- { 'lifepillar/vim-gruvbox8' },
   { 'eddyekofo94/gruvbox-flat.nvim' },
-  { 'p00f/nvim-ts-rainbow',
+  {
+    'p00f/nvim-ts-rainbow',
     config = function()
       require("nvim-treesitter.configs").setup {
         highlight = {
@@ -155,14 +156,15 @@ lvim.plugins = {
   { 'matze/vim-tex-fold' },
   -- Coc for emojis
   -- { 'neoclide/coc.nvim' },
-  { "max397574/better-escape.nvim",
+  {
+    "max397574/better-escape.nvim",
     config = function()
       require("better_escape").setup
       {
-        mapping = { "jk", "jj" }, -- a table with mappings to use
+        mapping = { "jk", "jj" },   -- a table with mappings to use
         timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
-        clear_empty_lines = false, -- clear line after escaping if there is only whitespace
-        keys = "<Esc>", -- keys used for escaping, if it is a function will use the result everytime
+        clear_empty_lines = false,  -- clear line after escaping if there is only whitespace
+        keys = "<Esc>",             -- keys used for escaping, if it is a function will use the result everytime
         -- example(recommended)
         -- keys = function()
         --   return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
@@ -175,9 +177,9 @@ lvim.plugins = {
 ----------------------------------------------------
 
 require("nvim-surround").setup() -- Surround
-require("renamer").setup() -- Renamer
+require("renamer").setup()       -- Renamer
 lvim.keys.insert_mode["<F2>"] = { "<cmd>lua require(\"renamer\").rename()<cr>", { noremap = true, silent = true } }
-require 'colorizer'.setup() -- Colorizer
+require 'colorizer'.setup()      -- Colorizer
 
 -- Colorscheme
 lvim.colorscheme = "gruvbox-flat"
@@ -189,9 +191,9 @@ vim.cmd("let g:minimap_width = 8")
 
 -- Jump to line :number
 require('numb').setup {
-  show_numbers = true, -- Enable 'number' for the window while peeking
-  show_cursorline = true, -- Enable 'cursorline' for the window while peeking
-  number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
+  show_numbers = true,     -- Enable 'number' for the window while peeking
+  show_cursorline = true,  -- Enable 'cursorline' for the window while peeking
+  number_only = false,     -- Peek only when the command is only a number instead of when it starts with a number
   centered_peeking = true, -- Peeked line will be centered relative to window
 }
 -- Init Hop
@@ -223,8 +225,8 @@ nmap <2-LeftMouse> <Plug>(openbrowser-open)
 ]]
 
 lvim.builtin.which_key.mappings["ss"] = { "<cmd>HopChar2 <cr>", "Hop 2 Char fast motion" } -- Better motion keymap
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>" -- Save
-lvim.keys.normal_mode["<C-a>"] = ":%y+<cr>" -- Copy all buffer
+lvim.keys.normal_mode["<C-s>"] = ":w<cr>"                                                  -- Save
+lvim.keys.normal_mode["<C-a>"] = ":%y+<cr>"                                                -- Copy all buffer
 lvim.builtin.which_key.mappings["m"] = { "<cmd>MinimapToggle <cr>", "Toggle Minimap" }
 -- lvim.keys.normal_mode["<F5>"] = ":w<CR>:ter python3 %<CR>" -- Run python file
 lvim.keys.normal_mode["<F6>"] = ":w<CR>:ter mcs % <CR>" -- compile c# file, mono name.exe to run the compiled file

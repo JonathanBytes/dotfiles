@@ -362,6 +362,18 @@ label-padding = 3
 
 ;; Custom modules
 
+[module/toggleAwtrix]
+
+type = custom/script
+tail = true
+label-foreground = ${color.CYAN}
+label-background = ${color.BACKGROUND}
+label-font = 1
+interval = 2.0
+
+exec = ~/.config/bspwm/polybar/scripts/toggleAwtrix-icon.sh &
+click-left = ~/.config/bspwm/polybar/scripts/toggleAwtrix.sh
+
 [module/toggletouchpad]
 
 type = custom/script

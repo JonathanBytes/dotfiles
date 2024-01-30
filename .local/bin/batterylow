@@ -1,5 +1,5 @@
 #!/bin/bash
 while true; do
-  [ $(cat /sys/class/power_supply/BAT0/capacity) -lt 15 ] && [ "$(cat /sys/class/power_supply/BAT0/status)" = "Discharging" ] && export DISPLAY=:0.0 && notify-send -u critical "BATTERY LOW $(cat /sys/class/power_supply/BAT0/capacity)% REMAINING (cárgalo mi bro)" && sleep 5 && pkill dunst
+  [ $(cat /sys/class/power_supply/BAT0/capacity) -lt 15 ] && [ "$(cat /sys/class/power_supply/BAT0/status)" = "Discharging" ] && export DISPLAY=:0.0 && notify-send -u critical "BATTERY LOW $(cat /sys/class/power_supply/BAT0/capacity)% REMAINING (cárgalo lindo :3)" && sleep 5 && pkill dunst
   sleep 5
 done

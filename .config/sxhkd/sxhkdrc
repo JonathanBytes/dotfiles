@@ -50,8 +50,8 @@ super + {w,m,x,r,s,i}
 ##---------- Applications ----------##
 
 # Launch Apps
-super + shift + {b,f,e,k,n}
-	{brave,firefox,Thunar,gnome-calendar,xournalpp}
+super + shift + {b,f,e,n}
+	{brave,firefox,Thunar,xournalpp}
 
 # Terminal Apps
 ctrl + alt + {v,n,r,h,b}
@@ -147,7 +147,7 @@ super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
 # Send the window to another edge of the screen
-super + {_,shift + }{Left,Down,Up,Right}
+super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # Change focus to next window, including floating window
