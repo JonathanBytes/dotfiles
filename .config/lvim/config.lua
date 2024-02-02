@@ -75,7 +75,7 @@ lvim.plugins = {
     branch = 'v2', -- optional but strongly recommended
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
-      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   },
   {
@@ -104,15 +104,11 @@ lvim.plugins = {
     end,
   },
   -- Indent line
-  -- {
-  --   'lukas-reineke/indent-blankline.nvim',
-  --   config = function()
-  --     require('indent-blankline').setup {
-  --       show_current_context = true,
-  --       show_current_context_start = true,
-  --     }
-  --   end,
-  -- },
+  -- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = "ibl",
+  },
   -- Simply scrollbar
   {
     'Xuyuanp/scrollbar.nvim',
@@ -124,9 +120,24 @@ lvim.plugins = {
   { 'nvim-telescope/telescope-dap.nvim' },
   { 'mfussenegger/nvim-dap-python' },
   -- Surrounding ys ds cs (you, delete and change surround)
-  { 'kylechui/nvim-surround' },
+  {
+    'kylechui/nvim-surround',
+    config = function()
+      require("nvim-surround").setup()
+    end
+  },
   -- Numb, jump to line while :number
-  { 'nacro90/numb.nvim' },
+  {
+    'nacro90/numb.nvim',
+    config = function()
+      require('numb').setup {
+        show_numbers = true,     -- Enable 'number' for the window while peeking
+        show_cursorline = true,  -- Enable 'cursorline' for the window while peeking
+        number_only = false,     -- Peek only when the command is only a number instead of when it starts with a number
+        centered_peeking = true, -- Peeked line will be centered relative to window
+      }
+    end
+  },
   -- Markdown preview
   {
     "iamcco/markdown-preview.nvim",
@@ -135,13 +146,23 @@ lvim.plugins = {
   -- Uptime extension wakatime
   { 'wakatime/vim-wakatime' },
   -- Colorizer
-  { 'norcalli/nvim-colorizer.lua' },
+  {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require 'colorizer'.setup()
+    end
+  },
   -- Open URLs
   { 'tyru/open-browser.vim' },
   -- Liveview html
   { 'tamago324/vim-browsersync' },
   -- Rename names
-  { 'filipdutescu/renamer.nvim' },
+  {
+    'filipdutescu/renamer.nvim',
+    config = function()
+      require("renamer").setup()
+    end
+  },
   { 'kovetskiy/sxhkd-vim' },
   -- Latex live view
   -- { 'xuhdev/vim-latex-live-preview' },
@@ -173,13 +194,22 @@ lvim.plugins = {
     end,
   },
   { 'voldikss/vim-mma' },
+  {
+    'xiyaowong/telescope-emoji.nvim',
+    config = function()
+      require("telescope").load_extension("emoji")
+    end
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
 }
 ----------------------------------------------------
 
-require("nvim-surround").setup() -- Surround
-require("renamer").setup()       -- Renamer
 lvim.keys.insert_mode["<F2>"] = { "<cmd>lua require(\"renamer\").rename()<cr>", { noremap = true, silent = true } }
-require 'colorizer'.setup()      -- Colorizer
 
 -- Colorscheme
 lvim.colorscheme = "gruvbox-flat"
@@ -188,16 +218,6 @@ vim.g.gruvbox_transparent = true
 
 -- Minimap config
 vim.cmd("let g:minimap_width = 8")
-
--- Jump to line :number
-require('numb').setup {
-  show_numbers = true,     -- Enable 'number' for the window while peeking
-  show_cursorline = true,  -- Enable 'cursorline' for the window while peeking
-  number_only = false,     -- Peek only when the command is only a number instead of when it starts with a number
-  centered_peeking = true, -- Peeked line will be centered relative to window
-}
--- Init Hop
-require('hop').setup()
 
 -- Scrollbar setup
 vim.cmd [[
@@ -243,10 +263,11 @@ lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_z = {}
 
-require("lsp_lines").setup()
 -- Disable virtual_text since it's redundant due to lsp_lines.
 vim.diagnostic.config({
   virtual_text = false,
 })
 vim.diagnostic.config({ virtual_lines = true })
 vim.diagnostic.config({ virtual_text = false })
+
+lvim.keys.normal_mode["<leader>se"] = ":Telescope emoji<CR>"
