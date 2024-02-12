@@ -46,8 +46,8 @@ lvim.builtin.treesitter.ensure_installed = {
 -- Additional Plugins
 lvim.plugins = {
   -- Colorscheme
-  { "sainnhe/gruvbox-material", },
-  { "morhetz/gruvbox", },
+  -- { "sainnhe/gruvbox-material", },
+  -- { "morhetz/gruvbox", },
   -- { 'lifepillar/vim-gruvbox8' },
   { 'eddyekofo94/gruvbox-flat.nvim' },
   {

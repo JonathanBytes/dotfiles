@@ -136,7 +136,7 @@
   <property name="font" font="Sans" size="12"/>
   <data name="buttonConfig">
     <data name="default">
-      <attribute name="color" type="hex" value="ff000000"/>
+      <attribute name="color" type="hex" value="ff241f31"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="size" type="string" value="thin"/>
       <attribute name="tool" type="string" value="pen"/>
@@ -188,6 +188,14 @@
       <attribute name="deviceClass" type="int" value="0"/>
       <attribute name="deviceSource" type="int" value="8"/>
     </data>
+    <data name="HUION Huion Tablet Pen">
+      <attribute name="deviceClass" type="int" value="2"/>
+      <attribute name="deviceSource" type="int" value="1"/>
+    </data>
+    <data name="HUION Huion Tablet Pen (Eraser)">
+      <attribute name="deviceClass" type="int" value="3"/>
+      <attribute name="deviceSource" type="int" value="2"/>
+    </data>
     <data name="HUION Huion Tablet Pen stylus">
       <attribute name="deviceClass" type="int" value="2"/>
       <attribute name="deviceSource" type="int" value="1"/>
@@ -222,7 +230,7 @@
     </data>
   </data>
   <data name="tools">
-    <attribute name="current" type="string" value="pen"/>
+    <attribute name="current" type="string" value="selectRect"/>
     <data name="drawArrow">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
@@ -264,7 +272,7 @@
       <attribute name="drawingType" type="string" value="strokeRecognizer"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
-      <attribute name="size" type="string" value="VERY_BIG"/>
+      <attribute name="size" type="string" value="THIN"/>
       <attribute name="style" type="string" value="plain"/>
     </data>
     <data name="playObject">

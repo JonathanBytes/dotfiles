@@ -6,7 +6,7 @@ scheme.background = '#282828'
 return {
   font = wezterm.font {
     -- family = 'FiraCode Nerd Font',
-    family = 'CaskaydiaCove Nerd Font Mono',
+    family = 'CaskaydiaCove Nerd Font',
   },
   font_size = 13.0,
   color_schemes = {
