@@ -29,6 +29,7 @@
     "notifications",
     "mpris",
     "volume",
+    "backlight",
     "buttons-grid"
   ],
   "widget-config": {
@@ -49,8 +50,10 @@
       "image-radius": 7
     },
     "volume": {
-      "label": "󰕾",
-      "show-per-app": true
+      "label": "󰕾"
+    },
+    "backlight": {
+      "label": "󰖨"
     },
     "buttons-grid": {
       "actions": [

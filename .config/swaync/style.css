@@ -90,7 +90,7 @@
 .control-center {
     background: @cc-bg;
     border: 2px solid #85796f;
-    border-radius: 0px;
+    border-radius: 10px;
 }
  
 .control-center-list {
@@ -170,32 +170,10 @@
     color: @text-color;
 }
  
-.widget-mpris {
-    color: @text-color;
-    background: @noti-bg-darker;
-    padding: 5px 10px 0px 0px;
-    margin: 5px 10px 5px 10px;
-    border-radius: 0px;
-}
- 
-.widget-mpris > box > button {
-    border-radius: 5px;
-}
- 
 .widget-mpris-player {
-    padding: 5px 10px;
-    margin: 10px
+  box-shadow: none;
 }
- 
-.widget-mpris-title {
-    font-weight: 700;
-    font-size: 1.25rem
-}
- 
-.widget-mpris-subtitle {
-    font-size: 1.1rem
-}
- 
+
 .widget-buttons-grid {
     font-size: x-large;
     padding: 5px;
@@ -208,7 +186,7 @@
     margin: 2px;
     padding: 5px;
     background: @cc-bg;
-    border-radius: 5px;
+    border-radius: 10px;
     color: @text-color;
 }
  
