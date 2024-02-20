@@ -1,11 +1,6 @@
 [user]
 	email = jonathancardonaramirez@gmail.com
 	name = Jonathan ArchDell
-[credential]
-	helper = store
-	helper = 
-	helper = /usr/bin/git-credential-manager
-	credentialStore = gpg
 [init]
 	defaultBranch = main
 [core]
@@ -25,10 +20,3 @@
     added = yellow
     changed = green
     untracked = cyan
-[safe]
-	directory = /usr/share/webapps/jonathanbytesWeb
-	directory = /usr/share/webapps/jonathanbytesWeb
-	directory = /usr/share/webapps/jonathanbytes
-	directory = /usr/share/webapps/jonathanbytes
-[credential "https://dev.azure.com"]
-	useHttpPath = true
