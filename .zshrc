@@ -102,7 +102,8 @@ else
 fi
 
 # Bun
-[ -s "/home/jonathan/.bun/_bun" ] && source "/home/jonathan/.bun/_bun"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/home/jonathan/.local/share/pnpm"
@@ -176,8 +177,8 @@ alias docStart='cp ~/LaTeX/* .'
 # Deployment
 alias deploy='ngrok http --domain=wombat-grown-walrus.ngrok-free.app'
 
-# Autojump
-alias j='autojump'
+# Zoxide Init
+eval "$(zoxide init zsh)"
 
 # Create Dir And CD To It
 mkcdir () {
@@ -186,3 +187,4 @@ mkcdir () {
 }
 
 # End Of File
+
