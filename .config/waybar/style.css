@@ -1,0 +1,242 @@
+* {
+	border: none;
+	border-radius: 10px;
+  font-family: "CaskaydiaCove Nerd Font";
+	font-size: 14px;
+  /* padding: 2px; */
+	/* min-height: 10px; */
+}
+
+window#waybar {
+	background: transparent;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+#workspaces {
+	margin-top: 8px;
+	margin-left: 8px;
+	margin-bottom: 0px;
+  padding: 0px;
+	color: #161320;
+	background: #DDB6F2;
+}
+
+#workspaces button {
+  padding: 2px 8px 0px 4px;
+  color: #161320;
+}
+
+#workspaces button.empty {
+  color: #161320;
+  background: #F2CDCD;
+}
+
+#workspaces button.visible {
+  color: #161320;
+  background: #ABE9B3;
+}
+
+#workspaces button.active {
+  color: #161320;
+  background: #96CDFB;
+}
+
+#workspaces button.urgent {
+  color: #161320;
+  background: #BF616A;
+}
+
+#network {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #bd93f9;
+}
+
+#pulseaudio {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #1A1826;
+	background: #FAE3B0;
+}
+
+#battery {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #B5E8E0;
+}
+
+#battery.charging, #battery.plugged {
+	color: #161320;
+    background-color: #B5E8E0;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #B5E8E0;
+    color: #161320;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #BF616A;
+        color: #B5E8E0;
+    }
+}
+
+#backlight {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #F8BD96;
+}
+#clock {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #ABE9B3;
+	/*background: #1A1826;*/
+}
+
+#memory {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #DDB6F2;
+}
+#cpu {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #96CDFB;
+}
+
+#tray {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+	color: #B5E8E0;
+	background: #161320;
+}
+
+#custom-launcher {
+	font-size: 14px;
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 15px;
+	border-radius: 10px;
+	transition: none;
+  color: #89DCEB;
+  background: #161320;
+}
+
+#custom-power {
+	font-size: 14px;
+	margin-top: 8px;
+  margin-left: 8px;
+  margin-right: 10px;
+	padding-left: 10px;
+	padding-right: 15px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #F28FAD;
+}
+
+#custom-wallpaper {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #C9CBFF;
+}
+
+#custom-updates {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #E8A2AF;
+}
+
+#custom-media {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #F2CDCD;
+}
+
+#custom-notification {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #C9CBFF;
+}

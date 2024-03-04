@@ -1,0 +1,116 @@
+{
+	"layer": "top",
+	"modules-left": ["custom/launcher","hyprland/workspaces","cpu","memory","custom/media","custom/updates","tray"],
+	"modules-center": ["clock","custom/notification"],
+	"modules-right": ["custom/wallpaper","backlight","pulseaudio","network","battery","custom/power"],
+	"hyprland/workspaces": {
+	"format": "{icon}",
+	"format-icons": {
+		"active": "",
+		"default": ""
+    }
+  },
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-muted": "{icon} {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "", ""]
+		}
+	},
+	"network": {
+		"tooltip": false,
+		"format-wifi": "  {essid}",
+		"format-ethernet": "󰈀  {interface}"
+	},
+	"backlight": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval":1,
+        "on-scroll-up": "brightnessctl s 1%- -q",
+		"on-scroll-down": "brightnessctl s 1%+ -q",
+	},
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+	"tray":{
+		"icon-size":18,
+		"spacing": 10
+	},
+    "clock": {
+        "format": "{: %I:%M %p   %d/%m/%Y}"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "custom/media": {
+        "interval": 30,
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 20,
+        "format-icons": {
+            "spotify": " ",
+            "default": " "
+        },
+        "escape": true,
+        "exec": "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null",
+        "on-click": "playerctl play-pause"
+    },
+    "custom/launcher":{
+        "format": "",
+        "on-click": "wofi --show drun",
+        "on-click-right": "killall rofi"
+    },
+    "custom/power":{
+        "format": "",
+        "on-click": "$HOME/.config/wlogout/wlogoutLaunch.sh 2",
+    },
+    "custom/updates":{
+        "format": "{}",
+        "exec": "$HOME/.config/waybar/scripts/checkUpdates",
+        "interval": 30,
+        "on-click": "wezterm start yay -Syu && notify-send 'The system has been updated' "
+    },
+    "custom/wallpaper":{
+        "format":" ",
+        "on-click": "bash ~/.config/system_scripts/pkill_bc"
+    },
+      "custom/notification": {
+    "tooltip": false,
+    "format": "{icon} {}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+}
