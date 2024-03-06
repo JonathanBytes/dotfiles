@@ -1,3 +1,5 @@
+@import "themes/Gruvbox-Retro.css";
+
 * {
 	border: none;
 	border-radius: 10px;
@@ -22,33 +24,33 @@ window#waybar.hidden {
 	margin-left: 8px;
 	margin-bottom: 0px;
   padding: 0px;
-	color: #161320;
-	background: #DDB6F2;
+	color: @base01;
+	background: @base0E;
 }
 
 #workspaces button {
   padding: 2px 8px 0px 4px;
-  color: #161320;
+  color: @base06;
 }
 
 #workspaces button.empty {
-  color: #161320;
-  background: #F2CDCD;
+  color: @base01;
+  background: @base03;
 }
 
 #workspaces button.visible {
-  color: #161320;
-  background: #ABE9B3;
+  color: @base01;
+  background: @base0C;
 }
 
 #workspaces button.active {
-  color: #161320;
-  background: #96CDFB;
+  color: @base01;
+  background: @base0D;
 }
 
 #workspaces button.urgent {
-  color: #161320;
-  background: #BF616A;
+  color: @base01;
+  background: @base09;
 }
 
 #network {
@@ -59,8 +61,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #bd93f9;
+	color: @base01;
+	background: @base0E;
 }
 
 #pulseaudio {
@@ -71,8 +73,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #1A1826;
-	background: #FAE3B0;
+	color: @base01;
+	background: @base0A;
 }
 
 #battery {
@@ -83,18 +85,18 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #B5E8E0;
+	color: @base01;
+	background: @base0B;
 }
 
 #battery.charging, #battery.plugged {
-	color: #161320;
-    background-color: #B5E8E0;
+	color: @base01;
+    background-color: @base0C;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #B5E8E0;
-    color: #161320;
+    background-color: @base08;
+    color: @base01;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -104,8 +106,8 @@ window#waybar.hidden {
 
 @keyframes blink {
     to {
-        background-color: #BF616A;
-        color: #B5E8E0;
+        background-color: @base08;
+        color: @base01;
     }
 }
 
@@ -117,8 +119,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #F8BD96;
+	color: @base01;
+	background: @base0F;
 }
 #clock {
 	margin-top: 8px;
@@ -128,8 +130,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #ABE9B3;
+	color: @base01;
+	background: @base0C;
 	/*background: #1A1826;*/
 }
 
@@ -141,8 +143,8 @@ window#waybar.hidden {
 	padding-right: 10px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #DDB6F2;
+	color: @base01;
+	background: @base0E;
 }
 #cpu {
 	margin-top: 8px;
@@ -152,8 +154,8 @@ window#waybar.hidden {
 	padding-right: 10px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #96CDFB;
+	color: @base01;
+	background: @base0D;
 }
 
 #tray {
@@ -164,8 +166,8 @@ window#waybar.hidden {
 	padding-right: 10px;
 	border-radius: 10px;
 	transition: none;
-	color: #B5E8E0;
-	background: #161320;
+	color: @base0D;
+	background: @base01;
 }
 
 #custom-launcher {
@@ -176,8 +178,8 @@ window#waybar.hidden {
 	padding-right: 15px;
 	border-radius: 10px;
 	transition: none;
-  color: #89DCEB;
-  background: #161320;
+  color: @base0D;
+  background: @base01;
 }
 
 #custom-power {
@@ -189,8 +191,8 @@ window#waybar.hidden {
 	padding-right: 15px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #F28FAD;
+	color: @base01;
+	background: @base0F;
 }
 
 #custom-wallpaper {
@@ -201,8 +203,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #C9CBFF;
+	color: @base01;
+	background: @base0D;
 }
 
 #custom-updates {
@@ -213,8 +215,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #E8A2AF;
+	color: @base01;
+	background: @base0E;
 }
 
 #custom-media {
@@ -225,8 +227,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #F2CDCD;
+	color: @base01;
+	background: @base0E;
 }
 
 #custom-notification {
@@ -237,6 +239,6 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #C9CBFF;
+	color: @base01;
+	background: @base0D;
 }
