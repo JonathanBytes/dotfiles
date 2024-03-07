@@ -46,12 +46,10 @@ lvim.builtin.treesitter.ensure_installed = {
 -- Additional Plugins
 lvim.plugins = {
   -- Colorscheme
-  -- { "sainnhe/gruvbox-material", },
-  -- { "morhetz/gruvbox", },
-  -- { 'lifepillar/vim-gruvbox8' },
   { 'eddyekofo94/gruvbox-flat.nvim' },
   {
     'p00f/nvim-ts-rainbow',
+    event = 'VeryLazy',
     config = function()
       require("nvim-treesitter.configs").setup {
         highlight = {
@@ -72,30 +70,17 @@ lvim.plugins = {
   -- Easymotion
   {
     'phaazon/hop.nvim',
+    event = 'InsertEnter',
     branch = 'v2', -- optional but strongly recommended
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
       require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   },
-  {
-    'daeyun/vim-matlab',
-  },
-  {
-    'mikea1729/octave.vim'
-  },
-  -- HTML live server
-  {
-    "turbio/bracey.vim",
-    build = "npm install --prefix server",
-    config = function()
-      vim.g.bracey_server_allow_remote_connections = 1
-      vim.g.bracey_refresh_on_save = 1
-    end,
-  },
   -- Code minimap
   {
     'wfxr/minimap.vim',
+    event = "VeryLazy",
     build = "cargo install --locked code-minimap",
     -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
     config = function()
@@ -104,31 +89,31 @@ lvim.plugins = {
     end,
   },
   -- Indent line
-  -- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    main = "ibl",
-  },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = { scope = { enabled = true }, } },
   -- Simply scrollbar
   {
     'Xuyuanp/scrollbar.nvim',
+    event = 'VeryLazy',
   },
   -- Debugging tools
-  -- { 'mfussenegger/nvim-dap' }, -- already installed on core plugs
-  -- { 'rcarriga/nvim-dap-ui' },
   { 'theHamsta/nvim-dap-virtual-text' },
   { 'nvim-telescope/telescope-dap.nvim' },
   { 'mfussenegger/nvim-dap-python' },
   -- Surrounding ys ds cs (you, delete and change surround)
   {
-    'kylechui/nvim-surround',
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
     end
   },
   -- Numb, jump to line while :number
   {
     'nacro90/numb.nvim',
+    event = 'VeryLazy',
     config = function()
       require('numb').setup {
         show_numbers = true,     -- Enable 'number' for the window while peeking
@@ -141,21 +126,25 @@ lvim.plugins = {
   -- Markdown preview
   {
     "iamcco/markdown-preview.nvim",
-    build = function() vim.fn["mkdp#util#install"]() end,
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && pnpm install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
   },
   -- Uptime extension wakatime
   { 'wakatime/vim-wakatime' },
   -- Colorizer
   {
     'norcalli/nvim-colorizer.lua',
+    event = 'VeryLazy',
     config = function()
       require 'colorizer'.setup()
     end
   },
   -- Open URLs
-  { 'tyru/open-browser.vim' },
-  -- Liveview html
-  { 'tamago324/vim-browsersync' },
+  { 'tyru/open-browser.vim', event = 'InsertEnter' },
   -- Rename names
   {
     'filipdutescu/renamer.nvim',
@@ -163,9 +152,6 @@ lvim.plugins = {
       require("renamer").setup()
     end
   },
-  { 'kovetskiy/sxhkd-vim' },
-  -- Latex live view
-  -- { 'xuhdev/vim-latex-live-preview' },
   -- Fancy error virtual text
   {
     url = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
@@ -175,14 +161,13 @@ lvim.plugins = {
   },
   -- Latex text fold
   { 'matze/vim-tex-fold' },
-  -- Coc for emojis
-  -- { 'neoclide/coc.nvim' },
+  -- Better escape
   {
     "max397574/better-escape.nvim",
     config = function()
       require("better_escape").setup
       {
-        mapping = { "jk", "jj" },   -- a table with mappings to use
+        mapping = { "jk" },         -- a table with mappings to use
         timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
         clear_empty_lines = false,  -- clear line after escaping if there is only whitespace
         keys = "<Esc>",             -- keys used for escaping, if it is a function will use the result everytime
@@ -193,19 +178,34 @@ lvim.plugins = {
       }
     end,
   },
-  { 'voldikss/vim-mma' },
-  {
-    'xiyaowong/telescope-emoji.nvim',
-    config = function()
-      require("telescope").load_extension("emoji")
-    end
-  },
   {
     "windwp/nvim-ts-autotag",
     config = function()
       require("nvim-ts-autotag").setup()
     end,
   },
+  -- Discord rich presence
+  { 'andweeb/presence.nvim' },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    dependencies = { "copilot.lua" },
+    event = "InsertEnter",
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  },
+  {
+    'VonHeikemen/fine-cmdline.nvim',
+    dependencies = {
+      { 'MunifTanjim/nui.nvim' }
+    }
+  },
+  { 'rcarriga/nvim-notify' },
 }
 ----------------------------------------------------
 
@@ -271,3 +271,26 @@ vim.diagnostic.config({ virtual_lines = true })
 vim.diagnostic.config({ virtual_text = false })
 
 lvim.keys.normal_mode["<leader>se"] = ":Telescope emoji<CR>"
+
+-- Copilot setup
+local ok, copilot = pcall(require, "copilot")
+if not ok then
+  return
+end
+
+copilot.setup {
+  suggestion = {
+    keymap = {
+      accept = "<c-l>",
+      next = "<c-j>",
+      prev = "<c-k>",
+      dismiss = "<c-h>",
+    },
+  },
+}
+
+lvim.keys.normal_mode["<leader>gt"] = ":Copilot suggestion toggle_auto_trigger<CR>"
+-- Copilot setup end
+
+-- Cmdpalette setup keymapping
+lvim.keys.normal_mode[":"] = "<cmd>FineCmdline<CR>"
