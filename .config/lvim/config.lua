@@ -36,7 +36,6 @@ lvim.builtin.treesitter.ensure_installed = {
   "tsx",
   "css",
   "html",
-  "rust",
   "java",
   "yaml",
   "latex",
@@ -205,7 +204,14 @@ lvim.plugins = {
       { 'MunifTanjim/nui.nvim' }
     }
   },
-  { 'rcarriga/nvim-notify' },
+  {
+    "vuki656/package-info.nvim",
+    dependencies = "MunifTanjim/nui.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("package-info").setup()
+    end,
+  },
 }
 ----------------------------------------------------
 
@@ -287,6 +293,9 @@ copilot.setup {
       dismiss = "<c-h>",
     },
   },
+  filetypes = {
+    ["*"] = true
+  }
 }
 
 lvim.keys.normal_mode["<leader>gt"] = ":Copilot suggestion toggle_auto_trigger<CR>"
@@ -294,3 +303,12 @@ lvim.keys.normal_mode["<leader>gt"] = ":Copilot suggestion toggle_auto_trigger<C
 
 -- Cmdpalette setup keymapping
 lvim.keys.normal_mode[":"] = "<cmd>FineCmdline<CR>"
+
+-- Formatters setup
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    command = "prettierd",
+    filetypes = { "javascript", "javascriptreact", "css" },
+  },
+}
