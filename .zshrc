@@ -177,6 +177,10 @@ alias docStart='cp ~/LaTeX/* .'
 # Deployment
 alias deploy='ngrok http --domain=wombat-grown-walrus.ngrok-free.app'
 
+# ESP32
+alias esp-upload='arduino-cli upload --fqbn esp32:esp32:esp32:UploadSpeed=115200 --log'
+alias esp-compile='arduino-cli compile --fqbn esp32:esp32:esp32 --log'
+
 # Zoxide Init
 eval "$(zoxide init zsh)"
 
