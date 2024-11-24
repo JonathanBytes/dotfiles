@@ -2,7 +2,7 @@ output HDMI1
 off
 output VIRTUAL1
 off
-output eDP1
+output eDP-1
 crtc 0
 mode 1366x768
 pos 0x0

@@ -11,7 +11,7 @@ x-prop-broadcast_rgb Automatic
 x-prop-colorspace Default
 x-prop-max_bpc 12
 x-prop-non_desktop 0
-output eDP1
+output eDP-1
 crtc 0
 mode 1366x768
 pos 277x1080
