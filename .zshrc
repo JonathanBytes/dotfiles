@@ -113,6 +113,12 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# Fuzzy Finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh    # For zsh
+
+# ESP-IDF
+# source /opt/esp-idf/export.sh
+
 # pip zsh completion
 #compdef -P pip[0-9.]#
 __pip() {
@@ -167,6 +173,12 @@ alias term='wezterm start --cwd $PWD'
 alias dn='dotnet new'
 alias dr='dotnet run'
 
+# Navigation
+alias tree='exa -T'
+alias ls='exa'
+alias la='exa -a'
+alias ll='exa -la'
+
 # Iraf
 alias irafds9='/usr/local/bin/irafStart.sh'
 alias iraf='ecl'
@@ -192,3 +204,5 @@ mkcdir () {
 
 # End Of File
 
+
+PATH=~/.console-ninja/.bin:$PATH

@@ -7,5 +7,5 @@
 #include ".Xresources.d/fonts"
 #include ".Xresources.d/rxvt-unicode"
 
-Xcursor.theme: Pear
-Xcursor.size: 16
+Xcursor.theme: PearWhiteCursors
+Xcursor.size: 24
