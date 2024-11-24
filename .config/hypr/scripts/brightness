@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+
+down() {
+NID=$(notify-send "Brightness" "Decreasing to $brightness%" -h int:value:"$brightness" -h int:transient:1 -i weather-clear-night -r 6 -u normal -p)
+brightnessctl s 10%- -q
+brightness=$(brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}')
+[$brightness -gt 0 ] && brightness=`expr $brightness`  
+notify-send "Brightness" "Decreasing to $brightness%" -h int:value:"$brightness" -h int:transient:1 -i weather-clear-night -r $NID -u normal
+}
+
+up() {
+NID=$(notify-send "Brightness" "Increasing to $brightness%" -h int:value:"$brightness" -h int:transient:1 -i weather-clear -r 6 -u normal -p)
+brightnessctl s 10%+ -q
+brightness=$(brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}')
+[ $brightness -lt 100 ] && brightness=`expr $brightness`  
+notify-send "Brightness" "Increasing to $brightness%" -h int:value:"$brightness" -h int:transient:1 -i weather-clear -r $NID -u normal
+}
+
+case "$1" in
+  up) up;;
+  down) down;;
+esac

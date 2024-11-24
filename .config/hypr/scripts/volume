@@ -1,0 +1,36 @@
+#!/bin/bash
+#
+NID=$(notify-send "Volume" "Decreasing to $volume%" -h int:value:"$volume" -h int:transient:1 -i audio-volume-low-symbolic -r 6 -u normal -p)
+
+down() {
+pamixer -d 5
+volume=$(pamixer --get-volume)
+[$volume -gt 0 ] && volume=`expr $volume`  
+notify-send "Volume" "Decreasing to $volume%" -h int:value:"$volume" -h int:transient:1 -i audio-volume-low-symbolic -r $NID -u normal
+# canberra-gtk-play -i audio-volume-change -d "changevolume"
+}
+
+up() {
+pamixer -i 5
+volume=$(pamixer --get-volume)
+[ $volume -lt 100 ] && volume=`expr $volume`  
+notify-send "Volume" "Increasing to $volume%" -h int:value:"$volume" -h int:transient:1 -i audio-volume-high-symbolic -r $NID -u normal
+# canberra-gtk-play -i audio-volume-change -d "changevolume"
+}
+
+mute() {
+muted="$(pamixer --get-mute)"
+if $muted; then
+  pamixer -u
+  notify-send "Volume" "Unmuted" -h int:transient:1 -i audio-volume-high-symbolic -r $NID -u normal
+else 
+  pamixer -m
+  notify-send "Volume" "Muted" -h int:transient:1 -i audio-volume-muted-symbolic -r $NID -u normal
+fi
+}
+
+case "$1" in
+  up) up;;
+  down) down;;
+  mute) mute;;
+esac
