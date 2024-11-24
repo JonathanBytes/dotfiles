@@ -50,10 +50,11 @@ ramp-headphones-1 = 
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/backlight]
-type = internal/xbacklight
+[module/xbacklight]
+type = internal/backlight
 
-card = intel_backlight
+# card = intel_backlight
+# output = eDP-1
 
 format = <ramp>
 format-background = ${color.BACKGROUND}
@@ -74,6 +75,8 @@ ramp-9 = 
 ramp-font = 2
 ramp-foreground = ${color.MAGENTA}
 ramp-background = ${color.BACKGROUND}
+
+enable-scroll = true
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/brightness]

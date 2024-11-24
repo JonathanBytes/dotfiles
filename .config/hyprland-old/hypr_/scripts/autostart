@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+# Notification Control daemon
+swaync &
+
+# System bar 
+waybar &
+
+# Gnome authentication
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Wallpaper script
+$HOME/.config/hypr/scripts/wallpaper/launch_wall &
+
+# Idle handler
+# $HOME/.config/hypr/scripts/idleHandler & # Commented until I find a better way to handle this
+
+# Battery low warning
+$HOME/.config/hypr/scripts/batterylow &
+
+
+# Persistent clipboard
+wl-paste --type text --watch cliphist store & #Stores only text data
+wl-paste --type image --watch cliphist store & #Stores only image data

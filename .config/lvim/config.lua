@@ -1,7 +1,6 @@
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
-
+lvim.format_on_save.enabled = true
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- TODO: User Config for predefined plugins
@@ -39,6 +38,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "java",
   "yaml",
   "latex",
+  "arduino",
 }
 
 ----------------------------------------------------
@@ -69,7 +69,6 @@ lvim.plugins = {
   -- Easymotion
   {
     'phaazon/hop.nvim',
-    event = 'InsertEnter',
     branch = 'v2', -- optional but strongly recommended
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
@@ -164,17 +163,7 @@ lvim.plugins = {
   {
     "max397574/better-escape.nvim",
     config = function()
-      require("better_escape").setup
-      {
-        mapping = { "jk" },         -- a table with mappings to use
-        timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
-        clear_empty_lines = false,  -- clear line after escaping if there is only whitespace
-        keys = "<Esc>",             -- keys used for escaping, if it is a function will use the result everytime
-        -- example(recommended)
-        -- keys = function()
-        --   return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
-        -- end,
-      }
+      require("better_escape").setup()
     end,
   },
   {
@@ -189,15 +178,35 @@ lvim.plugins = {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          enabled = false,
+          keymap = {
+            accept = "<c-l>",
+            next = "<c-j>",
+            prev = "<c-k>",
+            dismiss = "<c-h>",
+          },
+        },
+        panel = {
+          enabled = false,
+        },
+        filetypes = {
+          ["*"] = true,
+          ["css"] = true,
+        }
+      })
+    end
   },
   {
     "zbirenbaum/copilot-cmp",
-    dependencies = { "copilot.lua" },
-    event = "InsertEnter",
     config = function()
       require("copilot_cmp").setup()
     end,
+    fix_pairs = true,
   },
+  { 'AndreM222/copilot-lualine' },
   {
     'VonHeikemen/fine-cmdline.nvim',
     dependencies = {
@@ -211,6 +220,13 @@ lvim.plugins = {
     config = function()
       require("package-info").setup()
     end,
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = {
+      { 'dokwork/lualine-ex' },
+      { 'nvim-lua/plenary.nvim' },
+    }
   },
 }
 ----------------------------------------------------
@@ -264,10 +280,41 @@ lvim.keys.normal_mode["<leader>hs"] = ":horizontal split<CR>"
 lvim.builtin.which_key.mappings["n"] = { ":set rnu! | :set nu! <CR>", "Toggle numbers sidebar" }
 lvim.keys.normal_mode["<S-l>"] = ":bnext<cr>"
 lvim.keys.normal_mode["<S-h>"] = ":bprev<cr>"
+lvim.builtin.which_key.mappings["bc"] = { "<cmd>ColorizerReloadAllBuffers <cr>", "Reload colorizer" }
 
 lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
+
+-- Lualine config
+
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
-lvim.builtin.lualine.sections.lualine_z = {}
+local components = require("lvim.core.lualine.components")
+lvim.builtin.lualine.sections.lualine_x = {
+  {
+    'copilot',
+    -- Default values
+    symbols = {
+      status = {
+        hl = {
+          enabled = "#84a45a",
+          sleep = "#8ec07c",
+          disabled = "#83a598",
+          warning = "#fe8019",
+          unknown = "#fb4934",
+        }
+      },
+      spinners = require("copilot-lualine.spinners").dots,
+      spinner_color = "#d3869b",
+    },
+    show_colors = true,
+    show_loading = true
+  },
+  components.diagnostics,
+  "ex.lsp.all",
+  -- components.lsp,
+  components.filetype,
+}
+lvim.builtin.lualine.sections.lualine_y = {}
+lvim.builtin.lualine.sections.lualine_z = { { "ex.location", pattern = '%3L:%-2C' } }
 
 -- Disable virtual_text since it's redundant due to lsp_lines.
 vim.diagnostic.config({
@@ -279,25 +326,6 @@ vim.diagnostic.config({ virtual_text = false })
 lvim.keys.normal_mode["<leader>se"] = ":Telescope emoji<CR>"
 
 -- Copilot setup
-local ok, copilot = pcall(require, "copilot")
-if not ok then
-  return
-end
-
-copilot.setup {
-  suggestion = {
-    keymap = {
-      accept = "<c-l>",
-      next = "<c-j>",
-      prev = "<c-k>",
-      dismiss = "<c-h>",
-    },
-  },
-  filetypes = {
-    ["*"] = true
-  }
-}
-
 lvim.keys.normal_mode["<leader>gt"] = ":Copilot suggestion toggle_auto_trigger<CR>"
 -- Copilot setup end
 
@@ -308,7 +336,6 @@ lvim.keys.normal_mode[":"] = "<cmd>FineCmdline<CR>"
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   {
-    command = "prettierd",
-    filetypes = { "javascript", "javascriptreact", "css" },
+    name = "prettierd"
   },
 }

@@ -26,14 +26,20 @@ super + ctrl + Return
 # Roficlip https://github.com/seamus-45/roficlip
 super + z
   rofi -modi "clipboard:roficlip.py --show" -show clipboard -theme ~/.config/bspwm/rofi/themes/launcher.rasi
+	# clipcat-menu
 
 # Rofi emojis
 super + e
-       rofimoji --selector rofi --selector-args="-theme ~/.config/bspwm/rofi/themes/launcher.rasi" 
+	emote
+  # rofimoji --selector rofi --selector-args="-theme ~/.config/bspwm/rofi/themes/launcher.rasi" 
 
 # Rofi App Launcher
 alt + F1
-	sh ~/.config/bspwm/rofi/bin/launcher
+	rofi -show drun -show-icons
+	# sh ~/.config/bspwm/rofi/bin/launcher
+
+alt + space 
+	rofi -show drun -show-icons
 
 # Rofi Network Menu
 super + n
@@ -89,7 +95,7 @@ ctrl + alt + Print
 
 # Brighness control
 XF86MonBrightness{Up,Down}
-	brightness{ --inc, --dec}
+	brightnessctl s { 10%+, 10%-}
 	
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume}

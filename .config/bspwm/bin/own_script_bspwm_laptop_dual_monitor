@@ -5,6 +5,6 @@
 # want to apply.
 my_laptop_external_monitor=$(xrandr --query | grep 'HDMI1')
 if [[ $my_laptop_external_monitor = *connected* ]]; then
-    xrandr --output eDP1 --primary --mode 1366x768 --rotate normal --output HDMI1 --mode 1920x1080 --rotate normal --above eDP1
+    xrandr --output eDP-1 --primary --mode 1366x768 --rotate normal --output HDMI1 --mode 1920x1080 --rotate normal --above eDP-1
 fi
 

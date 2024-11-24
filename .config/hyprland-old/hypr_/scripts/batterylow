@@ -1,0 +1,26 @@
+#!/bin/bash
+
+prev_status=""
+
+while true; do
+  battery=$(cat /sys/class/power_supply/BAT0/capacity)
+  status=$(cat /sys/class/power_supply/BAT0/status)
+  
+  # Check if battery is low and discharging
+  if [ "$battery" -le 20 ] && [ "$status" = "Discharging" ]; then
+    # Send low battery notification
+    NID=$(notify-send "Battery" "Battery low: $battery%" -h int:value:"$battery" -h int:transient:1 -i battery-low -r 6 -u critical -p)
+    notify-send "Battery" "Battery low: $battery% | Cárgalo lindo :3" -h int:value:"$battery" -h int:transient:1 -i battery-low -r $NID -u critical
+  fi
+  
+  # Check if battery is charging and the previous status was not charging
+  if [ "$status" = "Charging" ] && [ "$prev_status" != "Charging" ]; then
+    # Send charging notification
+    NID=$(notify-send "Battery" "Battery low: $battery%" -h int:value:"$battery" -h int:transient:1 -i battery-low -r 6 -u critical -p)
+    notify-send "Battery" "Charging" -h int:transient:1 -i battery -u normal -r $NID
+  fi
+  
+  prev_status="$status"  # Update previous status
+  
+  sleep 10  # Sleep for 5 minutes
+done

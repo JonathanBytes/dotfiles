@@ -34,7 +34,7 @@
 .notification-content {
     background: @cc-bg;
     padding: 7px;
-    border-radius: 0px;
+    border-radius: 10px;
     border: 2px solid #85796f;
     margin: 0;
 }
@@ -44,7 +44,7 @@
     color: @cc-bg;
     text-shadow: none;
     padding: 0;
-    border-radius: 0px;
+    border-radius: 10px;
     margin-top: 5px;
     margin-right: 5px;
 }
@@ -60,7 +60,7 @@
     color: #ebdbb2;
     border: 2px solid #85796f;
     border-top: none;
-    border-radius: 0px;
+    border-radius: 10px;
     background: #32302F;
 }
  

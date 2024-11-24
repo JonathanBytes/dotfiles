@@ -1,0 +1,23 @@
+#!/bin/sh
+
+while true; do
+  BACKGROUND_IMAGE=$( find ~/.config/hypr/themes/apatheia/wallpapers/ -type f -print0 | shuf -zn1 )
+  BACKGROUND_IMAGE2=$( find ~/.config/hypr/themes/apatheia/wallpapers/ -type f -print0 | shuf -zn1 )
+
+  function load_wp(){
+      swww img -t any --transition-bezier 0.0,0.0,1.0,1.0 --transition-duration .8 --transition-step 255 --transition-fps 60 $BACKGROUND_IMAGE -o HDMI-A-1
+  }
+
+  function load_wp2(){
+      swww img -t any --transition-bezier 0.0,0.0,1.0,1.0 --transition-duration .8 --transition-step 255 --transition-fps 60 $BACKGROUND_IMAGE2 -o eDP-1
+  }
+
+  #perform cleanup and exit
+  if ! swww query; then
+      swww init
+  fi
+
+  load_wp
+  load_wp2
+  sleep 10m
+done

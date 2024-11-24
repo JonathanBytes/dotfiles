@@ -6,20 +6,20 @@
   <property name="pressureMultiplier" value="1"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Xournal++ Copy"/>
-  <property name="lastSavePath" value="/home/jonathan/Documents/Universidad/2023-1/Física de estado sólido"/>
-  <property name="lastOpenPath" value="/home/jonathan/Documents/Universidad/2023-1/Física de estado sólido"/>
+  <property name="lastSavePath" value="/home/jonathan/.config/xournalpp"/>
+  <property name="lastOpenPath" value="/home/jonathan/Documents/Trabajos/FerreBMO"/>
   <property name="lastImagePath" value="/home/jonathan/Pictures/Screenshots"/>
   <property name="edgePanSpeed" value="20"/>
   <property name="edgePanMaxMult" value="5"/>
   <property name="zoomStep" value="10"/>
   <property name="zoomStepScroll" value="2"/>
   <property name="displayDpi" value="72"/>
-  <property name="mainWndWidth" value="593"/>
-  <property name="mainWndHeight" value="701"/>
-  <property name="maximized" value="false"/>
+  <property name="mainWndWidth" value="665"/>
+  <property name="mainWndHeight" value="710"/>
+  <property name="maximized" value="true"/>
   <property name="showToolbar" value="true"/>
-  <property name="showSidebar" value="false"/>
-  <property name="sidebarWidth" value="50"/>
+  <property name="showSidebar" value="true"/>
+  <property name="sidebarWidth" value="144"/>
   <property name="sidebarNumberingStyle" value="1"/>
   <property name="sidebarOnRight" value="false"/>
   <property name="scrollbarOnLeft" value="false"/>
@@ -48,12 +48,13 @@
   <property name="eraserVisibility" value="always"/>
   <!--The icon theme, allowed values are "iconsColor", "iconsLucide"-->
   <property name="iconTheme" value="iconsColor"/>
+  <!--Dark/light mode, allowed values are "useSystem", "forceLight", "forceDark"-->
+  <property name="themeVariant" value="useSystem"/>
   <property name="highlightPosition" value="true"/>
   <property name="cursorHighlightColor" value="2159467519"/>
   <property name="cursorHighlightBorderColor" value="2147483903"/>
   <property name="cursorHighlightRadius" value="6"/>
   <property name="cursorHighlightBorderWidth" value="2"/>
-  <property name="darkTheme" value="false"/>
   <property name="useStockIcons" value="false"/>
   <property name="disableScrollbarFadeout" value="false"/>
   <property name="disableAudio" value="false"/>
@@ -174,18 +175,22 @@
     </data>
     <data name="DELL0978:00 04F3:30C3 Touchpad">
       <attribute name="deviceClass" type="int" value="1"/>
-      <attribute name="deviceSource" type="int" value="0"/>
+      <attribute name="deviceSource" type="int" value="6"/>
     </data>
     <data name="HUION Huion Tablet">
       <attribute name="deviceClass" type="int" value="2"/>
       <attribute name="deviceSource" type="int" value="1"/>
     </data>
     <data name="HUION Huion Tablet Dial pad">
-      <attribute name="deviceClass" type="int" value="0"/>
+      <attribute name="deviceClass" type="int" value="5"/>
+      <attribute name="deviceSource" type="int" value="8"/>
+    </data>
+    <data name="HUION Huion Tablet Pad">
+      <attribute name="deviceClass" type="int" value="5"/>
       <attribute name="deviceSource" type="int" value="8"/>
     </data>
     <data name="HUION Huion Tablet Pad pad">
-      <attribute name="deviceClass" type="int" value="0"/>
+      <attribute name="deviceClass" type="int" value="5"/>
       <attribute name="deviceSource" type="int" value="8"/>
     </data>
     <data name="HUION Huion Tablet Pen">
@@ -196,12 +201,16 @@
       <attribute name="deviceClass" type="int" value="3"/>
       <attribute name="deviceSource" type="int" value="2"/>
     </data>
+    <data name="HUION Huion Tablet Pen Pen (0)">
+      <attribute name="deviceClass" type="int" value="2"/>
+      <attribute name="deviceSource" type="int" value="1"/>
+    </data>
     <data name="HUION Huion Tablet Pen stylus">
       <attribute name="deviceClass" type="int" value="2"/>
       <attribute name="deviceSource" type="int" value="1"/>
     </data>
     <data name="HUION Huion Tablet Touch Strip pad">
-      <attribute name="deviceClass" type="int" value="0"/>
+      <attribute name="deviceClass" type="int" value="5"/>
       <attribute name="deviceSource" type="int" value="8"/>
     </data>
     <data name="HUION Huion Tablet stylus">
@@ -230,7 +239,7 @@
     </data>
   </data>
   <data name="tools">
-    <attribute name="current" type="string" value="selectRect"/>
+    <attribute name="current" type="string" value="pen"/>
     <data name="drawArrow">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
@@ -258,7 +267,7 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="highlighter">
-      <attribute name="color" type="hex" value="000000"/>
+      <attribute name="color" type="hex" value="ff8000"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
@@ -268,11 +277,11 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="pen">
-      <attribute name="color" type="hex" value="000000"/>
-      <attribute name="drawingType" type="string" value="strokeRecognizer"/>
+      <attribute name="color" type="hex" value="808080"/>
+      <attribute name="drawingType" type="string" value="line"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
-      <attribute name="size" type="string" value="THIN"/>
+      <attribute name="size" type="string" value="BIG"/>
       <attribute name="style" type="string" value="plain"/>
     </data>
     <data name="playObject">

@@ -15,16 +15,16 @@ include-file = ~/.config/bspwm/polybar/modules
 
 
 [bar/main]
-monitor = eDP1
+monitor = eDP-1
 
 wm-restack = bspwm
 bottom = false
 fixed-center = true
 
-width = 1322
+width = 1360
 height = 26
-offset-x = 11
-offset-y = 11
+offset-x = 3
+offset-y = 6
 
 background = #00
 foreground = ${color.FOREGROUND}
@@ -51,7 +51,7 @@ font-5 = "Iosevka Nerd Font:size=15.4;4"
 
 modules-left = sepleft bspwm updates sepright
 modules-center = sepleft speeed sepright
-modules-right = sepleft volume sep backlight sep toggletouchpad sep toggleAwtrix sep ethernet sep network sep battery battery-combined-tlp sep date sysmenu sepright
+modules-right = sepleft volume sep backlight sep toggletouchpad sep ethernet sep network sep battery battery-combined-tlp sep date sysmenu sepright
 
 separator =
 spacing = 0

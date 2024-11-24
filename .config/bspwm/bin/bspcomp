@@ -10,5 +10,6 @@ killall -q picom
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 
 # Launch picom
-picom -b --config ~/.config/bspwm/picom.conf &
+# picom -b --config ~/.config/bspwm/picom.conf &
+compfy -b &
 # Picom actual fork https://github.com/pijulius/picom

@@ -28,6 +28,10 @@ window#waybar.hidden {
 	background: @base0E;
 }
 
+#workspaces button label {
+  font-size: 10px;
+}
+
 #workspaces button {
   padding: 2px 8px 0px 4px;
   color: @base06;

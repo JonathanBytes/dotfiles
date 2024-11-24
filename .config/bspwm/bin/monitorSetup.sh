@@ -9,7 +9,7 @@
 # Check if bspwm is running:
 pgrep bspwm > /dev/null || exit 0
 
-LAPTOP='eDP1' # Name of Laptop Screen
+LAPTOP='eDP-1' # Name of Laptop Screen
 LAPTOP_WIDTH=1366
 LAPTOP_HEIGHT=768
 
