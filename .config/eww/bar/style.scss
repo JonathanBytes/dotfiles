@@ -1,0 +1,122 @@
+.bar {
+  font-family: "Caskaydia Code NF";
+  font-size: 12px;
+  font-weight: 900;
+  color: $fg;
+
+  & .box {
+    border: none;
+  }
+
+  & .container {
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  & .divider {
+    font-size: 14px;
+  }
+
+  menu {
+    background-color: $bg;
+    padding: 4px;
+    border: solid $bgh 2px;
+    font-size: 13px;
+
+    menuitem {
+      padding: 0 8px 0 8px;
+    }
+
+    menuitem:hover {
+      background-color: $purple;
+      /* color: $bg; */
+      border-radius: 4px;
+    }
+  }
+
+  & .menu {
+    &.cava {
+      font-size: 8px;
+    }
+    &.arch {
+      font-size: 20px;
+      padding: 0 14px 0 8px;
+    }
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  & .workspaces {
+    & .horizontal {
+      margin: 0 8px 0 8px;
+    }
+    & button {
+      background-color: $fg;
+      border-radius: 99px;
+      padding: 6px;
+      margin: 0 2px 0 2px;
+
+      &.occupied {
+        background-color: $red;
+      }
+      &.current {
+        background-color: $blue;
+        /* padding: 6px 8px 6px 8px; */
+        /* margin: 0 4px 0 4px; */
+        border-radius: 3px;
+      }
+      &:hover {
+        background-color: $gray;
+      }
+    }
+  }
+
+  & .activewindow {
+    padding: 0 2rem;
+
+    & .icon {
+      font-size: 12px;
+    }
+  }
+
+  & .controls {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 12px;
+
+    & .time {
+      font-weight: 900;
+      margin-right: 4px;
+    }
+
+    & .menu {
+      background-color: $bg2;
+      border-radius: 8px;
+      padding-right: 2px;
+    }
+
+    & .network.active,
+    & .notif.active {
+      color: $gray;
+    }
+
+    & .battery {
+      padding-left: 8px;
+    }
+
+    & button,
+    .divider {
+      padding: 4px 7px;
+      font-size: 14px;
+    }
+
+    & .shutdown {
+      color: $red;
+      font-size: 14px;
+      padding-right: 1rem;
+    }
+  }
+}

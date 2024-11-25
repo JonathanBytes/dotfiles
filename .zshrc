@@ -206,3 +206,5 @@ mkcdir () {
 
 
 PATH=~/.console-ninja/.bin:$PATH
+
+export PATH=$PATH:/home/jonathan/.millennium/ext/bin
