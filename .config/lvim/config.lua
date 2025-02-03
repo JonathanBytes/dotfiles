@@ -20,7 +20,11 @@ vim.opt.spelllang = { 'es' }                                                    
 -- Editing default keymapping
 lvim.keys.normal_mode["<leader>f"] = false
 lvim.keys.normal_mode["<leader>fn"] = ":ene!<cr>" -- Open new tab
--- lvim.keys.normal_mode["<leader>ff"] = ":Telescope find_files<cr>"
+lvim.keys.normal_mode["<leader>ff"] = ":Telescope find_files<cr>"
+
+-- All custom headers
+local header = require("headers")
+lvim.builtin.alpha.dashboard.section.header.val = header
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -43,192 +47,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 ----------------------------------------------------
 -- Additional Plugins
-lvim.plugins = {
-  -- Colorscheme
-  { 'eddyekofo94/gruvbox-flat.nvim' },
-  {
-    'p00f/nvim-ts-rainbow',
-    event = 'VeryLazy',
-    config = function()
-      require("nvim-treesitter.configs").setup {
-        highlight = {
-          -- ...
-        },
-        -- ...
-        rainbow = {
-          enable = true,
-          -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-          extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-          max_file_lines = nil, -- Do not enable for files with more than n lines, int
-          -- colors = {}, -- table of hex strings
-          -- termcolors = {} -- table of colour name strings
-        }
-      }
-    end
-  },
-  -- Easymotion
-  {
-    'phaazon/hop.nvim',
-    branch = 'v2', -- optional but strongly recommended
-    config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
-      require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  },
-  -- Code minimap
-  {
-    'wfxr/minimap.vim',
-    event = "VeryLazy",
-    build = "cargo install --locked code-minimap",
-    -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
-    config = function()
-      -- vim.cmd("let g:minimap_auto_start = 1")
-      -- vim.cmd("let g:minimap_auto_start_win_enter = 1")
-    end,
-  },
-  -- Indent line
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = { scope = { enabled = true }, } },
-  -- Simply scrollbar
-  {
-    'Xuyuanp/scrollbar.nvim',
-    event = 'VeryLazy',
-  },
-  -- Debugging tools
-  { 'theHamsta/nvim-dap-virtual-text' },
-  { 'nvim-telescope/telescope-dap.nvim' },
-  { 'mfussenegger/nvim-dap-python' },
-  -- Surrounding ys ds cs (you, delete and change surround)
-  {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
-    end
-  },
-  -- Numb, jump to line while :number
-  {
-    'nacro90/numb.nvim',
-    event = 'VeryLazy',
-    config = function()
-      require('numb').setup {
-        show_numbers = true,     -- Enable 'number' for the window while peeking
-        show_cursorline = true,  -- Enable 'cursorline' for the window while peeking
-        number_only = false,     -- Peek only when the command is only a number instead of when it starts with a number
-        centered_peeking = true, -- Peeked line will be centered relative to window
-      }
-    end
-  },
-  -- Markdown preview
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = "cd app && pnpm install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
-  },
-  -- Uptime extension wakatime
-  { 'wakatime/vim-wakatime' },
-  -- Colorizer
-  {
-    'norcalli/nvim-colorizer.lua',
-    event = 'VeryLazy',
-    config = function()
-      require 'colorizer'.setup()
-    end
-  },
-  -- Open URLs
-  { 'tyru/open-browser.vim', event = 'InsertEnter' },
-  -- Rename names
-  {
-    'filipdutescu/renamer.nvim',
-    config = function()
-      require("renamer").setup()
-    end
-  },
-  -- Fancy error virtual text
-  {
-    url = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
-    config = function()
-      require("lsp_lines").setup()
-    end,
-  },
-  -- Latex text fold
-  { 'matze/vim-tex-fold' },
-  -- Better escape
-  {
-    "max397574/better-escape.nvim",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
-  {
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end,
-  },
-  -- Discord rich presence
-  { 'andweeb/presence.nvim' },
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({
-        suggestion = {
-          enabled = false,
-          keymap = {
-            accept = "<c-l>",
-            next = "<c-j>",
-            prev = "<c-k>",
-            dismiss = "<c-h>",
-          },
-        },
-        panel = {
-          enabled = false,
-        },
-        filetypes = {
-          ["*"] = true,
-          ["css"] = true,
-        }
-      })
-    end
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-    fix_pairs = true,
-  },
-  { 'AndreM222/copilot-lualine' },
-  {
-    'VonHeikemen/fine-cmdline.nvim',
-    dependencies = {
-      { 'MunifTanjim/nui.nvim' }
-    }
-  },
-  {
-    "vuki656/package-info.nvim",
-    dependencies = "MunifTanjim/nui.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("package-info").setup()
-    end,
-  },
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = {
-      { 'dokwork/lualine-ex' },
-      { 'nvim-lua/plenary.nvim' },
-    }
-  },
-}
+lvim.plugins = require("plugins")
 ----------------------------------------------------
 
 lvim.keys.insert_mode["<F2>"] = { "<cmd>lua require(\"renamer\").rename()<cr>", { noremap = true, silent = true } }
@@ -239,17 +58,7 @@ vim.g.gruvbox_flat_style = "dark"
 vim.g.gruvbox_transparent = true
 
 -- Minimap config
-vim.cmd("let g:minimap_width = 8")
-
--- Scrollbar setup
-vim.cmd [[
-augroup ScrollbarInit
-  autocmd!
-  autocmd WinScrolled,VimResized,QuitPre * silent! lua require('scrollbar').show()
-  autocmd WinEnter,FocusGained           * silent! lua require('scrollbar').show()
-  autocmd WinLeave,BufLeave,BufWinLeave,FocusLost            * silent! lua require('scrollbar').clear()
-augroup end
-]]
+vim.g.minimap_width = 8
 
 -- Debugging setup
 lvim.keys.normal_mode["<F5>"] = ":lua require'dap'.continue()<CR>"
@@ -327,7 +136,6 @@ lvim.keys.normal_mode["<leader>se"] = ":Telescope emoji<CR>"
 
 -- Copilot setup
 lvim.keys.normal_mode["<leader>gt"] = ":Copilot suggestion toggle_auto_trigger<CR>"
--- Copilot setup end
 
 -- Cmdpalette setup keymapping
 lvim.keys.normal_mode[":"] = "<cmd>FineCmdline<CR>"
