@@ -40,6 +40,7 @@ plugins=(
 git
 zsh-autosuggestions
 )
+bindkey '^ ' autosuggest-accept
 
 ##############################
 # Function Definitions
@@ -151,6 +152,10 @@ alias gaa='git add .'
 alias gc='git commit -m'
 alias gp='git push'
 alias gcp='git checkout -b'
+
+# Copilot aliases
+alias ghcs='gh copilot suggest'
+alias ghce='gh copilot explain'
 
 # Nvim
 alias n='lvim'
