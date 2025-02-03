@@ -192,6 +192,8 @@ alias deploy='ngrok http --domain=wombat-grown-walrus.ngrok-free.app'
 # ESP32
 alias esp-upload='arduino-cli upload --fqbn esp32:esp32:esp32:UploadSpeed=115200 --log'
 alias esp-compile='arduino-cli compile --fqbn esp32:esp32:esp32 --log'
+alias esp-compile-s3='arduino-cli compile --fqbn esp32:esp32:esp32s3usbotg --log'
+alias esp-upload-s3='arduino-cli upload --fqbn esp32:esp32:esp32s3usbotg --log'
 
 # Zoxide Init
 eval "$(zoxide init zsh)"
@@ -205,6 +207,9 @@ mkcdir () {
 # End Of File
 
 
-PATH=~/.console-ninja/.bin:$PATH
+
 
 export PATH=$PATH:/home/jonathan/.millennium/ext/bin
+
+# bun completions
+[ -s "/home/jonathan/.bun/_bun" ] && source "/home/jonathan/.bun/_bun"
