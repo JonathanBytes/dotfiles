@@ -19,6 +19,6 @@ return {
   use_fancy_tab_bar = false,
   hide_tab_bar_if_only_one_tab = true,
   adjust_window_size_when_changing_font_size = false,
-  enable_wayland = true,
+  enable_wayland = false,
   alternate_buffer_wheel_scroll_speed = 1,
 }
