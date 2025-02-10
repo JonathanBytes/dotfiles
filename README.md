@@ -14,37 +14,40 @@ This is a work in progress :hammer: (and my first) dotfiles repo. Please be kind
 
 Installation script:
 
+> [!WARNING]
+> This script is very basic and can break your system. Use it at your own risk.
+
 ```bash
 curl -L https://jonathanbytes.com/install | bash
 
 # or with wget
 wget -O - https://jonathanbytes.com/install | bash
 ```
+
 > Only for debian, for now.
 
+## :package: Contents
 
-## :package: Contents 
-
-  - [:package: Contents](#package-contents)
-  - [:shell: Shell](#shell-shell)
-  - [:keyboard: Terminal](#keyboard-terminal)
-    * [Terminal emulator](#terminal-emulator)
-    * [Scripts](#scripts)
-    * [TUI](#tui)
-    * [Nvim :hammer:](#nvim-hammer)
-  - [:zap: System :hammer:](#zap-system-hammer)
-  - [:sparkles: GUI Apps :hammer:](#sparkles-gui-apps-hammer)
+- [:package: Contents](#package-contents)
+- [:shell: Shell](#shell-shell)
+- [:keyboard: Terminal](#keyboard-terminal)
+  - [Terminal emulator](#terminal-emulator)
+  - [Scripts](#scripts)
+  - [TUI](#tui)
+  - [Nvim :hammer:](#nvim-hammer)
+- [:zap: System :hammer:](#zap-system-hammer)
+- [:sparkles: GUI Apps :hammer:](#sparkles-gui-apps-hammer)
   
 ---
 
-## :shell: Shell 
+## :shell: Shell
 
 - [zsh](https://www.zsh.org/): Shell
 - [oh-my-zsh](https://ohmyz.sh/#install): Shell framework (Plugin manager and more)
 - [starship](https://starship.rs/): Cross-shell prompt
 - Plugins
   - [AutoJump](https://github.com/wting/autojump): A cd command that learns
-  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh): Fish-like autosuggestions for zsh 
+  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh): Fish-like autosuggestions for zsh
   - [zsh-syntax-highloghting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md): Fish shell like syntax highlighting for zsh
 - [trash-cli](https://github.com/andreafrancia/trash-cli): Command line interface to the freedesktop.org trashcan
 - [exa](https://the.exa.website/): A modern replacement for ls
@@ -61,7 +64,7 @@ Terminal stuff, scripts and TUIs.
 ### Scripts
 
 - [neofetch]()
-- [pokemon-colorscripts](https://gitlab.com/phoneybadger/pokemon-colorscripts): some scripts to print out images of pokemons to terminal 
+- [pokemon-colorscripts](https://gitlab.com/phoneybadger/pokemon-colorscripts): some scripts to print out images of pokemons to terminal
 - [oneko](https://github.com/tie/oneko): Cat follows cursor
 - [cmatrix](https://github.com/abishekvashok/cmatrix)
 - [pipes.sh](https://github.com/pipeseroni/pipes.sh)
@@ -69,20 +72,19 @@ Terminal stuff, scripts and TUIs.
 
 ### TUI
 
-
 - [nvim](#nvim): Text editor
 - [ranger](https://github.com/ranger/ranger): A VIM-inspired filemanager for the console
 - [zathura](https://pwmt.org/projects/zathura/): A document viewer
-  - [zathura-gruvbox](https://github.com/eastack/zathura-gruvbox): The gruvbox color theme for Zathura 
+  - [zathura-gruvbox](https://github.com/eastack/zathura-gruvbox): The gruvbox color theme for Zathura
 
 ### Nvim :hammer:
 
-Text editor
+Text editor (With LazyVim and Lunarvim distributions)
 
 ## :zap: System :hammer:
 
 - [sddm](https://github.com/sddm/sddm): Display manager
-- [ bspwm ](https://github.com/baskerville/bspwm): Window manager
+- [bspwm](https://github.com/baskerville/bspwm): Window manager
 - [sxhkd](https://github.com/baskerville/sxhkd): Hotkeys daemon
 - [picom](https://github.com/pijulius/picom): Rounded corners, animations and transparency
 - Fonts
@@ -90,15 +92,15 @@ Text editor
   - FiraCode Nerd Font
   - Iosevka
   - Iosevka Nerd Font
-- [ Polybar ](https://github.com/polybar/polybar): Status bar
+- [Polybar](https://github.com/polybar/polybar): Status bar
   - Jonathan custom font...
 - [Rofi](https://github.com/davarotium/rofi): App launcher and more! (clipboard history, emoji list...)
-  - [Rofimoji](https://github.com/fdw/rofimoji): An emoji and character picker for rofi 😬   
+  - [Rofimoji](https://github.com/fdw/rofimoji): An emoji and character picker for rofi 😬
 - [Cursor Theme](https://www.gnome-look.org/p/1327310/): PearWhiteCursors
-- [Kvantum](https://github.com/tsujan/Kvantum): A Linux SVG-based theme engine for Qt and KDE 
+- [Kvantum](https://github.com/tsujan/Kvantum): A Linux SVG-based theme engine for Qt and KDE
   - [Gruvbox-Kvantum](https://github.com/sourav2k/Gruvbox-Kvantum): kvantum theme based on Gruvbox color pallete
-- [Lxappearance](https://github.com/lxde/lxappearance): LXDE GTK+ theme switcher 
-  - [gruvbox-material-gtk](https://github.com/TheGreatMcPain/gruvbox-material-gtk): Gruvbox Material for GTK, Gnome, Cinnamon, XFCE, Unity, Plank and Icons 
+- [Lxappearance](https://github.com/lxde/lxappearance): LXDE GTK+ theme switcher
+  - [gruvbox-material-gtk](https://github.com/TheGreatMcPain/gruvbox-material-gtk): Gruvbox Material for GTK, Gnome, Cinnamon, XFCE, Unity, Plank and Icons
 
 ## :sparkles: GUI apps :hammer:
 

@@ -24,9 +24,9 @@
   "lualine-ex": { "branch": "main", "commit": "ca33528053201df6c10b5905121c0a1427b763c1" },
   "lualine.nvim": { "branch": "master", "commit": "84ffb80e452d95e2c46fa29a98ea11a240f7843e" },
   "lunar.nvim": { "branch": "master", "commit": "08bbc93b96ad698d22fc2aa01805786bcedc34b9" },
-  "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "7276ffffcf51a8304b5fd4b81293be4ee010ec47" },
   "mason.nvim": { "branch": "main", "commit": "057ac5ca159c83e302a55bd839a96ff1ea2396db" },
+  "mini.nvim": { "branch": "main", "commit": "4e873f36552ac7c15a824f36783c629493f78d0c" },
   "minimap.vim": { "branch": "master", "commit": "57287e2dd28fa3e63276a32d11c729df14741d54" },
   "neodev.nvim": { "branch": "main", "commit": "0043cf91c18aeac8db5765eb86c6078e17ac9325" },
   "nlsp-settings.nvim": { "branch": "main", "commit": "32aa12da328258f2dccb15d327c26a8d21d9f4bd" },
@@ -57,6 +57,7 @@
   "presence.nvim": { "branch": "main", "commit": "87c857a56b7703f976d3a5ef15967d80508df6e6" },
   "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "renamer.nvim": { "branch": "develop", "commit": "1614d466df53899f11dd5395eaac3c09a275c384" },
+  "render-markdown.nvim": { "branch": "main", "commit": "17a77463f945c4b9e4f371c752efd90e3e1bf604" },
   "schemastore.nvim": { "branch": "main", "commit": "0b396f538f195c249f021a48c3d8988f0d3f86f7" },
   "structlog.nvim": { "branch": "main", "commit": "45b26a2b1036bb93c0e83f4225e85ab3cee8f476" },
   "telescope-dap.nvim": { "branch": "master", "commit": "783366bd6c1e7fa0a5c59c07db37f49c805a28df" },
@@ -65,7 +66,6 @@
   "toggleterm.nvim": { "branch": "main", "commit": "68fdf851c2b7901a7065ff129b77d3483419ddce" },
   "tokyonight.nvim": { "branch": "main", "commit": "c5df636ce62a8aab7565f35da143cfd672526302" },
   "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },
-  "vim-tex-fold": { "branch": "master", "commit": "5ad3e2cd396eb876ae48ee1ebaba956b21fe1642" },
   "vim-wakatime": { "branch": "master", "commit": "e46d7c4f98ee0f40782008dd60cb2a79c377fb1d" },
   "which-key.nvim": { "branch": "main", "commit": "4acffc92953a90a790603bfdab7c92319ab167b1" }
 }

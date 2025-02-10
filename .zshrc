@@ -16,14 +16,15 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/bin:/usr/local/bin:$PATH
 # Custom directories
 export ZSH="$HOME/.oh-my-zsh"
 export VIRTUAL_ENV_DISABLE_PROMPT=true
-export VISUAL=lvim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 export XCURSOR_THEME=Pear
 
 # Iraf binaries path
 export PATH=$HOME/.iraf/bin/:$PATH
 # Iraf environment variable
-export iraf=~/Downloads/irafInstaller/iraf-2.17/
+# export iraf=~/Downloads/irafInstaller/iraf-2.17/
+export iraf=/usr/lib/iraf/
 
 # DS9 installer path
 export PATH=$HOME/Downloads/ds9Installer/SAOImageDS9/bin/:$PATH
@@ -40,7 +41,7 @@ plugins=(
 git
 zsh-autosuggestions
 )
-bindkey '^ ' autosuggest-accept
+
 
 ##############################
 # Function Definitions
@@ -66,8 +67,8 @@ compctl -K _dotnet_zsh_complete dotnet
 ##############################
 
 # Personal aliases
-alias zshconfig="lvim ~/.zshrc"
-alias ohmyzsh="lvim ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 # On-demand rehash
 zshcache_time="$(date +%s%N)"
@@ -158,7 +159,7 @@ alias ghcs='gh copilot suggest'
 alias ghce='gh copilot explain'
 
 # Nvim
-alias n='lvim'
+alias n='nvim'
 
 # Trash Cli
 alias rm='trash-put'
@@ -194,6 +195,9 @@ alias docStart='cp ~/LaTeX/* .'
 # Deployment
 alias deploy='ngrok http --domain=wombat-grown-walrus.ngrok-free.app'
 
+# Run notes server Quartz
+alias quartz='cd ~/Dev/quartz && npx quartz build --serve'
+
 # ESP32
 alias esp-upload='arduino-cli upload --fqbn esp32:esp32:esp32:UploadSpeed=115200 --log'
 alias esp-compile='arduino-cli compile --fqbn esp32:esp32:esp32 --log'
@@ -218,3 +222,5 @@ export PATH=$PATH:/home/jonathan/.millennium/ext/bin
 
 # bun completions
 [ -s "/home/jonathan/.bun/_bun" ] && source "/home/jonathan/.bun/_bun"
+
+bindkey '^ ' autosuggest-accept

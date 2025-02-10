@@ -43,6 +43,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
   "latex",
   "arduino",
+  "markdown",
 }
 
 ----------------------------------------------------
