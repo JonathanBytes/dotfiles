@@ -1,3 +1,5 @@
+local header = require("../headers")
+
 return {
   {
     "folke/snacks.nvim",
@@ -22,6 +24,14 @@ return {
             -- your explorer picker configuration comes here
             -- or leave it empty to use the default settings
           },
+        },
+      },
+      dashboard = {
+        -- your dashboard configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+        preset = {
+          header = header,
         },
       },
     },
