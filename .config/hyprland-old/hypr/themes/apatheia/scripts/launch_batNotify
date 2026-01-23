@@ -1,4 +1,0 @@
-#!/bin/sh
-ps -ef | grep batterylow | grep -v grep | awk '{print $2}' | xargs kill -9
-while pgrep -x batterylow >/dev/null; do sleep 0.5; done
-$HOME/.local/bin/batterylow &
